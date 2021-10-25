@@ -492,7 +492,7 @@ function Rheirloomswap() {
 		if (getPageSetting('Rhsmapstaff') != "undefined" && (Rshouldtimefarm == false || getPageSetting('Rhstributestaff') == "undefined") && game.global.mapsActive == true) {
 			Rhsmapstaffequip();
 		}
-		if (getPageSetting('Rhstributestaff') != "undefined" && getPageSetting('Rhsstaff') && Rshouldtimefarm == true && game.global.mapsActive == true) {
+		if (getPageSetting('Rhstributestaff') != "undefined" && getPageSetting('Rhsstaff') && Rshouldtributefarm == true && game.global.mapsActive == true) {
 			Rhstributestaffequip();
 		}
 	}
