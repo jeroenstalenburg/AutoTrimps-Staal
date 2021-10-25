@@ -1,4 +1,4 @@
-var basepath = 'https://jeroenstalenburg.github.io/AutoTrimps/';
+var basepath = 'https://jeroenstalenburg.github.io/AutoTrimps-Staal/';
 
 function safeSetItems1(name,data) {
     try {

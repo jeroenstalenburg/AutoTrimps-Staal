@@ -11,6 +11,6 @@
 // ==/UserScript==
 var script = document.createElement('script');
 script.id = 'AutoTrimps-GraphsU2';
-script.src = 'https://jeroenstalenburg.github.io/AutoTrimps/GraphsU2.js';
+script.src = 'https://jeroenstalenburg.github.io/AutoTrimps-Staal/GraphsU2.js';
 script.setAttribute('crossorigin',"anonymous");
 document.head.appendChild(script);
