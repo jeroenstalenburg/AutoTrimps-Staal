@@ -34,7 +34,7 @@ function printChangelog() {
         body+=result;
     }
     var footer =
-        '<b>ZӘK Fork</b> - <u>Report any bugs/problems please</u>!\
+        "'<b>Staal Fork</b>"
     ,   action = 'cancelTooltip()'
     ,   title = 'Script Update Notice<br>' + ATversion
     ,   acceptBtnText = "Thank you for playing AutoTrimps. Accept and Continue."
