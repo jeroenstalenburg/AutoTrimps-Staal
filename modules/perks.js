@@ -1329,11 +1329,6 @@ RAutoPerks.VariablePerk = function(name, base, compounding, value, baseIncrease,
     this.base = base;
     this.type  = "exponential";
     this.exprate = 1.3;
-    if (name === "championism") {
-        this.exprate = 5;
-    }
-    console.log(name + ': ' + this.exprate)
-    this.fixed = false;
     this.compounding = compounding;
     this.updatedValue = -1;
     this.baseIncrease = baseIncrease;
@@ -1379,6 +1374,7 @@ RAutoPerks.initializePerks = function () {
     var championism = new RAutoPerks.VariablePerk("championism", 1000000000, true,      14, 0.1);
     
     equality.exprate = 1.5;
+    championism.exprate = 5;
     //scruffy
 	//no
     //tier2
