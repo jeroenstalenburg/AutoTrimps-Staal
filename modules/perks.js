@@ -1331,8 +1331,8 @@ RAutoPerks.VariablePerk = function(name, base, compounding, value, baseIncrease,
     this.exprate = 1.3;
     if (name === "championism") {
         this.exprate = 5;
-        debug("This should be once")
     }
+    console.log(name + ': ' + this.exprate)
     this.fixed = false;
     this.compounding = compounding;
     this.updatedValue = -1;
