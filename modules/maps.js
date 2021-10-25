@@ -1879,7 +1879,6 @@ function RautoMap() {
                         }
                     }
                 }
-                debug('tributefarm map selected: ' + selectedMap)
 	    } else if (Rshouldequipfarm) {
                 for (var map in game.global.mapsOwnedArray) {
                     if (!game.global.mapsOwnedArray[map].noRecycle && equipminus <= 0 && ((game.global.world + equipminus) == game.global.mapsOwnedArray[map].level)) {
@@ -2451,7 +2450,6 @@ function RautoMap() {
                             document.getElementById("mapLevelInput").value = (game.global.world - 1);
                         }
                     }
-                    debug(tributefarmlevel + ' ' + tributefarmlevelindex + ' ' + levelzones)
                 }
                 biomeAdvMapsSelect.value = autoTrimpSettings.Rtributemapselection.selected;
                 document.getElementById("advSpecialSelect").value = autoTrimpSettings.Rtributespecialselection.selected;
