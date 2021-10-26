@@ -499,48 +499,48 @@ function ImportExportTooltip(what, event) {
     
 };
         function c2listcolor(){
-			function a(b,c,d){ 
-				var e=100*(game.c2[b]/(game.global.highestLevelCleared+1));
-				c2list[b].color=e>=c?"LIMEGREEN":e<c&&e>=d?"GOLD":e<d&&1<=e?"#de0000":"DEEPSKYBLUE"
-			}
-				Object.keys(c2list).forEach(function(b){
-						null!=game.c2[b]&&("Coordinate"===b?a(b,45,38):"Trimp"===b?a(b,45,35):"Obliterated"===b?a(b,25,20):"Eradicated"===b?a(b,14,10):"Mapology"===b?a(b,90,80):"Trapper"===b?a(b,85,75):a(b,95,85))
-				})
-		}
+            function a(b,c,d){ 
+                var e=100*(game.c2[b]/(game.global.highestLevelCleared+1));
+                c2list[b].color=e>=c?"LIMEGREEN":e<c&&e>=d?"GOLD":e<d&&1<=e?"#de0000":"DEEPSKYBLUE"
+            }
+                Object.keys(c2list).forEach(function(b){
+                        null!=game.c2[b]&&("Coordinate"===b?a(b,45,38):"Trimp"===b?a(b,45,35):"Obliterated"===b?a(b,25,20):"Eradicated"===b?a(b,14,10):"Mapology"===b?a(b,90,80):"Trapper"===b?a(b,85,75):a(b,95,85))
+                })
+        }
        function Rc2listcolor(){
-			function a(b,c,d){ 
-				var e=100*(game.c2[b]/(game.global.highestRadonLevelCleared+1));
-				c2list[b].color=e>=c?"LIMEGREEN":e<c&&e>=d?"GOLD":e<d&&1<=e?"#de0000":"DEEPSKYBLUE";
-			}
-				Object.keys(c2list).forEach(function(b){
-						if (game.c2[b] != null) {
-							if (b == "Unbalance")
-								a(b,90,80);
-							else if (b == "Unlucky")
-								a(b,97,92);
-							else if (b == "Duel")
-								a(b,90,80);
-							else if (b == "Transmute")
-								a(b,90,80);
-							else if (b == "Quest")
-								a(b,90,80);
-							else if (b == "Downsize")
-								a(b,85,75);
-							else if (b == "Trappapalooza")
-								a(b,85,75);
-							else if (b == "Wither")
-								a(b,85,75);
-							else if (b == "Wither")
-								a(b,75,65);
-							else if (b == "Storm")
-								a(b,90,80);
-							else if (b == "Berserk")
-								a(b,85,75);
-						}
-				});
-		} 
-		c2listcolor();
-	        Rc2listcolor();
+            function a(b,c,d){ 
+                var e=100*(game.c2[b]/(game.global.highestRadonLevelCleared+1));
+                c2list[b].color=e>=c?"LIMEGREEN":e<c&&e>=d?"GOLD":e<d&&1<=e?"#de0000":"DEEPSKYBLUE";
+            }
+                Object.keys(c2list).forEach(function(b){
+                        if (game.c2[b] != null) {
+                            if (b == "Unbalance")
+                                a(b,90,80);
+                            else if (b == "Unlucky")
+                                a(b,97,92);
+                            else if (b == "Duel")
+                                a(b,90,80);
+                            else if (b == "Transmute")
+                                a(b,90,80);
+                            else if (b == "Quest")
+                                a(b,90,80);
+                            else if (b == "Downsize")
+                                a(b,85,75);
+                            else if (b == "Trappapalooza")
+                                a(b,85,75);
+                            else if (b == "Wither")
+                                a(b,85,75);
+                            else if (b == "Wither")
+                                a(b,75,65);
+                            else if (b == "Storm")
+                                a(b,90,80);
+                            else if (b == "Berserk")
+                                a(b,85,75);
+                        }
+                });
+        } 
+        c2listcolor();
+            Rc2listcolor();
         tooltipText = `<div class='litScroll'>
     <table class='bdTableSm table table-striped'>
         <tbody>
@@ -738,7 +738,7 @@ function ImportExportTooltip(what, event) {
                     <font color=` + c2list.Duel.color + `>` + c2list.Duel.percentzone + `
                 </td>
             </tr>
-	    <tr>
+        <tr>
                 <td>Storm</td>
                 <td>` + c2list.Storm.number + `</td>
                 <td>` + c2list.Storm.percent + `</td>
@@ -783,7 +783,7 @@ function ImportExportTooltip(what, event) {
                     <font color=` + c2list.Trappapalooza.color + `>` + c2list.Trappapalooza.percentzone + `
                 </td>
             </tr>
-	    <tr>
+        <tr>
                 <td>Berserk</td>
                 <td>` + c2list.Berserk.number + `</td>
                 <td>` + c2list.Berserk.percent + `</td>

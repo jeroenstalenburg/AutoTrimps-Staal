@@ -466,7 +466,7 @@ function initializeAllSettings() {
     createSetting('RLumberjackRatio', 'Lumberjack Ratio', '', 'value', '1', null, "Jobs");
     createSetting('RMinerRatio', 'Miner Ratio', '', 'value', '1', null, "Jobs");
     createSetting('RMaxExplorers', 'Max Explorers', 'Advanced. Cap your explorers (This is an absolute number not a ratio). recommend: -1', 'value', '-1', null, "Jobs");
-	
+    
     //Ships
     document.getElementById('RMaxExplorers').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rshipfarmon', 'Ship Farming', 'Turn Ship Farming off or on. ', 'boolean', 'false', null, "Jobs");
@@ -516,7 +516,7 @@ function initializeAllSettings() {
     createSetting('Requipfarmmult', 'AEF: Multiplier', 'Starting from the zone above AEF: Zone, this setting will multiply the H:D you have set in AEF: H:D. So if AEF: Zone was 100, AEF: H:D was 10, AEF: Multiplier was 1.2, at z101 your H:D target will be 12, then at z102 it will be 14.4 and so on. This way you can account for the zones getting stronger and you will not waste time farming for a really low H:D. ', 'value', '-1', null, 'Gear');
     createSetting('Requipfarmhits', 'AEF: Hits', 'How many hits do you want to kill an enemy in a AEF map. ', 'value', '-1', null, 'Gear');
     
-	
+    
 
     //Maps
 
@@ -742,13 +742,13 @@ function initializeAllSettings() {
     createSetting('Rinsanityfarmstack', 'IF: Stacks', 'How many stacks to farm at zone specified in IF. Can use 300,400,500. These values should match up to your IF zones. If using IF and IF: Stacks examples (110 and 500) it will farm at z110 for 500 stacks of insanity. If stacks specified are above maximum Insanity Stacks, it will farm for maximum. ', 'multiValue', [-1], null, 'Challenges');
     createSetting('Rinsanityfarmlevel', 'IF: Map Level', 'What map level to use. Can use -1,1,2. -1 to use a level down from world (This is how to remove insanity stacks), 0 to use world, 1 etc to use +maps. Using 0 by itself will use global level for all maps. ', 'multiValue', [0], null, 'Challenges');
     createSetting('Rinsanityfarmfrag', 'IF: Frags', 'Turn this on to farm fragments if you cannot afford the map you have selected for IF. ', 'boolean', 'false', null, 'Challenges');
-	
+    
     //Exterminate
     document.getElementById('Rinsanityfarmfrag').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rexterminateon', 'Exterminate', 'Turn on Exterminate settings. This also controls the entireity of Exterminate. If you turn this off it will not calculate Exterminate. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Rexterminatecalc', 'E: Calc', 'Calculate Exterminate enemies instead of the usual ones. May improve your challenge experience. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Rexterminateeq', 'E: Equality', 'Will manage your equality \'better\' inside the challenge. When you have the experienced buff it will turn it off, when you dont it will turn it on and let it build up. ', 'boolean', 'false', null, 'Challenges');
-	
+    
     //Nurture
     document.getElementById('Rexterminateeq').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rnurtureon', 'Nurture', 'Enables the Lab setting in Buildings and building labs through it. ', 'boolean', 'false', null, 'Challenges');
@@ -853,20 +853,20 @@ function initializeAllSettings() {
     //Heirloom Swapping
     document.getElementById('lowdmg').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rhs', 'Heirloom Swapping', 'Heirloom swapping master button. Turn this on to allow heirloom swapping and its associated settings. ', 'boolean', false, null, 'Heirlooms');
-	
-	//Shield Swapping
-	document.getElementById('Rhs').parentNode.insertAdjacentHTML('afterend', '<br>');
-	createSetting('Rhsshield', 'Shields', 'Toggle to swap Shields', 'boolean', false, null, 'Heirlooms');
-	createSetting('Rhsz', 'HS: Zone', 'Which zone to swap from your first heirloom you have defined to your second heirloom you have defined. I.e if this value is 75 it will switch to the second heirloom <b>on z75</b>', 'value', '-1', null, 'Heirlooms');
-	createSetting('Rhs1', 'HS: First', '<b>First Heirloom to use</b><br><br>Enter the name of your first heirloom. This is the heirloom that you will use before swapping to the second heirloom at the zone you have defined in the HS: Zone. ', 'textValue', 'undefined', null, 'Heirlooms');
-	createSetting('Rhs2', 'HS: Second', '<b>Second Heirloom to use</b><br><br>Enter the name of your second heirloom. This is the heirloom that you will use after swapping from the first heirloom at the zone you have defined in the HS: Zone. ', 'textValue', 'undefined', null, 'Heirlooms');
+    
+    //Shield Swapping
+    document.getElementById('Rhs').parentNode.insertAdjacentHTML('afterend', '<br>');
+    createSetting('Rhsshield', 'Shields', 'Toggle to swap Shields', 'boolean', false, null, 'Heirlooms');
+    createSetting('Rhsz', 'HS: Zone', 'Which zone to swap from your first heirloom you have defined to your second heirloom you have defined. I.e if this value is 75 it will switch to the second heirloom <b>on z75</b>', 'value', '-1', null, 'Heirlooms');
+    createSetting('Rhs1', 'HS: First', '<b>First Heirloom to use</b><br><br>Enter the name of your first heirloom. This is the heirloom that you will use before swapping to the second heirloom at the zone you have defined in the HS: Zone. ', 'textValue', 'undefined', null, 'Heirlooms');
+    createSetting('Rhs2', 'HS: Second', '<b>Second Heirloom to use</b><br><br>Enter the name of your second heirloom. This is the heirloom that you will use after swapping from the first heirloom at the zone you have defined in the HS: Zone. ', 'textValue', 'undefined', null, 'Heirlooms');
 
-	//Staff Swapping
-	document.getElementById('Rhs2').parentNode.insertAdjacentHTML('afterend', '<br>');
-	createSetting('Rhsstaff', 'Staffs', 'Toggle to swap Staffs', 'boolean', false, null, 'Heirlooms');
-	createSetting('Rhsworldstaff', 'World', '<b>World Staff</b><br><br>Enter the name of your world staff.', 'textValue', 'undefined', null, 'Heirlooms');
-	createSetting('Rhsmapstaff', 'Map', '<b>Mapping staff</b><br><br>Enter the name of your mapping staff.', 'textValue', 'undefined', null, 'Heirlooms');
-	createSetting('Rhstributestaff', 'Tribute', '<b>Tribute farming staff</b><br><br>Enter the name of the staff you would like to equip during tribute farming.', 'textValue', 'undefined', null, 'Heirlooms');
+    //Staff Swapping
+    document.getElementById('Rhs2').parentNode.insertAdjacentHTML('afterend', '<br>');
+    createSetting('Rhsstaff', 'Staffs', 'Toggle to swap Staffs', 'boolean', false, null, 'Heirlooms');
+    createSetting('Rhsworldstaff', 'World', '<b>World Staff</b><br><br>Enter the name of your world staff.', 'textValue', 'undefined', null, 'Heirlooms');
+    createSetting('Rhsmapstaff', 'Map', '<b>Mapping staff</b><br><br>Enter the name of your mapping staff.', 'textValue', 'undefined', null, 'Heirlooms');
+    createSetting('Rhstributestaff', 'Tribute', '<b>Tribute farming staff</b><br><br>Enter the name of the staff you would like to equip during tribute farming.', 'textValue', 'undefined', null, 'Heirlooms');
 
     //Heirloom Line
     document.getElementById('Rhstributestaff').parentNode.insertAdjacentHTML('afterend', '<br>');
@@ -1655,7 +1655,7 @@ function updateCustomButtons() {
     
     
     //RGear
-	
+    
     radonon ? turnOn("Requipon"): turnOff("Requipon");
     (radonon && getPageSetting('Requipon') == true) ? turnOn("Requipamount"): turnOff("Requipamount");
     (radonon && getPageSetting('Requipon') == true) ? turnOn("Requipcapattack"): turnOff("Requipcapattack");
@@ -1664,7 +1664,7 @@ function updateCustomButtons() {
     (radonon && getPageSetting('Requipon') == true) ? turnOn("Requippercent"): turnOff("Requippercent");
     (radonon && getPageSetting('Requipon') == true) ? turnOn("Requip2"): turnOff("Requip2");
     (radonon && getPageSetting('Requipon') == true) ? turnOn("Rdmgcuntoff"): turnOff("Rdmgcuntoff");
-	
+    
     radonon ? turnOn("Requipfarmon"): turnOff("Requipfarmon");
     (radonon && getPageSetting('Requipfarmon') == true) ? turnOn("Requipfarmzone"): turnOff("Requipfarmzone");
     (radonon && getPageSetting('Requipfarmon') == true) ? turnOn("RequipfarmHD"): turnOff("RequipfarmHD");
@@ -1872,7 +1872,7 @@ function updateCustomButtons() {
     radonon ? turnOn("Rexterminateon") : turnOff("Rexterminateon");
     radonon && getPageSetting('Rexterminateon') == true ? turnOn("Rexterminatecalc") : turnOff("Rexterminatecalc");
     radonon && getPageSetting('Rexterminateon') == true ? turnOn("Rexterminateeq") : turnOff("Rexterminateeq");
-	
+    
     //Nurture
     radonon ? turnOn("Rnurtureon") : turnOff("Rnurtureon");
 
@@ -2002,7 +2002,7 @@ function updateCustomButtons() {
     radonon && getPageSetting('RAutoGoldenUpgrades') == "Battle" ? turnOn('Rbattleradon') : turnOff('Rbattleradon');
     radonon && getPageSetting('RdAutoGoldenUpgrades') == "Battle" ? turnOn('Rdbattleradon') : turnOff('Rdbattleradon');
 
-	
+    
     //AB
     radonon ? turnOn("RAB"): turnOff("RAB");
     radonon && getPageSetting('RAB') == true ? turnOn("RABpreset"): turnOff("RABpreset");
@@ -2044,25 +2044,25 @@ function updateCustomButtons() {
     !radonon ? turnOn("showautomapstatus"): turnOff("showautomapstatus");
     radonon ? turnOn("Rshowautomapstatus"): turnOff("Rshowautomapstatus");
 
-	
-	//Heirloom Swapping
-	radonon ? turnOn('Rhs') : turnOff('Rhs');
-	var hson = (getPageSetting('Rhs') == true);
-	
-	//Shields
-	radonon && hson ? turnOn('Rhsshield') : turnOff('Rhsshield');
-	var hsshieldon = (getPageSetting('Rhsshield') == true);
-	radonon && hson && hsshieldon ? turnOn('Rhsz') : turnOff('Rhsz');
-	radonon && hson && hsshieldon ? turnOn('Rhs1') : turnOff('Rhs1');
-	radonon && hson && hsshieldon ? turnOn('Rhs2') : turnOff('Rhs2');
-	
-	//Staffs
-	radonon && hson ? turnOn('Rhsstaff') : turnOff('Rhsstaff');
-	var hsstaffon = (getPageSetting('Rhsstaff') == true);
-	radonon && hson && hsstaffon ? turnOn('Rhsworldstaff') : turnOff('Rhsworldstaff');
-	radonon && hson && hsstaffon ? turnOn('Rhsmapstaff') : turnOff('Rhsmapstaff');
-	radonon && hson && hsstaffon ? turnOn('Rhstributestaff') : turnOff('Rhstributestaff');
-	
+    
+    //Heirloom Swapping
+    radonon ? turnOn('Rhs') : turnOff('Rhs');
+    var hson = (getPageSetting('Rhs') == true);
+    
+    //Shields
+    radonon && hson ? turnOn('Rhsshield') : turnOff('Rhsshield');
+    var hsshieldon = (getPageSetting('Rhsshield') == true);
+    radonon && hson && hsshieldon ? turnOn('Rhsz') : turnOff('Rhsz');
+    radonon && hson && hsshieldon ? turnOn('Rhs1') : turnOff('Rhs1');
+    radonon && hson && hsshieldon ? turnOn('Rhs2') : turnOff('Rhs2');
+    
+    //Staffs
+    radonon && hson ? turnOn('Rhsstaff') : turnOff('Rhsstaff');
+    var hsstaffon = (getPageSetting('Rhsstaff') == true);
+    radonon && hson && hsstaffon ? turnOn('Rhsworldstaff') : turnOff('Rhsworldstaff');
+    radonon && hson && hsstaffon ? turnOn('Rhsmapstaff') : turnOff('Rhsmapstaff');
+    radonon && hson && hsstaffon ? turnOn('Rhstributestaff') : turnOff('Rhstributestaff');
+    
     var autoheirloomenable = (getPageSetting('autoheirlooms') == true);
     var keepshieldenable = (autoheirloomenable && getPageSetting('keepshields') == true);
     var keepstaffenable = (autoheirloomenable && getPageSetting('keepstaffs') == true);
@@ -2165,7 +2165,7 @@ function updateCustomButtons() {
                 else if (item.type == 'multiValue') {
                     if (Array.isArray(item.value) && item.value.length == 1 && item.value[0] == -1)
                         elem.innerHTML = item.name + ': ' + "<span class='icomoon icon-infinity'></span>";
-		    else if (Array.isArray(item.value))
+            else if (Array.isArray(item.value))
                         elem.innerHTML = item.name + ': ' + item.value[0] + '+';    
                     else
                         elem.textContent = item.name + ': ' + item.value.toString();

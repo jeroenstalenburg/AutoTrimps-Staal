@@ -1376,9 +1376,9 @@ RAutoPerks.initializePerks = function () {
     equality.exprate = 1.5;
     championism.exprate = 5;
     //scruffy
-	//no
+    //no
     //tier2
-	//no
+    //no
     RAutoPerks.perkHolder = [range, agility, bait, trumps, packrat, hunger, /*overkill,*/ looting, toughness, power, motivation, pheromones, artisanistry, carpentry, prismal, resilience, criticality, tenacity, greed, frenzy, championism, equality];
     for(var i in RAutoPerks.perkHolder) {
         RAutoPerks.perkHolder[i].radLevel = 0;

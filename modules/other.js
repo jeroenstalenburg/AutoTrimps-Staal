@@ -24,24 +24,24 @@ function autoGoldenUpgradesAT(setting) {
     var setting2;
     if (num == 0) return;
     if (setting == "Helium")
-	setting2 = "Helium";
+    setting2 = "Helium";
     if ((!game.global.dailyChallenge.seed && !game.global.runningChallengeSquared && autoTrimpSettings.AutoGoldenUpgrades.selected == "Helium" && getPageSetting('radonbattle') > 0 && game.goldenUpgrades.Helium.purchasedAt.length >= getPageSetting('radonbattle')) || (game.global.dailyChallenge.seed && autoTrimpSettings.dAutoGoldenUpgrades.selected == "Helium" && getPageSetting('dradonbattle') > 0 && game.goldenUpgrades.Helium.purchasedAt.length >= getPageSetting('dradonbattle')))
-	setting2 = "Battle";
+    setting2 = "Battle";
     if (setting == "Battle")
-	setting2 = "Battle";
+    setting2 = "Battle";
     if ((!game.global.dailyChallenge.seed && !game.global.runningChallengeSquared && autoTrimpSettings.AutoGoldenUpgrades.selected == "Battle" && getPageSetting('battleradon') > 0 && game.goldenUpgrades.Battle.purchasedAt.length >= getPageSetting('battleradon')) || (game.global.dailyChallenge.seed && autoTrimpSettings.dAutoGoldenUpgrades.selected == "Battle" && getPageSetting('dbattleradon') > 0 && game.goldenUpgrades.Battle.purchasedAt.length >= getPageSetting('dbattleradon')))
-	setting2 = "Helium";
+    setting2 = "Helium";
     if (setting == "Void" || setting == "Void + Battle")
         setting2 = "Void";
     var success = buyGoldenUpgrade(setting2);
     if (!success && setting2 == "Void") {
         num = getAvailableGoldenUpgrades();
         if (num == 0) return;
-	if ((autoTrimpSettings.AutoGoldenUpgrades.selected == "Void" && !game.global.dailyChallenge.seed && !game.global.runningChallengeSquared) || (autoTrimpSettings.dAutoGoldenUpgrades.selected == "Void" && game.global.dailyChallenge.seed))
-	setting2 = "Helium";
-	if (((autoTrimpSettings.AutoGoldenUpgrades.selected == "Void" && getPageSetting('voidheliumbattle') > 0 && game.global.world >= getPageSetting('voidheliumbattle')) || (autoTrimpSettings.dAutoGoldenUpgrades.selected == "Void" && getPageSetting('dvoidheliumbattle') > 0 && game.global.world >= getPageSetting('dvoidheliumbattle'))) || ((autoTrimpSettings.AutoGoldenUpgrades.selected == "Void + Battle" && !game.global.dailyChallenge.seed && !game.global.runningChallengeSquared) || (autoTrimpSettings.dAutoGoldenUpgrades.selected == "Void + Battle" && game.global.dailyChallenge.seed) || (autoTrimpSettings.cAutoGoldenUpgrades.selected == "Void + Battle" && game.global.runningChallengeSquared)))
+    if ((autoTrimpSettings.AutoGoldenUpgrades.selected == "Void" && !game.global.dailyChallenge.seed && !game.global.runningChallengeSquared) || (autoTrimpSettings.dAutoGoldenUpgrades.selected == "Void" && game.global.dailyChallenge.seed))
+    setting2 = "Helium";
+    if (((autoTrimpSettings.AutoGoldenUpgrades.selected == "Void" && getPageSetting('voidheliumbattle') > 0 && game.global.world >= getPageSetting('voidheliumbattle')) || (autoTrimpSettings.dAutoGoldenUpgrades.selected == "Void" && getPageSetting('dvoidheliumbattle') > 0 && game.global.world >= getPageSetting('dvoidheliumbattle'))) || ((autoTrimpSettings.AutoGoldenUpgrades.selected == "Void + Battle" && !game.global.dailyChallenge.seed && !game.global.runningChallengeSquared) || (autoTrimpSettings.dAutoGoldenUpgrades.selected == "Void + Battle" && game.global.dailyChallenge.seed) || (autoTrimpSettings.cAutoGoldenUpgrades.selected == "Void + Battle" && game.global.runningChallengeSquared)))
         setting2 = "Battle";
-	buyGoldenUpgrade(setting2);
+    buyGoldenUpgrade(setting2);
     }
 }
 
@@ -50,601 +50,601 @@ function autoGoldenUpgradesAT(setting) {
 function plusMapToRun1() { 
 var map = 1;
 if (game.global.world % 10 == 5)
-	map = 6;
+    map = 6;
 if (game.global.world % 10 == 6)
-	map = 5;
+    map = 5;
 if (game.global.world % 10 == 7)
-	map = 4;
+    map = 4;
 if (game.global.world % 10 == 8)
-	map = 3;
+    map = 3;
 if (game.global.world % 10 == 9)
-	map = 2;
+    map = 2;
 return map;
 }
 
 function plusMapToRun2() { 
 var map = 2;
 if (game.global.world % 10 == 4)
-	map = 7;
+    map = 7;
 if (game.global.world % 10 == 5)
-	map = 7;
+    map = 7;
 if (game.global.world % 10 == 6)
-	map = 6;
+    map = 6;
 if (game.global.world % 10 == 7)
-	map = 5;
+    map = 5;
 if (game.global.world % 10 == 8)
-	map = 4;
+    map = 4;
 if (game.global.world % 10 == 9)
-	map = 3;
+    map = 3;
 return map;
 }
 
 function plusMapToRun3() { 
 var map = 3;
 if (game.global.world % 10 == 3)
-	map = 8;
+    map = 8;
 if (game.global.world % 10 == 4)
-	map = 8;
+    map = 8;
 if (game.global.world % 10 == 5)
-	map = 8;
+    map = 8;
 if (game.global.world % 10 == 6)
-	map = 7;
+    map = 7;
 if (game.global.world % 10 == 7)
-	map = 6;
+    map = 6;
 if (game.global.world % 10 == 8)
-	map = 5;
+    map = 5;
 if (game.global.world % 10 == 9)
-	map = 4;
+    map = 4;
 return map;
 }
 
 function plusMapToRun4() { 
 var map = 4;
 if (game.global.world % 10 == 2)
-	map = 9;
+    map = 9;
 if (game.global.world % 10 == 3)
-	map = 9;
+    map = 9;
 if (game.global.world % 10 == 4)
-	map = 9;
+    map = 9;
 if (game.global.world % 10 == 5)
-	map = 9;
+    map = 9;
 if (game.global.world % 10 == 6)
-	map = 8;
+    map = 8;
 if (game.global.world % 10 == 7)
-	map = 7;
+    map = 7;
 if (game.global.world % 10 == 8)
-	map = 6;
+    map = 6;
 if (game.global.world % 10 == 9)
-	map = 5;
+    map = 5;
 return map;
 }
 
 function plusMapToRun5() { 
 var map = 5;
 if (game.global.world % 10 == 1)
-	map = 10;
+    map = 10;
 if (game.global.world % 10 == 2)
-	map = 10;
+    map = 10;
 if (game.global.world % 10 == 3)
-	map = 10;
+    map = 10;
 if (game.global.world % 10 == 4)
-	map = 10;
+    map = 10;
 if (game.global.world % 10 == 5)
-	map = 10;
+    map = 10;
 if (game.global.world % 10 == 6)
-	map = 9;
+    map = 9;
 if (game.global.world % 10 == 7)
-	map = 8;
+    map = 8;
 if (game.global.world % 10 == 8)
-	map = 7;
+    map = 7;
 if (game.global.world % 10 == 9)
-	map = 6;
+    map = 6;
 return map;
 }
 
 function plusPres1() {
-	document.getElementById("biomeAdvMapsSelect").value="Depths";
-	document.getElementById("advExtraLevelSelect").value=plusMapToRun1();
-	document.getElementById("advSpecialSelect").value="p";
-	document.getElementById("lootAdvMapsRange").value=0;
-	document.getElementById("difficultyAdvMapsRange").value=9;
-	document.getElementById("sizeAdvMapsRange").value=9;
-	document.getElementById("advPerfectCheckbox").checked=true;
-	document.getElementById("mapLevelInput").value=game.global.world;
-	updateMapCost();
+    document.getElementById("biomeAdvMapsSelect").value="Depths";
+    document.getElementById("advExtraLevelSelect").value=plusMapToRun1();
+    document.getElementById("advSpecialSelect").value="p";
+    document.getElementById("lootAdvMapsRange").value=0;
+    document.getElementById("difficultyAdvMapsRange").value=9;
+    document.getElementById("sizeAdvMapsRange").value=9;
+    document.getElementById("advPerfectCheckbox").checked=true;
+    document.getElementById("mapLevelInput").value=game.global.world;
+    updateMapCost();
 
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("biomeAdvMapsSelect").value="Random";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advPerfectCheckbox").checked=false;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="fa";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="0";
-	updateMapCost();
-	}
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("biomeAdvMapsSelect").value="Random";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advPerfectCheckbox").checked=false;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="fa";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="0";
+    updateMapCost();
+    }
 }
 
 function plusPres2() {
-	document.getElementById("biomeAdvMapsSelect").value="Depths";
-	document.getElementById("advExtraLevelSelect").value=plusMapToRun2();
-	document.getElementById("advSpecialSelect").value="p";
-	document.getElementById("lootAdvMapsRange").value=0;
-	document.getElementById("difficultyAdvMapsRange").value=9;
-	document.getElementById("sizeAdvMapsRange").value=9;
-	document.getElementById("advPerfectCheckbox").checked=true;
-	document.getElementById("mapLevelInput").value=game.global.world;
-	updateMapCost();
+    document.getElementById("biomeAdvMapsSelect").value="Depths";
+    document.getElementById("advExtraLevelSelect").value=plusMapToRun2();
+    document.getElementById("advSpecialSelect").value="p";
+    document.getElementById("lootAdvMapsRange").value=0;
+    document.getElementById("difficultyAdvMapsRange").value=9;
+    document.getElementById("sizeAdvMapsRange").value=9;
+    document.getElementById("advPerfectCheckbox").checked=true;
+    document.getElementById("mapLevelInput").value=game.global.world;
+    updateMapCost();
 
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("biomeAdvMapsSelect").value="Random";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advPerfectCheckbox").checked=false;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="fa";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="0";
-	updateMapCost();
-	}
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("biomeAdvMapsSelect").value="Random";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advPerfectCheckbox").checked=false;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="fa";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="0";
+    updateMapCost();
+    }
 }
 
 function plusPres3() {
-	document.getElementById("biomeAdvMapsSelect").value="Depths";
-	document.getElementById("advExtraLevelSelect").value=plusMapToRun3();
-	document.getElementById("advSpecialSelect").value="p";
-	document.getElementById("lootAdvMapsRange").value=0;
-	document.getElementById("difficultyAdvMapsRange").value=9;
-	document.getElementById("sizeAdvMapsRange").value=9;
-	document.getElementById("advPerfectCheckbox").checked=true;
-	document.getElementById("mapLevelInput").value=game.global.world;
-	updateMapCost();
+    document.getElementById("biomeAdvMapsSelect").value="Depths";
+    document.getElementById("advExtraLevelSelect").value=plusMapToRun3();
+    document.getElementById("advSpecialSelect").value="p";
+    document.getElementById("lootAdvMapsRange").value=0;
+    document.getElementById("difficultyAdvMapsRange").value=9;
+    document.getElementById("sizeAdvMapsRange").value=9;
+    document.getElementById("advPerfectCheckbox").checked=true;
+    document.getElementById("mapLevelInput").value=game.global.world;
+    updateMapCost();
 
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("biomeAdvMapsSelect").value="Random";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advPerfectCheckbox").checked=false;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="fa";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="0";
-	updateMapCost();
-	}
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("biomeAdvMapsSelect").value="Random";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advPerfectCheckbox").checked=false;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="fa";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="0";
+    updateMapCost();
+    }
 }
 
 function plusPres4() {
-	document.getElementById("biomeAdvMapsSelect").value="Depths";
-	document.getElementById("advExtraLevelSelect").value=plusMapToRun4();
-	document.getElementById("advSpecialSelect").value="p";
-	document.getElementById("lootAdvMapsRange").value=0;
-	document.getElementById("difficultyAdvMapsRange").value=9;
-	document.getElementById("sizeAdvMapsRange").value=9;
-	document.getElementById("advPerfectCheckbox").checked=true;
-	document.getElementById("mapLevelInput").value=game.global.world;
-	updateMapCost();
+    document.getElementById("biomeAdvMapsSelect").value="Depths";
+    document.getElementById("advExtraLevelSelect").value=plusMapToRun4();
+    document.getElementById("advSpecialSelect").value="p";
+    document.getElementById("lootAdvMapsRange").value=0;
+    document.getElementById("difficultyAdvMapsRange").value=9;
+    document.getElementById("sizeAdvMapsRange").value=9;
+    document.getElementById("advPerfectCheckbox").checked=true;
+    document.getElementById("mapLevelInput").value=game.global.world;
+    updateMapCost();
 
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("biomeAdvMapsSelect").value="Random";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advPerfectCheckbox").checked=false;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="fa";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="0";
-	updateMapCost();
-	}
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("biomeAdvMapsSelect").value="Random";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advPerfectCheckbox").checked=false;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="fa";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="0";
+    updateMapCost();
+    }
 }
 
 function plusPres5() {
-	document.getElementById("biomeAdvMapsSelect").value="Depths";
-	document.getElementById("advExtraLevelSelect").value=plusMapToRun5();
-	document.getElementById("advSpecialSelect").value="p";
-	document.getElementById("lootAdvMapsRange").value=0;
-	document.getElementById("difficultyAdvMapsRange").value=9;
-	document.getElementById("sizeAdvMapsRange").value=9;
-	document.getElementById("advPerfectCheckbox").checked=true;
-	document.getElementById("mapLevelInput").value=game.global.world;
-	updateMapCost();
+    document.getElementById("biomeAdvMapsSelect").value="Depths";
+    document.getElementById("advExtraLevelSelect").value=plusMapToRun5();
+    document.getElementById("advSpecialSelect").value="p";
+    document.getElementById("lootAdvMapsRange").value=0;
+    document.getElementById("difficultyAdvMapsRange").value=9;
+    document.getElementById("sizeAdvMapsRange").value=9;
+    document.getElementById("advPerfectCheckbox").checked=true;
+    document.getElementById("mapLevelInput").value=game.global.world;
+    updateMapCost();
 
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("biomeAdvMapsSelect").value="Random";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advPerfectCheckbox").checked=false;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=8;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=7;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=6;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=5;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=4;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=3;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=2;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=1;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("difficultyAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("sizeAdvMapsRange").value=0;
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="fa";
-	updateMapCost();
-	}
-	if (updateMapCost(true) > game.resources.fragments.owned) {
-	document.getElementById("advSpecialSelect").value="0";
-	updateMapCost();
-	}
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("biomeAdvMapsSelect").value="Random";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advPerfectCheckbox").checked=false;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=8;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=7;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=6;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=5;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=4;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=3;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=2;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=1;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("difficultyAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("sizeAdvMapsRange").value=0;
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="fa";
+    updateMapCost();
+    }
+    if (updateMapCost(true) > game.resources.fragments.owned) {
+    document.getElementById("advSpecialSelect").value="0";
+    updateMapCost();
+    }
 }
 
 function pcheck1() {
@@ -654,29 +654,29 @@ function pcheck1() {
     var I;
 
     if (game.global.challengeActive != "Daily") {
-	HD = getPageSetting('PraidingHD');
-	P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
-	I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
+    HD = getPageSetting('PraidingHD');
+    P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
+    I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
     }
     if (game.global.challengeActive == "Daily") {
-	HD = getPageSetting('dPraidingHD');
-	P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
-	I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
+    HD = getPageSetting('dPraidingHD');
+    P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
+    I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
     }
 
     var go = false;
 
     if (HD <= 0) {
-	go = true;
+    go = true;
     }
     else if (HD > 0) {
-	go = (HD >= calcHDratio(game.global.world + plusMapToRun1()));
+    go = (HD >= calcHDratio(game.global.world + plusMapToRun1()));
     }
     if (P > 0 && getEmpowerment() == "Poison") {
-	go = (P >= plusMapToRun1());
+    go = (P >= plusMapToRun1());
     }
     if (I > 0 && getEmpowerment() == "Ice") {
-	go = (I >= plusMapToRun1());
+    go = (I >= plusMapToRun1());
     }
     return go;
 }
@@ -688,29 +688,29 @@ function pcheck2() {
     var I;
 
     if (game.global.challengeActive != "Daily") {
-	HD = getPageSetting('PraidingHD');
-	P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
-	I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
+    HD = getPageSetting('PraidingHD');
+    P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
+    I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
     }
     if (game.global.challengeActive == "Daily") {
-	HD = getPageSetting('dPraidingHD');
-	P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
-	I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
+    HD = getPageSetting('dPraidingHD');
+    P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
+    I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
     }
 
     var go = false;
 
     if (HD <= 0) {
-	go = true;
+    go = true;
     }
     else if (HD > 0) {
-	go = (HD >= calcHDratio(game.global.world + plusMapToRun2()));
+    go = (HD >= calcHDratio(game.global.world + plusMapToRun2()));
     }
     if (P > 0 && getEmpowerment() == "Poison") {
-	go = (P >= plusMapToRun2());
+    go = (P >= plusMapToRun2());
     }
     if (I > 0 && getEmpowerment() == "Ice") {
-	go = (I >= plusMapToRun2());
+    go = (I >= plusMapToRun2());
     }
     return go;
 }
@@ -722,29 +722,29 @@ function pcheck3() {
     var I;
 
     if (game.global.challengeActive != "Daily") {
-	HD = getPageSetting('PraidingHD');
-	P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
-	I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
+    HD = getPageSetting('PraidingHD');
+    P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
+    I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
     }
     if (game.global.challengeActive == "Daily") {
-	HD = getPageSetting('dPraidingHD');
-	P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
-	I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
+    HD = getPageSetting('dPraidingHD');
+    P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
+    I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
     }
 
     var go = false;
 
     if (HD <= 0) {
-	go = true;
+    go = true;
     }
     else if (HD > 0) {
-	go = (HD >= calcHDratio(game.global.world + plusMapToRun3()));
+    go = (HD >= calcHDratio(game.global.world + plusMapToRun3()));
     }
     if (P > 0 && getEmpowerment() == "Poison") {
-	go = (P >= plusMapToRun3());
+    go = (P >= plusMapToRun3());
     }
     if (I > 0 && getEmpowerment() == "Ice") {
-	go = (I >= plusMapToRun3());
+    go = (I >= plusMapToRun3());
     }
     return go;
 }
@@ -756,29 +756,29 @@ function pcheck4() {
     var I;
 
     if (game.global.challengeActive != "Daily") {
-	HD = getPageSetting('PraidingHD');
-	P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
-	I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
+    HD = getPageSetting('PraidingHD');
+    P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
+    I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
     }
     if (game.global.challengeActive == "Daily") {
-	HD = getPageSetting('dPraidingHD');
-	P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
-	I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
+    HD = getPageSetting('dPraidingHD');
+    P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
+    I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
     }
 
     var go = false;
 
     if (HD <= 0) {
-	go = true;
+    go = true;
     }
     else if (HD > 0) {
-	go = (HD >= calcHDratio(game.global.world + plusMapToRun4()));
+    go = (HD >= calcHDratio(game.global.world + plusMapToRun4()));
     }
     if (P > 0 && getEmpowerment() == "Poison") {
-	go = (P >= plusMapToRun4());
+    go = (P >= plusMapToRun4());
     }
     if (I > 0 && getEmpowerment() == "Ice") {
-	go = (I >= plusMapToRun4());
+    go = (I >= plusMapToRun4());
     }
     return go;
 }
@@ -790,206 +790,206 @@ function pcheck5() {
     var I;
 
     if (game.global.challengeActive != "Daily") {
-	HD = getPageSetting('PraidingHD');
-	P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
-	I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
+    HD = getPageSetting('PraidingHD');
+    P = (getPageSetting('PraidingP') > 0 ? getPageSetting('PraidingP') : 0);
+    I = (getPageSetting('PraidingI') > 0 ? getPageSetting('PraidingI') : 0);
     }
     if (game.global.challengeActive == "Daily") {
-	HD = getPageSetting('dPraidingHD');
-	P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
-	I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
+    HD = getPageSetting('dPraidingHD');
+    P = (getPageSetting('dPraidingP') > 0 ? getPageSetting('dPraidingP') : 0);
+    I = (getPageSetting('dPraidingI') > 0 ? getPageSetting('dPraidingI') : 0);
     }
 
     var go = false;
 
     if (HD <= 0) {
-	go = true;
+    go = true;
     }
     else if (HD > 0) {
-	go = (HD >= calcHDratio(game.global.world + plusMapToRun5()));
+    go = (HD >= calcHDratio(game.global.world + plusMapToRun5()));
     }
     if (P > 0 && getEmpowerment() == "Poison") {
-	go = (P >= plusMapToRun5());
+    go = (P >= plusMapToRun5());
     }
     if (I > 0 && getEmpowerment() == "Ice") {
-	go = (I >= plusMapToRun5());
+    go = (I >= plusMapToRun5());
     }
     return go;
 }
 
 function pcheckmap1() {
-	var go = false;
-	if (game.global.world % 10 == 0 && plusMapToRun1() == 1) {
-	    go = true;
+    var go = false;
+    if (game.global.world % 10 == 0 && plusMapToRun1() == 1) {
+        go = true;
         }
-	if (game.global.world % 10 == 1 && (plusMapToRun1() == 1 || plusMapToRun1() == 10)) {
-	    go = true;
+    if (game.global.world % 10 == 1 && (plusMapToRun1() == 1 || plusMapToRun1() == 10)) {
+        go = true;
         }
-	if (game.global.world % 10 == 2 && (plusMapToRun1() == 1 || plusMapToRun1() >= 9)) {
-	    go = true;
+    if (game.global.world % 10 == 2 && (plusMapToRun1() == 1 || plusMapToRun1() >= 9)) {
+        go = true;
         }
-	if (game.global.world % 10 == 3 && (plusMapToRun1() == 1 || plusMapToRun1() >= 8)) {
-	    go = true;
+    if (game.global.world % 10 == 3 && (plusMapToRun1() == 1 || plusMapToRun1() >= 8)) {
+        go = true;
         }
-	if (game.global.world % 10 == 4 && (plusMapToRun1() == 1 || plusMapToRun1() >= 7)) {
-	    go = true;
+    if (game.global.world % 10 == 4 && (plusMapToRun1() == 1 || plusMapToRun1() >= 7)) {
+        go = true;
         }
-	if (game.global.world % 10 == 5 && plusMapToRun1() >= 6) {
-	    go = true;
+    if (game.global.world % 10 == 5 && plusMapToRun1() >= 6) {
+        go = true;
         }
-	if (game.global.world % 10 == 6 && plusMapToRun1() >= 5) {
-	    go = true;
+    if (game.global.world % 10 == 6 && plusMapToRun1() >= 5) {
+        go = true;
         }
-	if (game.global.world % 10 == 7 && plusMapToRun1() >= 4) {
-	    go = true;
+    if (game.global.world % 10 == 7 && plusMapToRun1() >= 4) {
+        go = true;
         }
-	if (game.global.world % 10 == 8 && plusMapToRun1() >= 3) {
-	    go = true;
+    if (game.global.world % 10 == 8 && plusMapToRun1() >= 3) {
+        go = true;
         }
-	if (game.global.world % 10 == 9 && plusMapToRun1() >= 2) {
-	    go = true;
+    if (game.global.world % 10 == 9 && plusMapToRun1() >= 2) {
+        go = true;
         }
-	return go;
+    return go;
 }
 
 function pcheckmap2() {
-	var go = false;
-	if (game.global.world % 10 == 0 && plusMapToRun2() == 2) {
-	    go = true;
+    var go = false;
+    if (game.global.world % 10 == 0 && plusMapToRun2() == 2) {
+        go = true;
         }
-	if (game.global.world % 10 == 1 && (plusMapToRun2() == 2 || plusMapToRun2() == 10)) {
-	    go = true;
+    if (game.global.world % 10 == 1 && (plusMapToRun2() == 2 || plusMapToRun2() == 10)) {
+        go = true;
         }
-	if (game.global.world % 10 == 2 && (plusMapToRun2() == 2 || plusMapToRun2() >= 9)) {
-	    go = true;
+    if (game.global.world % 10 == 2 && (plusMapToRun2() == 2 || plusMapToRun2() >= 9)) {
+        go = true;
         }
-	if (game.global.world % 10 == 3 && (plusMapToRun2() == 2 || plusMapToRun2() >= 8)) {
-	    go = true;
+    if (game.global.world % 10 == 3 && (plusMapToRun2() == 2 || plusMapToRun2() >= 8)) {
+        go = true;
         }
-	if (game.global.world % 10 == 4 && plusMapToRun2() >= 7) {
-	    go = true;
+    if (game.global.world % 10 == 4 && plusMapToRun2() >= 7) {
+        go = true;
         }
-	if (game.global.world % 10 == 5 && plusMapToRun2() >= 6) {
-	    go = true;
+    if (game.global.world % 10 == 5 && plusMapToRun2() >= 6) {
+        go = true;
         }
-	if (game.global.world % 10 == 6 && plusMapToRun2() >= 6) {
-	    go = true;
+    if (game.global.world % 10 == 6 && plusMapToRun2() >= 6) {
+        go = true;
         }
-	if (game.global.world % 10 == 7 && plusMapToRun2() >= 5) {
-	    go = true;
+    if (game.global.world % 10 == 7 && plusMapToRun2() >= 5) {
+        go = true;
         }
-	if (game.global.world % 10 == 8 && plusMapToRun2() >= 4) {
-	    go = true;
+    if (game.global.world % 10 == 8 && plusMapToRun2() >= 4) {
+        go = true;
         }
-	if (game.global.world % 10 == 9 && plusMapToRun2() >= 3) {
-	    go = true;
+    if (game.global.world % 10 == 9 && plusMapToRun2() >= 3) {
+        go = true;
         }
-	return go;
+    return go;
 }
 
 function pcheckmap3() {
-	var go = false;
-	if (game.global.world % 10 == 0 && plusMapToRun3() == 3) {
-	    go = true;
+    var go = false;
+    if (game.global.world % 10 == 0 && plusMapToRun3() == 3) {
+        go = true;
         }
-	if (game.global.world % 10 == 1 && (plusMapToRun3() == 3 || plusMapToRun3() == 10)) {
-	    go = true;
+    if (game.global.world % 10 == 1 && (plusMapToRun3() == 3 || plusMapToRun3() == 10)) {
+        go = true;
         }
-	if (game.global.world % 10 == 2 && (plusMapToRun3() == 3 || plusMapToRun3() >= 9)) {
-	    go = true;
+    if (game.global.world % 10 == 2 && (plusMapToRun3() == 3 || plusMapToRun3() >= 9)) {
+        go = true;
         }
-	if (game.global.world % 10 == 3 && plusMapToRun3() >= 8) {
-	    go = true;
+    if (game.global.world % 10 == 3 && plusMapToRun3() >= 8) {
+        go = true;
         }
-	if (game.global.world % 10 == 4 && plusMapToRun3() >= 8) {
-	    go = true;
+    if (game.global.world % 10 == 4 && plusMapToRun3() >= 8) {
+        go = true;
         }
-	if (game.global.world % 10 == 5 && plusMapToRun3() >= 8) {
-	    go = true;
+    if (game.global.world % 10 == 5 && plusMapToRun3() >= 8) {
+        go = true;
         }
-	if (game.global.world % 10 == 6 && plusMapToRun3() >= 7) {
-	    go = true;
+    if (game.global.world % 10 == 6 && plusMapToRun3() >= 7) {
+        go = true;
         }
-	if (game.global.world % 10 == 7 && plusMapToRun3() >= 6) {
-	    go = true;
+    if (game.global.world % 10 == 7 && plusMapToRun3() >= 6) {
+        go = true;
         }
-	if (game.global.world % 10 == 8 && plusMapToRun3() >= 5) {
-	    go = true;
+    if (game.global.world % 10 == 8 && plusMapToRun3() >= 5) {
+        go = true;
         }
-	if (game.global.world % 10 == 9 && plusMapToRun3() >= 4) {
-	    go = true;
+    if (game.global.world % 10 == 9 && plusMapToRun3() >= 4) {
+        go = true;
         }
-	return go;
+    return go;
 }
 
 function pcheckmap4() {
-	var go = false;
-	if (game.global.world % 10 == 0 && plusMapToRun4() == 4) {
-	    go = true;
+    var go = false;
+    if (game.global.world % 10 == 0 && plusMapToRun4() == 4) {
+        go = true;
         }
-	if (game.global.world % 10 == 1 && (plusMapToRun4() == 4 || plusMapToRun4() == 10)) {
-	    go = true;
+    if (game.global.world % 10 == 1 && (plusMapToRun4() == 4 || plusMapToRun4() == 10)) {
+        go = true;
         }
-	if (game.global.world % 10 == 2 && plusMapToRun4() >= 9) {
-	    go = true;
+    if (game.global.world % 10 == 2 && plusMapToRun4() >= 9) {
+        go = true;
         }
-	if (game.global.world % 10 == 3 && plusMapToRun4() >= 8) {
-	    go = true;
+    if (game.global.world % 10 == 3 && plusMapToRun4() >= 8) {
+        go = true;
         }
-	if (game.global.world % 10 == 4 && plusMapToRun4() >= 7) {
-	    go = true;
+    if (game.global.world % 10 == 4 && plusMapToRun4() >= 7) {
+        go = true;
         }
-	if (game.global.world % 10 == 5 && plusMapToRun4() >= 6) {
-	    go = true;
+    if (game.global.world % 10 == 5 && plusMapToRun4() >= 6) {
+        go = true;
         }
-	if (game.global.world % 10 == 6 && plusMapToRun4() >= 5) {
-	    go = true;
+    if (game.global.world % 10 == 6 && plusMapToRun4() >= 5) {
+        go = true;
         }
-	if (game.global.world % 10 == 7 && plusMapToRun4() >= 4) {
-	    go = true;
+    if (game.global.world % 10 == 7 && plusMapToRun4() >= 4) {
+        go = true;
         }
-	if (game.global.world % 10 == 8 && plusMapToRun4() >= 3) {
-	    go = true;
+    if (game.global.world % 10 == 8 && plusMapToRun4() >= 3) {
+        go = true;
         }
-	if (game.global.world % 10 == 9 && plusMapToRun4() >= 2) {
-	    go = true;
+    if (game.global.world % 10 == 9 && plusMapToRun4() >= 2) {
+        go = true;
         }
-	return go;
+    return go;
 }
 
 function pcheckmap5() {
-	var go = false;
-	if (game.global.world % 10 == 0 && plusMapToRun5() == 5) {
-	    go = true;
+    var go = false;
+    if (game.global.world % 10 == 0 && plusMapToRun5() == 5) {
+        go = true;
         }
-	if (game.global.world % 10 == 1 && (plusMapToRun5() == 4 || plusMapToRun5() == 10)) {
-	    go = true;
+    if (game.global.world % 10 == 1 && (plusMapToRun5() == 4 || plusMapToRun5() == 10)) {
+        go = true;
         }
-	if (game.global.world % 10 == 2 && (plusMapToRun5() == 3 || plusMapToRun5() >= 9)) {
-	    go = true;
+    if (game.global.world % 10 == 2 && (plusMapToRun5() == 3 || plusMapToRun5() >= 9)) {
+        go = true;
         }
-	if (game.global.world % 10 == 3 && (plusMapToRun5() == 2 || plusMapToRun5() >= 8)) {
-	    go = true;
+    if (game.global.world % 10 == 3 && (plusMapToRun5() == 2 || plusMapToRun5() >= 8)) {
+        go = true;
         }
-	if (game.global.world % 10 == 4 && (plusMapToRun5() == 1 || plusMapToRun5() >= 7)) {
-	    go = true;
+    if (game.global.world % 10 == 4 && (plusMapToRun5() == 1 || plusMapToRun5() >= 7)) {
+        go = true;
         }
-	if (game.global.world % 10 == 5 && plusMapToRun5() >= 6) {
-	    go = true;
+    if (game.global.world % 10 == 5 && plusMapToRun5() >= 6) {
+        go = true;
         }
-	if (game.global.world % 10 == 6 && plusMapToRun5() >= 5) {
-	    go = true;
+    if (game.global.world % 10 == 6 && plusMapToRun5() >= 5) {
+        go = true;
         }
-	if (game.global.world % 10 == 7 && plusMapToRun5() >= 4) {
-	    go = true;
+    if (game.global.world % 10 == 7 && plusMapToRun5() >= 4) {
+        go = true;
         }
-	if (game.global.world % 10 == 8 && plusMapToRun5() >= 3) {
-	    go = true;
+    if (game.global.world % 10 == 8 && plusMapToRun5() >= 3) {
+        go = true;
         }
-	if (game.global.world % 10 == 9 && plusMapToRun5() >= 2) {
-	    go = true;
+    if (game.global.world % 10 == 9 && plusMapToRun5() >= 2) {
+        go = true;
         }
-	return go;
+    return go;
 }
 
 var pMap1 = undefined;
@@ -1028,64 +1028,64 @@ function Praiding() {
                 game.options.menu.repeatUntil.enabled = 2;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && !prestraid) {
-		debug("Map Loop");
+        debug("Map Loop");
                 if (pcheckmap5() == true && pcheck5() == true && pMap5 == undefined && !mapbought5 && game.global.preMapsActive && !prestraid) {
-			debug("Check complete for 5th map");
+            debug("Check complete for 5th map");
                     plusPres5();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         mapbought5 = true;
                         if (mapbought5) {
                             pMap5 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("5th map bought");
+                debug("5th map bought");
                         }
                     }
                 }
                 if (pcheckmap4() == true && pcheck4() == true && pMap4 == undefined && !mapbought4 && game.global.preMapsActive && !prestraid) {
-			debug("Check complete for 4th map");
+            debug("Check complete for 4th map");
                     plusPres4();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         mapbought4 = true;
                         if (mapbought4) {
                             pMap4 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("4th map bought");
+                debug("4th map bought");
                         }
                     }
                 }
                 if (pcheckmap3() == true && pcheck3() == true && pMap3 == undefined && !mapbought3 && game.global.preMapsActive && !prestraid) {
-			debug("Check complete for 3rd map");
+            debug("Check complete for 3rd map");
                     plusPres3();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         mapbought3 = true;
                         if (mapbought3) {
                             pMap3 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("3rd map bought");
+                debug("3rd map bought");
                         }
                     }
                 }
                 if (pcheckmap2() == true && pcheck2() == true && pMap2 == undefined && !mapbought2 && game.global.preMapsActive && !prestraid) {
-			debug("Check complete for 2nd map");
+            debug("Check complete for 2nd map");
                     plusPres2();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         mapbought2 = true;
                         if (mapbought2) {
                             pMap2 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("2nd map bought");
+                debug("2nd map bought");
                         }
                     }
                 }
                 if (pcheckmap1() == true && pcheck1() == true && pMap1 == undefined && !mapbought1 && game.global.preMapsActive && !prestraid) {
-			debug("Check complete for 1st map");
+            debug("Check complete for 1st map");
                     plusPres1();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         mapbought1 = true;
                         if (mapbought1) {
                             pMap1 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("1st map bought");
+                debug("1st map bought");
                         }
                     }
                 }
@@ -1107,38 +1107,38 @@ function Praiding() {
                 }
             }
             if (game.global.preMapsActive && !game.global.mapsActive && mapbought1 && pMap1 != undefined && !prestraid) {
-		    debug("running map 1");
+            debug("running map 1");
                 selectMap(pMap1);
                 runMap();
-		repMap1 = pMap1;
+        repMap1 = pMap1;
                 pMap1 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && mapbought2 && pMap2 != undefined && !prestraid) {
-		    debug("running map 2");
+            debug("running map 2");
                 selectMap(pMap2);
                 runMap();
-		repMap2 = pMap2;
+        repMap2 = pMap2;
                 pMap2 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && mapbought3 && pMap3 != undefined && !prestraid) {
-		    debug("running map 3");
+            debug("running map 3");
                 selectMap(pMap3);
                 runMap();
-		repMap3 = pMap3;
+        repMap3 = pMap3;
                 pMap3 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && mapbought4 && pMap4 != undefined && !prestraid) {
-		    debug("running map 4");
+            debug("running map 4");
                 selectMap(pMap4);
                 runMap();
-		repMap4 = pMap4;
+        repMap4 = pMap4;
                 pMap4 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && mapbought5 && pMap5 != undefined && !prestraid) {
-		    debug("running map 5");
+            debug("running map 5");
                 selectMap(pMap5);
                 runMap();
-		repMap5 = pMap5;
+        repMap5 = pMap5;
                 pMap5 = undefined;
             }
             if (!prestraid && !game.global.repeatMap) {
@@ -1158,29 +1158,29 @@ function Praiding() {
     if (getPageSetting('AutoMaps') == 0 && game.global.preMapsActive && prestraid && !failpraid && prestraidon) {
         praidDone = true;
         prestraidon = false;
-	if (repMap1 != undefined) {
-	    recycleMap(getMapIndex(repMap1));
-	    repMap1 = undefined;
-	}
-	if (repMap2 != undefined) {
-	    recycleMap(getMapIndex(repMap2));
-	    repMap2 = undefined;
-	}
-	if (repMap3 != undefined) {
-	    recycleMap(getMapIndex(repMap3));
-	    repMap3 = undefined;
-	}
-	if (repMap4 != undefined) {
-	    recycleMap(getMapIndex(repMap4));
-	    repMap4 = undefined;
-	}
-	if (repMap5 != undefined) {
-	    recycleMap(getMapIndex(repMap5));
-	    repMap5 = undefined;
-	}
+    if (repMap1 != undefined) {
+        recycleMap(getMapIndex(repMap1));
+        repMap1 = undefined;
+    }
+    if (repMap2 != undefined) {
+        recycleMap(getMapIndex(repMap2));
+        repMap2 = undefined;
+    }
+    if (repMap3 != undefined) {
+        recycleMap(getMapIndex(repMap3));
+        repMap3 = undefined;
+    }
+    if (repMap4 != undefined) {
+        recycleMap(getMapIndex(repMap4));
+        repMap4 = undefined;
+    }
+    if (repMap5 != undefined) {
+        recycleMap(getMapIndex(repMap5));
+        repMap5 = undefined;
+    }
         autoTrimpSettings["AutoMaps"].value = 1;
         game.options.menu.repeatUntil.enabled = 0;
-	pMap1 = undefined;
+    pMap1 = undefined;
         pMap2 = undefined;
         pMap3 = undefined;
         pMap4 = undefined;
@@ -1202,11 +1202,11 @@ function Praiding() {
         pMap3 = undefined;
         pMap4 = undefined;
         pMap5 = undefined;
-	repMap1 = undefined;
-	repMap2 = undefined;
-	repMap3 = undefined;
-	repMap4 = undefined;
-	repMap5 = undefined;
+    repMap1 = undefined;
+    repMap2 = undefined;
+    repMap3 = undefined;
+    repMap4 = undefined;
+    repMap5 = undefined;
         praidDone = false;
     }
 }
@@ -1261,7 +1261,7 @@ function PraidHarder() {
       // Get into the preMaps screen
       if (!game.global.preMapsActive && !game.global.mapsActive) {
         mapsClicked();
-	if (!game.global.preMapsActive) {
+    if (!game.global.preMapsActive) {
           mapsClicked();
         }
       }
@@ -1534,64 +1534,64 @@ function dailyPraiding() {
                 game.options.menu.repeatUntil.enabled = 2;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && !dprestraid) {
-		debug("Map Loop");
+        debug("Map Loop");
                 if (pcheckmap5() == true && pcheck5() == true && dpMap5 == undefined && !dmapbought5 && game.global.preMapsActive && !dprestraid) {
-			debug("Check complete for 5th map");
+            debug("Check complete for 5th map");
                     plusPres5();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         dmapbought5 = true;
                         if (dmapbought5) {
                             dpMap5 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("5th map bought");
+                debug("5th map bought");
                         }
                     }
                 }
                 if (pcheckmap4() == true && pcheck4() == true && dpMap4 == undefined && !dmapbought4 && game.global.preMapsActive && !dprestraid) {
-			debug("Check complete for 4th map");
+            debug("Check complete for 4th map");
                     plusPres4();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         dmapbought4 = true;
                         if (dmapbought4) {
                             dpMap4 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("4th map bought");
+                debug("4th map bought");
                         }
                     }
                 }
                 if (pcheckmap3() == true && pcheck3() == true && dpMap3 == undefined && !dmapbought3 && game.global.preMapsActive && !dprestraid) {
-			debug("Check complete for 3rd map");
+            debug("Check complete for 3rd map");
                     plusPres3();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         dmapbought3 = true;
                         if (dmapbought3) {
                             dpMap3 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("3rd map bought");
+                debug("3rd map bought");
                         }
                     }
                 }
                 if (pcheckmap2() == true && pcheck2() == true && dpMap2 == undefined && !dmapbought2 && game.global.preMapsActive && !dprestraid) {
-			debug("Check complete for 2nd map");
+            debug("Check complete for 2nd map");
                     plusPres2();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         dmapbought2 = true;
                         if (dmapbought2) {
                             dpMap2 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("2nd map bought");
+                debug("2nd map bought");
                         }
                     }
                 }
                 if (pcheckmap1() == true && pcheck1() == true && dpMap1 == undefined && !dmapbought1 && game.global.preMapsActive && !dprestraid) {
-			debug("Check complete for 1st map");
+            debug("Check complete for 1st map");
                     plusPres1();
                     if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                         buyMap();
                         dmapbought1 = true;
                         if (dmapbought1) {
                             dpMap1 = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length - 1].id;
-				debug("1st map bought");
+                debug("1st map bought");
                         }
                     }
                 }
@@ -1613,38 +1613,38 @@ function dailyPraiding() {
                 }
             }
             if (game.global.preMapsActive && !game.global.mapsActive && dmapbought1 && dpMap1 != undefined && !dprestraid) {
-		    debug("running map 1");
+            debug("running map 1");
                 selectMap(dpMap1);
                 runMap();
-		drepMap1 = dpMap1;
+        drepMap1 = dpMap1;
                 dpMap1 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && dmapbought2 && dpMap2 != undefined && !dprestraid) {
-		    debug("running map 2");
+            debug("running map 2");
                 selectMap(dpMap2);
                 runMap();
-		drepMap2 = dpMap2;
+        drepMap2 = dpMap2;
                 dpMap2 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && dmapbought3 && dpMap3 != undefined && !dprestraid) {
-		    debug("running map 3");
+            debug("running map 3");
                 selectMap(dpMap3);
                 runMap();
-		drepMap3 = dpMap3;
+        drepMap3 = dpMap3;
                 dpMap3 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && dmapbought4 && dpMap4 != undefined && !dprestraid) {
-		    debug("running map 4");
+            debug("running map 4");
                 selectMap(dpMap4);
                 runMap();
-		drepMap4 = dpMap4;
+        drepMap4 = dpMap4;
                 dpMap4 = undefined;
             }
             if (game.global.preMapsActive && !game.global.mapsActive && dmapbought5 && dpMap5 != undefined && !dprestraid) {
-		    debug("running map 5");
+            debug("running map 5");
                 selectMap(dpMap5);
                 runMap();
-		drepMap5 = dpMap5;
+        drepMap5 = dpMap5;
                 dpMap5 = undefined;
             }
             if (!dprestraid && !game.global.repeatMap) {
@@ -1664,29 +1664,29 @@ function dailyPraiding() {
     if (getPageSetting('AutoMaps') == 0 && game.global.preMapsActive && dprestraid && !dfailpraid && dprestraidon) {
         dpraidDone = true;
         dprestraidon = false;
-	if (drepMap1 != undefined) {
-	    recycleMap(getMapIndex(drepMap1));
-	    drepMap1 = undefined;
-	}
-	if (drepMap2 != undefined) {
-	    recycleMap(getMapIndex(drepMap2));
-	    drepMap2 = undefined;
-	}
-	if (drepMap3 != undefined) {
-	    recycleMap(getMapIndex(drepMap3));
-	    drepMap3 = undefined;
-	}
-	if (drepMap4 != undefined) {
-	    recycleMap(getMapIndex(drepMap4));
-	    drepMap4 = undefined;
-	}
-	if (drepMap5 != undefined) {
-	    recycleMap(getMapIndex(drepMap5));
-	    drepMap5 = undefined;
-	}
+    if (drepMap1 != undefined) {
+        recycleMap(getMapIndex(drepMap1));
+        drepMap1 = undefined;
+    }
+    if (drepMap2 != undefined) {
+        recycleMap(getMapIndex(drepMap2));
+        drepMap2 = undefined;
+    }
+    if (drepMap3 != undefined) {
+        recycleMap(getMapIndex(drepMap3));
+        drepMap3 = undefined;
+    }
+    if (drepMap4 != undefined) {
+        recycleMap(getMapIndex(drepMap4));
+        drepMap4 = undefined;
+    }
+    if (drepMap5 != undefined) {
+        recycleMap(getMapIndex(drepMap5));
+        drepMap5 = undefined;
+    }
         autoTrimpSettings["AutoMaps"].value = 1;
         game.options.menu.repeatUntil.enabled = 0;
-	pMap1 = undefined;
+    pMap1 = undefined;
         dpMap2 = undefined;
         dpMap3 = undefined;
         dpMap4 = undefined;
@@ -1708,87 +1708,87 @@ function dailyPraiding() {
         dpMap3 = undefined;
         dpMap4 = undefined;
         dpMap5 = undefined;
-	repMap1 = undefined;
-	repMap2 = undefined;
-	repMap3 = undefined;
-	repMap4 = undefined;
-	repMap5 = undefined;
+    repMap1 = undefined;
+    repMap2 = undefined;
+    repMap3 = undefined;
+    repMap4 = undefined;
+    repMap5 = undefined;
         dpraidDone = false;
     }
 }
 
 function dailyBWraiding() {
-	var cell;
-	cell = ((getPageSetting('dbwraidcell') > 0) ? getPageSetting('dbwraidcell') : 1);
- 	 if (!dprestraidon && game.global.world == getPageSetting('dBWraidingz') && ((game.global.lastClearedCell+1) >= cell) && !dbwraided && !dfailbwraid && getPageSetting('Dailybwraid')) {
- 	     if (getPageSetting('AutoMaps') == 1 && !dbwraided && !dfailbwraid) {
+    var cell;
+    cell = ((getPageSetting('dbwraidcell') > 0) ? getPageSetting('dbwraidcell') : 1);
+      if (!dprestraidon && game.global.world == getPageSetting('dBWraidingz') && ((game.global.lastClearedCell+1) >= cell) && !dbwraided && !dfailbwraid && getPageSetting('Dailybwraid')) {
+          if (getPageSetting('AutoMaps') == 1 && !dbwraided && !dfailbwraid) {
                  autoTrimpSettings["AutoMaps"].value = 0;
                  }
               if (!game.global.preMapsActive && !game.global.mapsActive && !dbwraided && !dfailbwraid) {
                  mapsClicked();
- 		 if (!game.global.preMapsActive) {
+          if (!game.global.preMapsActive) {
                      mapsClicked();
                      }
                  }
- 	     if (game.options.menu.repeatUntil.enabled != 2 && !dbwraided && !dfailbwraid) {
-            	 game.options.menu.repeatUntil.enabled = 2;
+          if (game.options.menu.repeatUntil.enabled != 2 && !dbwraided && !dfailbwraid) {
+                 game.options.menu.repeatUntil.enabled = 2;
                  }
- 	     if (game.global.preMapsActive && !dbwraided && !dfailbwraid) {
-		 selectMap(findLastBionic().id);
-		 dfailbwraid = false;
-		 debug("Beginning Daily BW Raiding...");
+          if (game.global.preMapsActive && !dbwraided && !dfailbwraid) {
+         selectMap(findLastBionic().id);
+         dfailbwraid = false;
+         debug("Beginning Daily BW Raiding...");
                  }
- 	     else if (game.global.preMapsActive && !dbwraided && !dfailbwraid) {
+          else if (game.global.preMapsActive && !dbwraided && !dfailbwraid) {
                       if (getPageSetting('AutoMaps') == 0 && game.global.world == getPageSetting('dBWraidingz') && !dbwraided) {
                           autoTrimpSettings["AutoMaps"].value = 1;
                           dfailbwraid = true;
                           debug("Failed to Daily BW raid. Looks like you don't have a BW to raid...");
                           }
                        }
- 	     if (findLastBionic().level <= getPageSetting('dBWraidingmax') && !dbwraided && !dfailbwraid && game.global.preMapsActive) {
-		 runMap();
-		 dbwraidon = true;
-		 }
- 	     if (!game.global.repeatMap && !dbwraided && !dfailbwraid && game.global.mapsActive) {
-		 repeatClicked();
-		 }
- 	     if (findLastBionic().level > getPageSetting('dBWraidingmax') && !dbwraided && !dfailbwraid) {
+          if (findLastBionic().level <= getPageSetting('dBWraidingmax') && !dbwraided && !dfailbwraid && game.global.preMapsActive) {
+         runMap();
+         dbwraidon = true;
+         }
+          if (!game.global.repeatMap && !dbwraided && !dfailbwraid && game.global.mapsActive) {
+         repeatClicked();
+         }
+          if (findLastBionic().level > getPageSetting('dBWraidingmax') && !dbwraided && !dfailbwraid) {
                  dbwraided = true;
-            	 dfailbwraid = false;
-		 dbwraidon = false;
-           	 debug("...Successfully Daily BW raided!");
-		 }
- 	     if (getPageSetting('AutoMaps') == 0 && game.global.preMapsActive && game.global.world == getPageSetting('dBWraidingz') && dbwraided && !dfailbwraid) {
+                 dfailbwraid = false;
+         dbwraidon = false;
+                debug("...Successfully Daily BW raided!");
+         }
+          if (getPageSetting('AutoMaps') == 0 && game.global.preMapsActive && game.global.world == getPageSetting('dBWraidingz') && dbwraided && !dfailbwraid) {
                  autoTrimpSettings["AutoMaps"].value = 1;
-		 debug("Turning AutoMaps back on");
+         debug("Turning AutoMaps back on");
                  }
- 	    }
- 	if (getPageSetting('AutoMaps') == 0 && game.global.preMapsActive && dbwraided && !dfailbwraid) {
+         }
+     if (getPageSetting('AutoMaps') == 0 && game.global.preMapsActive && dbwraided && !dfailbwraid) {
             autoTrimpSettings["AutoMaps"].value = 1;
-	    debug("Turning AutoMaps back on");
-	    }
- 	if (dbwraided && !dfailbwraid && game.global.world !== getPageSetting('dBWraidingz')) {
+        debug("Turning AutoMaps back on");
+        }
+     if (dbwraided && !dfailbwraid && game.global.world !== getPageSetting('dBWraidingz')) {
             dbwraided = false;
-	    dfailbwraid = false;
-	    dbwraidon = false;
+        dfailbwraid = false;
+        dbwraidon = false;
             }
  }
 
 function trimpcide() {
 if (game.portal.Anticipation.level > 0) {
-	var antistacklimit = (game.talents.patience.purchased) ? 45 : 30;
-	if (game.global.fighting && ((game.jobs.Amalgamator.owned > 0) ? Math.floor((new Date().getTime() - game.global.lastSoldierSentAt) / 1000) : Math.floor(game.global.lastBreedTime / 1000)) >= antistacklimit && (game.global.antiStacks < antistacklimit || antistacklimit == 0 && game.global.antiStacks >= 1) && !game.global.spireActive)
+    var antistacklimit = (game.talents.patience.purchased) ? 45 : 30;
+    if (game.global.fighting && ((game.jobs.Amalgamator.owned > 0) ? Math.floor((new Date().getTime() - game.global.lastSoldierSentAt) / 1000) : Math.floor(game.global.lastBreedTime / 1000)) >= antistacklimit && (game.global.antiStacks < antistacklimit || antistacklimit == 0 && game.global.antiStacks >= 1) && !game.global.spireActive)
               forceAbandonTrimps();
-	if (game.global.fighting && ((game.jobs.Amalgamator.owned > 0) ? Math.floor((new Date().getTime() - game.global.lastSoldierSentAt) / 1000) : Math.floor(game.global.lastBreedTime / 1000)) >= antistacklimit && game.global.antiStacks < antistacklimit && game.global.mapsActive) {
-	      if (getCurrentMapObject().location == "Void") {
-		  abandonVoidMap();
-	          }
-	      }
-	}
+    if (game.global.fighting && ((game.jobs.Amalgamator.owned > 0) ? Math.floor((new Date().getTime() - game.global.lastSoldierSentAt) / 1000) : Math.floor(game.global.lastBreedTime / 1000)) >= antistacklimit && game.global.antiStacks < antistacklimit && game.global.mapsActive) {
+          if (getCurrentMapObject().location == "Void") {
+          abandonVoidMap();
+              }
+          }
+    }
 }
 
 function avoidempower() {
-	if(armydeath()) {
+    if(armydeath()) {
             if (typeof game.global.dailyChallenge.bogged === 'undefined' && typeof game.global.dailyChallenge.plague === 'undefined'){
                 mapsClicked(true);
                 return;
@@ -1798,51 +1798,51 @@ function avoidempower() {
 
 var spirebreeding = false;
 function ATspirebreed() {
-	if(!spirebreeding && getPageSetting('SpireBreedTimer') > 0 && getPageSetting('IgnoreSpiresUntil') <= game.global.world && game.global.spireActive)
-		var prespiretimer = game.global.GeneticistassistSetting;
-	if (getPageSetting('SpireBreedTimer') > 0 && getPageSetting('IgnoreSpiresUntil') <= game.global.world && game.global.spireActive && game.global.GeneticistassistSetting != getPageSetting('SpireBreedTimer')) {
-		spirebreeding = true;
-	if (game.global.GeneticistassistSetting != getPageSetting('SpireBreedTimer'))
-		game.global.GeneticistassistSetting = getPageSetting('SpireBreedTimer');
-	}
-	if (getPageSetting('SpireBreedTimer') > 0 && getPageSetting('IgnoreSpiresUntil') <= game.global.world && !game.global.spireActive && game.global.GeneticistassistSetting == getPageSetting('SpireBreedTimer')) {
-		spirebreeding = false;
-		if (game.global.GeneticistassistSetting == getPageSetting('SpireBreedTimer')) {
-			game.global.GeneticistassistSetting = prespiretimer;
-			toggleGeneticistassist();
-			toggleGeneticistassist();
-			toggleGeneticistassist();
-			toggleGeneticistassist();
-		}
-	}
+    if(!spirebreeding && getPageSetting('SpireBreedTimer') > 0 && getPageSetting('IgnoreSpiresUntil') <= game.global.world && game.global.spireActive)
+        var prespiretimer = game.global.GeneticistassistSetting;
+    if (getPageSetting('SpireBreedTimer') > 0 && getPageSetting('IgnoreSpiresUntil') <= game.global.world && game.global.spireActive && game.global.GeneticistassistSetting != getPageSetting('SpireBreedTimer')) {
+        spirebreeding = true;
+    if (game.global.GeneticistassistSetting != getPageSetting('SpireBreedTimer'))
+        game.global.GeneticistassistSetting = getPageSetting('SpireBreedTimer');
+    }
+    if (getPageSetting('SpireBreedTimer') > 0 && getPageSetting('IgnoreSpiresUntil') <= game.global.world && !game.global.spireActive && game.global.GeneticistassistSetting == getPageSetting('SpireBreedTimer')) {
+        spirebreeding = false;
+        if (game.global.GeneticistassistSetting == getPageSetting('SpireBreedTimer')) {
+            game.global.GeneticistassistSetting = prespiretimer;
+            toggleGeneticistassist();
+            toggleGeneticistassist();
+            toggleGeneticistassist();
+            toggleGeneticistassist();
+        }
+    }
 }
 
 function fightalways() {
-	if (game.global.gridArray.length === 0 || game.global.preMapsActive || !game.upgrades.Battle.done || game.global.fighting || (game.global.spireActive && game.global.world >= getPageSetting('IgnoreSpiresUntil')))
-	    return;
-	if (!game.global.fighting)
-	    fightManual();
+    if (game.global.gridArray.length === 0 || game.global.preMapsActive || !game.upgrades.Battle.done || game.global.fighting || (game.global.spireActive && game.global.world >= getPageSetting('IgnoreSpiresUntil')))
+        return;
+    if (!game.global.fighting)
+        fightManual();
 }
 
 function armormagic() {
-	var armormagicworld =  Math.floor((game.global.highestLevelCleared + 1) * 0.8);
-	if (((getPageSetting('carmormagic') == 1 || getPageSetting('darmormagic') == 1) && game.global.world >= armormagicworld && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('carmormagic') == 2 || getPageSetting('darmormagic') == 2) && calcHDratio() >= MODULES["maps"].enoughDamageCutoff && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('carmormagic') == 3 || getPageSetting('darmormagic') == 3) && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)))
-	 buyArms();
+    var armormagicworld =  Math.floor((game.global.highestLevelCleared + 1) * 0.8);
+    if (((getPageSetting('carmormagic') == 1 || getPageSetting('darmormagic') == 1) && game.global.world >= armormagicworld && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('carmormagic') == 2 || getPageSetting('darmormagic') == 2) && calcHDratio() >= MODULES["maps"].enoughDamageCutoff && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('carmormagic') == 3 || getPageSetting('darmormagic') == 3) && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)))
+     buyArms();
 }
 
 trapIndexs = ["","Fire","Frost","Poison","Lightning","Strength","Condenser","Knowledge"];
 
 function tdStringCode2(){
-	var thestring=document.getElementById('importBox').value.replace(/\s/g, '');
-	var s = new String(thestring);
-	var index = s.indexOf("+",0);
-	s = s.slice(0,index);
-	var length = s.length;
+    var thestring=document.getElementById('importBox').value.replace(/\s/g, '');
+    var s = new String(thestring);
+    var index = s.indexOf("+",0);
+    s = s.slice(0,index);
+    var length = s.length;
 
     var saveLayout = [];
-	for (var i = 0; i < length; i++) {
-		saveLayout.push(trapIndexs[s.charAt(i)]);
-	}
+    for (var i = 0; i < length; i++) {
+        saveLayout.push(trapIndexs[s.charAt(i)]);
+    }
     playerSpire['savedLayout' + -1] = saveLayout;
 
     if ((playerSpire.runestones + playerSpire.getCurrentLayoutPrice()) < playerSpire.getSavedLayoutPrice(-1)) return false;
@@ -1873,7 +1873,7 @@ function tdStringCode2(){
         infoHtml += "<div class='spireControlBoxDbl'><div onclick='playerSpire.presetTooltip(1)'>Layout 1</div><div onclick='playerSpire.presetTooltip(2)'>Layout 2</div></div>"
         infoHtml += "<div onclick='playerSpire.selectTrap(\"shiftUp\")' onmouseout='tooltip(\"hide\")' onmouseover='playerSpire.trapTooltip(\"shiftUp\", event)' id='sellTrapBox' class='spireControlBox" + ((this.selectedTrap == "shiftUp") ? " selected" : "") + "'>Shift Up</div>";
         infoHtml += "<div onclick='playerSpire.selectTrap(\"shiftDown\")' onmouseout='tooltip(\"hide\")' onmouseover='playerSpire.trapTooltip(\"shiftDown\", event)' id='sellTrapBox' class='spireControlBox" + ((this.selectedTrap == "shiftDown") ? " selected" : "") + "'>Shift Down</div>";
-      	infoHtml += "<div onclick='ImportExportTooltip(\"spireImport\")' class='spireControlBox'>Import</div>";
+          infoHtml += "<div onclick='ImportExportTooltip(\"spireImport\")' class='spireControlBox'>Import</div>";
 
 
         infoHtml += "<br/><hr/>"
@@ -1924,17 +1924,17 @@ function RPraiding() {
   if (getPageSetting('RPraidingzone').length) {
     if (getPageSetting('RPraidingzone').includes(game.global.world) && ((cell <=1 ) || (cell > 1 && (game.global.lastClearedCell+1) >= cell)) && !Rprestraid && !Rfailpraid) {
       debug('World Zone matches a Praiding Zone!');
-	    Rprestraidon = true;
+        Rprestraidon = true;
 
       if (getPageSetting('RAutoMaps') == 1 && !Rprestraid && !Rfailpraid) {
         autoTrimpSettings["RAutoMaps"].value = 0;
       }
       if (!game.global.preMapsActive && !game.global.mapsActive && !Rprestraid && !Rfailpraid) {
         mapsClicked();
-		    if (!game.global.preMapsActive) {
+            if (!game.global.preMapsActive) {
           mapsClicked();
         }
-		    debug("Beginning Prestige Raiding...");
+            debug("Beginning Prestige Raiding...");
       }
       if (game.options.menu.repeatUntil.enabled!=2 && !Rprestraid && !Rfailpraid) {
         game.options.menu.repeatUntil.enabled = 2;
@@ -1958,18 +1958,18 @@ function RPraiding() {
           }
           return;
         }
-	    }
-	    if (Rmapbought == true) {
+        }
+        if (Rmapbought == true) {
         RpMap = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length-1].id;
         selectMap(RpMap);
-	      runMap();
+          runMap();
       }
       if (!Rprestraid && !Rfailpraid && !game.global.repeatMap) {
         repeatClicked();
       }
-	    Rprestraid = true;
-	    Rfailpraid = false
-	    Rmapbought = false;
+        Rprestraid = true;
+        Rfailpraid = false
+        Rmapbought = false;
     }
   }
 
@@ -2044,7 +2044,7 @@ function RPraidHarder() {
       // Get into the preMaps screen
       if (!game.global.preMapsActive && !game.global.mapsActive) {
         mapsClicked();
-	if (!game.global.preMapsActive) {
+    if (!game.global.preMapsActive) {
           mapsClicked();
         }
       }
@@ -2287,18 +2287,18 @@ function RBWraiding() {
 function RdailyPraiding() {
     var dpMap;
     if (getPageSetting('RdPraidingzone').length) {
-   	if (getPageSetting('RdPraidingzone').includes(game.global.world) && !Rdprestraid && !Rdfailpraid) {
+       if (getPageSetting('RdPraidingzone').includes(game.global.world) && !Rdprestraid && !Rdfailpraid) {
             debug('World Zone matches a Daily Praiding Zone!');
-	    Rdprestraidon = true;
+        Rdprestraidon = true;
              if (getPageSetting('RAutoMaps') == 1 && !Rdprestraid && !Rdfailpraid) {
                 autoTrimpSettings["RAutoMaps"].value = 0;
             }
             if (!game.global.preMapsActive && !game.global.mapsActive && !Rdprestraid && !Rdfailpraid) {
                 mapsClicked();
-		if (!game.global.preMapsActive) {
+        if (!game.global.preMapsActive) {
                     mapsClicked();
                 }
-		debug("Beginning Daily Prestige Raiding...");
+        debug("Beginning Daily Prestige Raiding...");
             }
             if (game.options.menu.repeatUntil.enabled!=2 && !Rdprestraid && !Rdfailpraid) {
                 game.options.menu.repeatUntil.enabled = 2;
@@ -2308,40 +2308,40 @@ function RdailyPraiding() {
                 if ((updateMapCost(true) <= game.resources.fragments.owned)) {
                     buyMap();
                     Rdfailpraid = false;
-		    Rdmapbought = true;
+            Rdmapbought = true;
                 }
                 else if ((updateMapCost(true) > game.resources.fragments.owned)) {
                     if (getPageSetting('RAutoMaps') == 0 && !Rdprestraid) {
                         autoTrimpSettings["RAutoMaps"].value = 1;
                         Rdfailpraid = true;
-			                  Rdprestraidon = false;
-			                  Rdmapbought = false;
+                              Rdprestraidon = false;
+                              Rdmapbought = false;
                         RpraidDone = true;
                         debug("Failed to Daily Prestige Raid. Looks like you can't afford to..");
                     }
                     return;
                  }
-	    }
-	    if (Rdmapbought == true) {
-		dpMap = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length-1].id;
+        }
+        if (Rdmapbought == true) {
+        dpMap = game.global.mapsOwnedArray[game.global.mapsOwnedArray.length-1].id;
                 selectMap(dpMap);
-		runMap();
+        runMap();
             }
             if (!Rdprestraid && !Rdfailpraid && !game.global.repeatMap) {
                 repeatClicked();
              }
-	    Rdprestraid = true;
-	    Rdfailpraid = false;
-	    Rdmapbought = false;
-	}
+        Rdprestraid = true;
+        Rdfailpraid = false;
+        Rdmapbought = false;
+    }
     }
      if (getPageSetting('RAutoMaps') == 0 && game.global.preMapsActive && Rdprestraid && !Rdfailpraid && Rdprestraidon) {
         RpraidDone = true;
         Rdprestraidon = false;
         autoTrimpSettings["RAutoMaps"].value = 1;
-	      debug("Daily Prestige Raiding successful! - recycling Praid map");
-	      recycleMap(getMapIndex(dpMap));
-	      debug("Turning AutoMaps back on");
+          debug("Daily Prestige Raiding successful! - recycling Praid map");
+          recycleMap(getMapIndex(dpMap));
+          debug("Turning AutoMaps back on");
     }
     if (getPageSetting('RdPraidingzone').every(isBelowThreshold)) {
         Rdprestraid = false;
@@ -2353,244 +2353,244 @@ function RdailyPraiding() {
 }
 
 function RdailyBWraiding() {
- 	 if (!Rdprestraidon && game.global.world == getPageSetting('RdBWraidingz') && !Rdbwraided && !Rdfailbwraid && getPageSetting('RDailybwraid')) {
- 	     if (getPageSetting('RAutoMaps') == 1 && !Rdbwraided && !Rdfailbwraid) {
+      if (!Rdprestraidon && game.global.world == getPageSetting('RdBWraidingz') && !Rdbwraided && !Rdfailbwraid && getPageSetting('RDailybwraid')) {
+          if (getPageSetting('RAutoMaps') == 1 && !Rdbwraided && !Rdfailbwraid) {
                  autoTrimpSettings["RAutoMaps"].value = 0;
                  }
               if (!game.global.preMapsActive && !game.global.mapsActive && !Rdbwraided && !Rdfailbwraid) {
                  mapsClicked();
- 		 if (!game.global.preMapsActive) {
+          if (!game.global.preMapsActive) {
                      mapsClicked();
                      }
                  }
- 	     if (game.options.menu.repeatUntil.enabled != 2 && !Rdbwraided && !Rdfailbwraid) {
-            	 game.options.menu.repeatUntil.enabled = 2;
+          if (game.options.menu.repeatUntil.enabled != 2 && !Rdbwraided && !Rdfailbwraid) {
+                 game.options.menu.repeatUntil.enabled = 2;
                  }
- 	     if (game.global.preMapsActive && !Rdbwraided && !Rdfailbwraid) {
-		 selectMap(findLastBionic().id);
-		 Rdfailbwraid = false;
-		 debug("Beginning Daily BW Raiding...");
+          if (game.global.preMapsActive && !Rdbwraided && !Rdfailbwraid) {
+         selectMap(findLastBionic().id);
+         Rdfailbwraid = false;
+         debug("Beginning Daily BW Raiding...");
                  }
- 	     else if (game.global.preMapsActive && !Rdbwraided && !Rdfailbwraid) {
+          else if (game.global.preMapsActive && !Rdbwraided && !Rdfailbwraid) {
                       if (getPageSetting('RAutoMaps') == 0 && game.global.world == getPageSetting('RdBWraidingz') && !Rdbwraided) {
                           autoTrimpSettings["RAutoMaps"].value = 1;
                           Rdfailbwraid = true;
                           debug("Failed to Daily BW raid. Looks like you don't have a BW to raid...");
                           }
                        }
- 	     if (findLastBionic().level <= getPageSetting('RdBWraidingmax') && !Rdbwraided && !Rdfailbwraid && game.global.preMapsActive) {
-		 runMap();
-		 Rdbwraidon = true;
-		 }
- 	     if (!game.global.repeatMap && !Rdbwraided && !Rdfailbwraid && game.global.mapsActive) {
-		 repeatClicked();
-		 }
- 	     if (findLastBionic().level > getPageSetting('RdBWraidingmax') && !Rdbwraided && !Rdfailbwraid) {
+          if (findLastBionic().level <= getPageSetting('RdBWraidingmax') && !Rdbwraided && !Rdfailbwraid && game.global.preMapsActive) {
+         runMap();
+         Rdbwraidon = true;
+         }
+          if (!game.global.repeatMap && !Rdbwraided && !Rdfailbwraid && game.global.mapsActive) {
+         repeatClicked();
+         }
+          if (findLastBionic().level > getPageSetting('RdBWraidingmax') && !Rdbwraided && !Rdfailbwraid) {
                  Rdbwraided = true;
-            	 Rdfailbwraid = false;
-		 Rdbwraidon = false;
-           	 debug("...Successfully Daily BW raided!");
-		 }
- 	     if (getPageSetting('RAutoMaps') == 0 && game.global.preMapsActive && game.global.world == getPageSetting('RdBWraidingz') && Rdbwraided && !Rdfailbwraid) {
+                 Rdfailbwraid = false;
+         Rdbwraidon = false;
+                debug("...Successfully Daily BW raided!");
+         }
+          if (getPageSetting('RAutoMaps') == 0 && game.global.preMapsActive && game.global.world == getPageSetting('RdBWraidingz') && Rdbwraided && !Rdfailbwraid) {
                  autoTrimpSettings["RAutoMaps"].value = 1;
-		 debug("Turning AutoMaps back on");
+         debug("Turning AutoMaps back on");
                  }
- 	    }
- 	if (getPageSetting('RAutoMaps') == 0 && game.global.preMapsActive && Rdbwraided && !Rdfailbwraid) {
+         }
+     if (getPageSetting('RAutoMaps') == 0 && game.global.preMapsActive && Rdbwraided && !Rdfailbwraid) {
             autoTrimpSettings["RAutoMaps"].value = 1;
-	    debug("Turning AutoMaps back on");
-	    }
- 	if (Rdbwraided && !Rdfailbwraid && game.global.world !== getPageSetting('RdBWraidingz')) {
+        debug("Turning AutoMaps back on");
+        }
+     if (Rdbwraided && !Rdfailbwraid && game.global.world !== getPageSetting('RdBWraidingz')) {
             Rdbwraided = false;
-	    Rdfailbwraid = false;
-	    Rdbwraidon = false;
+        Rdfailbwraid = false;
+        Rdbwraidon = false;
             }
  }
 
 function Rfightalways() {
-	if (game.global.gridArray.length === 0 || game.global.preMapsActive || !game.upgrades.Battle.done || game.global.fighting)
-	    return;
-	if (!game.global.fighting)
-	    fightManual();
+    if (game.global.gridArray.length === 0 || game.global.preMapsActive || !game.upgrades.Battle.done || game.global.fighting)
+        return;
+    if (!game.global.fighting)
+        fightManual();
 }
 
 function Rarmormagic() {
-	var armormagicworld =  Math.floor((game.global.highestLevelCleared + 1) * 0.8);
-	if (((getPageSetting('Rcarmormagic') == 1 || getPageSetting('Rdarmormagic') == 1) && game.global.world >= armormagicworld && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('Rcarmormagic') == 2 || getPageSetting('Rdarmormagic') == 2) && RcalcHDratio() >= MODULES["maps"].RenoughDamageCutoff && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('Rcarmormagic') == 3 || getPageSetting('Rdarmormagic') == 3) && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)))
-	 RbuyArms();
+    var armormagicworld =  Math.floor((game.global.highestLevelCleared + 1) * 0.8);
+    if (((getPageSetting('Rcarmormagic') == 1 || getPageSetting('Rdarmormagic') == 1) && game.global.world >= armormagicworld && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('Rcarmormagic') == 2 || getPageSetting('Rdarmormagic') == 2) && RcalcHDratio() >= MODULES["maps"].RenoughDamageCutoff && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)) || ((getPageSetting('Rcarmormagic') == 3 || getPageSetting('Rdarmormagic') == 3) && (game.global.soldierHealth <= game.global.soldierHealthMax*0.4)))
+     RbuyArms();
 }
 
 function questcheck() {
-	if (game.global.world < game.challenges.Quest.getQuestStartZone()) {
-	    return 0;
-	}
-	//x5 resource
-	if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your food" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 10;
-	else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your wood" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 11;
-	else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your metal" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 12;
-	else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your gems" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 13;
-	else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your science" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 14;
-	//x2 resource
-	else if (game.challenges.Quest.getQuestDescription() == "Double your food" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 20;
-	else if (game.challenges.Quest.getQuestDescription() == "Double your wood" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 21;
-	else if (game.challenges.Quest.getQuestDescription() == "Double your metal" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 22;
-	else if (game.challenges.Quest.getQuestDescription() == "Double your gems" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 23;
-	else if (game.challenges.Quest.getQuestDescription() == "Double your science" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 24;
-	//Everything else
-	else if (game.challenges.Quest.getQuestDescription() == "Complete 5 Maps at Zone level" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 3;
-	else if (game.challenges.Quest.getQuestDescription() == "One-shot 5 world enemies" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 4;
-	else if (game.challenges.Quest.getQuestDescription() == "Don't let your shield break before Cell 100" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 5;
-	else if (game.challenges.Quest.getQuestDescription() == "Don't run a map before Cell 100" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 6;
-	else if (game.challenges.Quest.getQuestDescription() == "Buy a Smithy" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
-		return 7;
-	else
-		return 0;
+    if (game.global.world < game.challenges.Quest.getQuestStartZone()) {
+        return 0;
+    }
+    //x5 resource
+    if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your food" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 10;
+    else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your wood" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 11;
+    else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your metal" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 12;
+    else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your gems" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 13;
+    else if (game.challenges.Quest.getQuestDescription() == "Quintuple (x5) your science" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 14;
+    //x2 resource
+    else if (game.challenges.Quest.getQuestDescription() == "Double your food" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 20;
+    else if (game.challenges.Quest.getQuestDescription() == "Double your wood" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 21;
+    else if (game.challenges.Quest.getQuestDescription() == "Double your metal" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 22;
+    else if (game.challenges.Quest.getQuestDescription() == "Double your gems" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 23;
+    else if (game.challenges.Quest.getQuestDescription() == "Double your science" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 24;
+    //Everything else
+    else if (game.challenges.Quest.getQuestDescription() == "Complete 5 Maps at Zone level" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 3;
+    else if (game.challenges.Quest.getQuestDescription() == "One-shot 5 world enemies" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 4;
+    else if (game.challenges.Quest.getQuestDescription() == "Don't let your shield break before Cell 100" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 5;
+    else if (game.challenges.Quest.getQuestDescription() == "Don't run a map before Cell 100" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 6;
+    else if (game.challenges.Quest.getQuestDescription() == "Buy a Smithy" && game.challenges.Quest.getQuestProgress() != "Quest Complete!" && game.challenges.Quest.getQuestProgress() != "Failed!")
+        return 7;
+    else
+        return 0;
 }
 
 function Rgetequipcost(equip, resource, amt) { 
-	var cost = Math.ceil(getBuildingItemPrice(game.equipment[equip], resource, true, amt) * (Math.pow(amt - game.portal.Artisanistry.modifier, game.portal.Artisanistry.radLevel)));
-	return cost;
+    var cost = Math.ceil(getBuildingItemPrice(game.equipment[equip], resource, true, amt) * (Math.pow(amt - game.portal.Artisanistry.modifier, game.portal.Artisanistry.radLevel)));
+    return cost;
                        }
-					   
+                       
 //smithylogic('Shield', 'wood', true)
 function smithylogic(name, resource, equip) {
 
-	var go = true;
-	
-	//Checks
-	
-	if (getPageSetting('Rsmithylogic') == false || getPageSetting('Rsmithynumber') <= 0 || getPageSetting('Rsmithypercent') <= 0 || getPageSetting('Rsmithyseconds') <= 0) {
-	    return go;
-	}
-	if (getPageSetting('Rsmithynumber') > 0 && getPageSetting('Rsmithynumber') >= game.buildings.Smithy.owned) {
-	    return go;
-	}
-	if (name == undefined) {
-	    return go;
-	}
-	
-	//Vars
-	
-	var amt = (getPageSetting('Rgearamounttobuy') > 0) ? getPageSetting('Rgearamounttobuy') : 1;
-	var percent = (getPageSetting('Rsmithypercent') / 100);
-	var seconds = getPageSetting('Rsmithyseconds');
-	var resourcesecwood = getPsString("wood", true);
-	var resourcesecmetal = getPsString("metal", true);
-	var resourcesecgems = getPsString("gems", true);
-	var smithywood = getBuildingItemPrice(game.buildings.Smithy, "wood", false, 1);
-	var smithymetal = getBuildingItemPrice(game.buildings.Smithy, "metal", false, 1);
-	var smithygems = getBuildingItemPrice(game.buildings.Smithy, "gems", false, 1);
-	var smithypercentwood = smithywood * percent;
-	var smithypercentmetal = smithymetal * percent;
-	var smithypercentgems = smithygems * percent;
-	var smithyclosewood = ((smithywood / resourcesecwood) <= seconds);
-	var smithyclosemetal = ((smithymetal / resourcesecmetal) <= seconds);
-	var smithyclosegems = ((smithygems / resourcesecgems) <= seconds);
+    var go = true;
+    
+    //Checks
+    
+    if (getPageSetting('Rsmithylogic') == false || getPageSetting('Rsmithynumber') <= 0 || getPageSetting('Rsmithypercent') <= 0 || getPageSetting('Rsmithyseconds') <= 0) {
+        return go;
+    }
+    if (getPageSetting('Rsmithynumber') > 0 && getPageSetting('Rsmithynumber') >= game.buildings.Smithy.owned) {
+        return go;
+    }
+    if (name == undefined) {
+        return go;
+    }
+    
+    //Vars
+    
+    var amt = (getPageSetting('Rgearamounttobuy') > 0) ? getPageSetting('Rgearamounttobuy') : 1;
+    var percent = (getPageSetting('Rsmithypercent') / 100);
+    var seconds = getPageSetting('Rsmithyseconds');
+    var resourcesecwood = getPsString("wood", true);
+    var resourcesecmetal = getPsString("metal", true);
+    var resourcesecgems = getPsString("gems", true);
+    var smithywood = getBuildingItemPrice(game.buildings.Smithy, "wood", false, 1);
+    var smithymetal = getBuildingItemPrice(game.buildings.Smithy, "metal", false, 1);
+    var smithygems = getBuildingItemPrice(game.buildings.Smithy, "gems", false, 1);
+    var smithypercentwood = smithywood * percent;
+    var smithypercentmetal = smithymetal * percent;
+    var smithypercentgems = smithygems * percent;
+    var smithyclosewood = ((smithywood / resourcesecwood) <= seconds);
+    var smithyclosemetal = ((smithymetal / resourcesecmetal) <= seconds);
+    var smithyclosegems = ((smithygems / resourcesecgems) <= seconds);
 
-	var itemwood = null;
-	var itemmetal = null;
-	var itemgems = null;
-	
-	if (!equip) {
-		if (name == "Hut") {
-		    itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
-		}
-		else if (name == "House") {
-		    itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
-		    itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
-		}
-		else if (name == "Mansion") {
-		    itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
-		    itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
-		    itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
-		}
-		else if (name == "Hotel") {
-		    itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
-		    itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
-		    itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
-		}
-		else if (name == "Resort") {
-		    itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
-		    itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
-		    itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
-		}
-		else if (name == "Gateway") {
-		    itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
-		    itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
-		}
-		else if (name == "Collector") {
-		    itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
-		}
-	}
-	else if (equip && name == "Shield") {
-		itemwood = Rgetequipcost("Shield", "wood", amt);
-	}
-	else if (equip && name != "Shield") {
-		itemmetal = Rgetequipcost(name, resource, amt);
-	}
-	
-	if (itemwood == null && itemmetal == null && itemgems == null) {
-	    return go;
-	}
-	if (!smithyclosewood && !smithyclosemetal && !smithyclosegems) {
-	    return go;
-	}
-	else if (smithyclosewood && itemwood > smithypercentwood && (name == "Shield" || name == "Hut" || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort")) { 
-	    go = false;
-	    return go;
-	}
-	else if (smithyclosemetal && itemmetal > smithypercentmetal && ((equip && name != "Shield") || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway")) { 
-	    go = false;
-	    return go;
-	}
-	else if (smithyclosegems && itemgems > smithypercentgems && (name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway" || name == "Collector")) { 
-	    go = false;
-	    return go;
-	}
-	else if (smithyclosewood && itemwood <= smithypercentwood && (name == "Shield" || name == "Hut" || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort")) { 
-	    go = true;
-	    return go;
-	}
-	else if (smithyclosemetal && itemmetal <= smithypercentmetal && ((equip && name != "Shield") || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway")) { 
-	    go = true;
-	    return go;
-	}
-	else if (smithyclosegems && itemgems <= smithypercentgems && (name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway" || name == "Collector")) { 
-	    go = true;
-	    return go;
-	}
+    var itemwood = null;
+    var itemmetal = null;
+    var itemgems = null;
+    
+    if (!equip) {
+        if (name == "Hut") {
+            itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
+        }
+        else if (name == "House") {
+            itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
+            itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
+        }
+        else if (name == "Mansion") {
+            itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
+            itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
+            itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
+        }
+        else if (name == "Hotel") {
+            itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
+            itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
+            itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
+        }
+        else if (name == "Resort") {
+            itemwood = getBuildingItemPrice(game.buildings[name], "wood", false, amt);
+            itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
+            itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
+        }
+        else if (name == "Gateway") {
+            itemmetal = getBuildingItemPrice(game.buildings[name], "metal", false, amt);
+            itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
+        }
+        else if (name == "Collector") {
+            itemgems = getBuildingItemPrice(game.buildings[name], "gems", false, amt);
+        }
+    }
+    else if (equip && name == "Shield") {
+        itemwood = Rgetequipcost("Shield", "wood", amt);
+    }
+    else if (equip && name != "Shield") {
+        itemmetal = Rgetequipcost(name, resource, amt);
+    }
+    
+    if (itemwood == null && itemmetal == null && itemgems == null) {
+        return go;
+    }
+    if (!smithyclosewood && !smithyclosemetal && !smithyclosegems) {
+        return go;
+    }
+    else if (smithyclosewood && itemwood > smithypercentwood && (name == "Shield" || name == "Hut" || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort")) { 
+        go = false;
+        return go;
+    }
+    else if (smithyclosemetal && itemmetal > smithypercentmetal && ((equip && name != "Shield") || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway")) { 
+        go = false;
+        return go;
+    }
+    else if (smithyclosegems && itemgems > smithypercentgems && (name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway" || name == "Collector")) { 
+        go = false;
+        return go;
+    }
+    else if (smithyclosewood && itemwood <= smithypercentwood && (name == "Shield" || name == "Hut" || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort")) { 
+        go = true;
+        return go;
+    }
+    else if (smithyclosemetal && itemmetal <= smithypercentmetal && ((equip && name != "Shield") || name == "House" || name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway")) { 
+        go = true;
+        return go;
+    }
+    else if (smithyclosegems && itemgems <= smithypercentgems && (name == "Mansion" || name == "Hotel" || name == "Resort" || name == "Gateway" || name == "Collector")) { 
+        go = true;
+        return go;
+    }
 }
 
 function archstring() {
-	if (getPageSetting('Rarchon') == false) return;
-	if (getPageSetting('Rarchstring1') != "undefined" && getPageSetting('Rarchstring2') != "undefined" && getPageSetting('Rarchstring3') != "undefined") {
-	    var string1 = getPageSetting('Rarchstring1'), string2 = getPageSetting('Rarchstring2'), string3 = getPageSetting('Rarchstring3');
-	    var string1z = string1.split(',')[0], string2z = string2.split(',')[0];
-	    var string1split = string1.split(',').slice(1).toString(), string2split = string2.split(',').slice(1).toString();
-	    if (game.global.world <= string1z && game.global.archString != string1split) {
-		game.global.archString = string1split;
-	    }
-	    if (game.global.world > string1z && game.global.world <= string2z && game.global.archString != string2split) {
-		game.global.archString = string2split;
-	    }
-	    if (game.global.world > string2z && game.global.archString != string3) {
-		game.global.archString = string3;
-	    }
-	}
+    if (getPageSetting('Rarchon') == false) return;
+    if (getPageSetting('Rarchstring1') != "undefined" && getPageSetting('Rarchstring2') != "undefined" && getPageSetting('Rarchstring3') != "undefined") {
+        var string1 = getPageSetting('Rarchstring1'), string2 = getPageSetting('Rarchstring2'), string3 = getPageSetting('Rarchstring3');
+        var string1z = string1.split(',')[0], string2z = string2.split(',')[0];
+        var string1split = string1.split(',').slice(1).toString(), string2split = string2.split(',').slice(1).toString();
+        if (game.global.world <= string1z && game.global.archString != string1split) {
+        game.global.archString = string1split;
+        }
+        if (game.global.world > string1z && game.global.world <= string2z && game.global.archString != string2split) {
+        game.global.archString = string2split;
+        }
+        if (game.global.world > string2z && game.global.archString != string3) {
+        game.global.archString = string3;
+        }
+    }
 }
 
 //RAMP
@@ -2599,14 +2599,14 @@ function RAMPplusMapToRun(number) {
     var map;
     if (Rshoulddopraid) {
         var praidzone = getPageSetting('RAMPraidzone');
-	var raidzone = getPageSetting('RAMPraidraid');
+    var raidzone = getPageSetting('RAMPraidraid');
 
-	var praidindex = praidzone.indexOf(game.global.world);
-	var raidzones = raidzone[praidindex];
-	    
-	map = (raidzones - game.global.world - number);
-	    
-	return map;
+    var praidindex = praidzone.indexOf(game.global.world);
+    var raidzones = raidzone[praidindex];
+        
+    map = (raidzones - game.global.world - number);
+        
+    return map;
     }
 }
 
@@ -2614,36 +2614,36 @@ function RAMPshouldrunmap(number) {
     var go = false;
     if (Rshoulddopraid) {
         var praidzone = getPageSetting('RAMPraidzone');
-	var raidzone = getPageSetting('RAMPraidraid');
+    var raidzone = getPageSetting('RAMPraidraid');
 
-	var praidindex = praidzone.indexOf(game.global.world);
-	var raidzones = raidzone[praidindex];
+    var praidindex = praidzone.indexOf(game.global.world);
+    var raidzones = raidzone[praidindex];
 
-	var actualraidzone = (raidzones - number);
-	    
+    var actualraidzone = (raidzones - number);
+        
         if (Rgetequips(actualraidzone, false) > 0) {
-	    go = true;
+        go = true;
         }
     }
     return go;
 }
 
 function RAMPpcheckmap(number) {
-	if (Rshoulddopraid) {
+    if (Rshoulddopraid) {
             var praidzone = getPageSetting('RAMPraidzone');
-	    var raidzone = getPageSetting('RAMPraidraid');
+        var raidzone = getPageSetting('RAMPraidraid');
 
-	    var praidindex = praidzone.indexOf(game.global.world);
-	    var raidzones = raidzone[praidindex];
-	    
-	    var map = (raidzones - game.global.world);
-	    
-	    if (number == 0) {
-		if (game.global.world % 10 == 0 ) {
-		    
-		}
-	    }
-	}
+        var praidindex = praidzone.indexOf(game.global.world);
+        var raidzones = raidzone[praidindex];
+        
+        var map = (raidzones - game.global.world);
+        
+        if (number == 0) {
+        if (game.global.world % 10 == 0 ) {
+            
+        }
+        }
+    }
 }
 
 function RAMPplusPres(number) {
@@ -3016,38 +3016,38 @@ function RAMPplusPresfragmin(number) {
 }
 
 function RAMPfrag() {
-	var cost = 0;
-	if (Rshoulddopraid) {
+    var cost = 0;
+    if (Rshoulddopraid) {
             var praidzone = getPageSetting('RAMPraidzone');
-	    var raidzone = getPageSetting('RAMPraidraid');
+        var raidzone = getPageSetting('RAMPraidraid');
 
-	    var praidindex = praidzone.indexOf(game.global.world);
-	    var raidzones = raidzone[praidindex];
+        var praidindex = praidzone.indexOf(game.global.world);
+        var raidzones = raidzone[praidindex];
 
-	    if (Rgetequips(raidzones, false)) {
-		if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(0);
-		else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(0);
-	    }
-	    if (Rgetequips((raidzones - 1), false)) {
-		if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(1);
-		else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(1);
-	    }
+        if (Rgetequips(raidzones, false)) {
+        if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(0);
+        else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(0);
+        }
+        if (Rgetequips((raidzones - 1), false)) {
+        if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(1);
+        else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(1);
+        }
             if (Rgetequips((raidzones - 2), false)) {
-		if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(2);
-		else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(2);
-	    }
-	    if (Rgetequips((raidzones - 3), false)) {
-		if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(3);
-		else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(3);
-	    }
-	    if (Rgetequips((raidzones - 4), false)) {
-		if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(4);
-		else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(4);
-	    }
+        if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(2);
+        else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(2);
+        }
+        if (Rgetequips((raidzones - 3), false)) {
+        if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(3);
+        else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(3);
+        }
+        if (Rgetequips((raidzones - 4), false)) {
+        if (getPageSetting('RAMPraidfrag') == 1) cost += RAMPplusPresfragmin(4);
+        else if (getPageSetting('RAMPraidfrag') == 2) cost += RAMPplusPresfragmax(4);
+        }
 
-	    if (game.resources.fragments.owned >= cost) return true;
-	    else return false;
-	}
+        if (game.resources.fragments.owned >= cost) return true;
+        else return false;
+    }
 }
 
 function insanityfragmap() {
@@ -3285,22 +3285,22 @@ function insanityfragmin(number) {
 }
 
 function insanityfrag() {
-	var cost = 0;
-	if (Rshouldinsanityfarm) {
-		
-	    var insanityfarmzone = getPageSetting('Rinsanityfarmzone');
-	    var insanityfarmlevel = getPageSetting('Rinsanityfarmlevel');
+    var cost = 0;
+    if (Rshouldinsanityfarm) {
+        
+        var insanityfarmzone = getPageSetting('Rinsanityfarmzone');
+        var insanityfarmlevel = getPageSetting('Rinsanityfarmlevel');
 
             var insanityfarmlevelindex = insanityfarmzone.indexOf(game.global.world);
             var insanitylevelzones = insanityfarmlevel[insanityfarmlevelindex];
-		
-	    if (getPageSetting('Rinsanityfarmfrag') == true) {
-		cost = insanityfragmin(insanitylevelzones);
-	    }
+        
+        if (getPageSetting('Rinsanityfarmfrag') == true) {
+        cost = insanityfragmin(insanitylevelzones);
+        }
 
-	    if (game.resources.fragments.owned >= cost) return true;
-	    else return false;
-	}
+        if (game.resources.fragments.owned >= cost) return true;
+        else return false;
+    }
 }
 
 function shipfragmap() {
@@ -3566,57 +3566,57 @@ function shipfragmin(number) {
 }
 
 function shipfrag() {
-	var cost = 0;
-	if (Rshouldshipfarm) {
-		
-	    var shipfarmzone = getPageSetting('Rshipfarmzone');
-	    var shipfarmlevel = getPageSetting('Rshipfarmlevel');
+    var cost = 0;
+    if (Rshouldshipfarm) {
+        
+        var shipfarmzone = getPageSetting('Rshipfarmzone');
+        var shipfarmlevel = getPageSetting('Rshipfarmlevel');
 
             var shipfarmlevelindex = shipfarmzone.indexOf(game.global.world);
             var shiplevelzones = shipfarmlevel[shipfarmlevelindex];
-		
-	    if (getPageSetting('Rshipfarmfrag') == true) {
-		cost = shipfragmin(shiplevelzones);
-	    }
+        
+        if (getPageSetting('Rshipfarmfrag') == true) {
+        cost = shipfragmin(shiplevelzones);
+        }
 
-	    if (game.resources.fragments.owned >= cost) return true;
-	    else return false;
-	}
+        if (game.resources.fragments.owned >= cost) return true;
+        else return false;
+    }
 }
 
 var fastimps =
     [
-	"Snimp",
-    	"Kittimp",
-    	"Gorillimp",
-    	"Squimp",
-    	"Shrimp",
-    	"Chickimp",
-    	"Frimp",
-    	"Slagimp",
-    	"Lavimp",
-    	"Kangarimp",
-    	"Entimp",
-    	"Fusimp",
-    	"Carbimp",
-    	"Shadimp",
-    	"Voidsnimp",
-    	"Prismimp",
-    	"Sweltimp",
-	"Indianimp",
-	"Improbability",
-	"Neutrimp",
-	"Cthulimp",
-	"Omnipotrimp",
-	"Mutimp",
-	"Hulking_Mutimp",
-	"Liquimp",
-	"Poseidimp",
-	"Darknimp",
-	"Horrimp",
-	"Arachnimp",
-	"Beetlimp",
-	"Mantimp",
+    "Snimp",
+        "Kittimp",
+        "Gorillimp",
+        "Squimp",
+        "Shrimp",
+        "Chickimp",
+        "Frimp",
+        "Slagimp",
+        "Lavimp",
+        "Kangarimp",
+        "Entimp",
+        "Fusimp",
+        "Carbimp",
+        "Shadimp",
+        "Voidsnimp",
+        "Prismimp",
+        "Sweltimp",
+    "Indianimp",
+    "Improbability",
+    "Neutrimp",
+    "Cthulimp",
+    "Omnipotrimp",
+    "Mutimp",
+    "Hulking_Mutimp",
+    "Liquimp",
+    "Poseidimp",
+    "Darknimp",
+    "Horrimp",
+    "Arachnimp",
+    "Beetlimp",
+    "Mantimp",
         "Butterflimp"
     ];
 
@@ -3641,20 +3641,20 @@ function Rmanageequality() {
 
     else if (game.global.challengeActive == "Exterminate" && getPageSetting('Rexterminateon') == true && getPageSetting('Rexterminateeq') == true && !game.global.mapsActive) {
         if ((getCurrentEnemy().name == "Arachnimp" || getCurrentEnemy().name == "Beetlimp" || getCurrentEnemy().name == "Mantimp" || getCurrentEnemy().name == "Butterflimp") && !game.challenges.Exterminate.experienced) {
-	    if (!game.portal.Equality.scalingActive) {
+        if (!game.portal.Equality.scalingActive) {
                 game.portal.Equality.scalingActive = true;
                 manageEqualityStacks();
                 updateEqualityScaling();
             }
-	}
-	else if ((getCurrentEnemy().name == "Arachnimp" || getCurrentEnemy().name == "Beetlimp" || getCurrentEnemy().name == "Mantimp" || getCurrentEnemy().name == "Butterflimp") && game.challenges.Exterminate.experienced) {
-	    if (game.portal.Equality.scalingActive) {
+    }
+    else if ((getCurrentEnemy().name == "Arachnimp" || getCurrentEnemy().name == "Beetlimp" || getCurrentEnemy().name == "Mantimp" || getCurrentEnemy().name == "Butterflimp") && game.challenges.Exterminate.experienced) {
+        if (game.portal.Equality.scalingActive) {
                 game.portal.Equality.scalingActive = false;
                 game.portal.Equality.disabledStackCount = "0";
                 manageEqualityStacks();
                 updateEqualityScaling();
             }
-	}
+    }
     }
 }
 
@@ -3795,31 +3795,31 @@ function alchfragmin(number, selection) {
 }
 
 function alchfrag() {
-	var cost = 0;
-	if (Rshouldalchfarm) {
-		
-	    var alchfarmzone = getPageSetting('Ralchfarmzone');
+    var cost = 0;
+    if (Rshouldalchfarm) {
+        
+        var alchfarmzone = getPageSetting('Ralchfarmzone');
             var alchfarmlevel = getPageSetting('Ralchfarmlevel');
-	    var alchfarmselection = getPageSetting('Ralchfarmselection').split(',');
+        var alchfarmselection = getPageSetting('Ralchfarmselection').split(',');
 
             var alchfarmlevelindex = alchfarmzone.indexOf(game.global.world);
             var alchlevelzones = alchfarmlevel[alchfarmlevelindex];
             var alchfarmselectionindex = alchfarmzone.indexOf(game.global.world);
             var selection = alchfarmselection[alchfarmselectionindex];
-	    if (selection == 'm') selection = "Mountain";
+        if (selection == 'm') selection = "Mountain";
             else if (selection == 'f') selection = "Forest";
             else if (selection == 's') selection = "Sea";
             else if (selection == 'd') selection = "Depths";
             else if (selection == 'g') selection = "Plentiful";
             else if (selection == 'l') selection = "Farmlands";
 
-	    alchfragmin(alchlevelzones, selection);
-		
-	    if (getPageSetting('Ralchfarmfrag') == true) {
-		cost = alchfragmin(alchlevelzones, selection);
-	    }
+        alchfragmin(alchlevelzones, selection);
+        
+        if (getPageSetting('Ralchfarmfrag') == true) {
+        cost = alchfragmin(alchlevelzones, selection);
+        }
 
-	    if (game.resources.fragments.owned >= cost) return true;
-	    else return false;
-	}
+        if (game.resources.fragments.owned >= cost) return true;
+        else return false;
+    }
 }

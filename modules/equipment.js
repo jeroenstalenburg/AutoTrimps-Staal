@@ -194,13 +194,13 @@ function dorangewindstack(){(9<game.equipment.Dagger.level&&0==game.upgrades.Dag
 
 function windstackingprestige() {
     if (
-		(game.global.challengeActive != "Daily" && getEmpowerment() == "Wind" && getPageSetting('WindStackingMin') > 0 && game.global.world >= getPageSetting('WindStackingMin') && calcHDratio() < 5) || 
-		(game.global.challengeActive == "Daily" && getEmpowerment() == "Wind" && getPageSetting('dWindStackingMin') > 0 && game.global.world >= getPageSetting('dWindStackingMin') && calcHDratio() < 5) || 
-		(game.global.challengeActive != "Daily" && getPageSetting('wsmax') > 0 && getPageSetting('wsmaxhd') > 0 && game.global.world >= getPageSetting('wsmax') && calcHDratio() < getPageSetting('wsmaxhd')) || 
-		(game.global.challengeActive == "Daily" && getPageSetting('dwsmax') > 0 && getPageSetting('dwsmaxhd') > 0 && game.global.world >= getPageSetting('dwsmax') && calcHDratio() < getPageSetting('dwsmaxhd'))
-	) {
-	if (game.global.challengeActive != "Daily") orangewindstack();
-	if (game.global.challengeActive == "Daily") dorangewindstack();
+        (game.global.challengeActive != "Daily" && getEmpowerment() == "Wind" && getPageSetting('WindStackingMin') > 0 && game.global.world >= getPageSetting('WindStackingMin') && calcHDratio() < 5) || 
+        (game.global.challengeActive == "Daily" && getEmpowerment() == "Wind" && getPageSetting('dWindStackingMin') > 0 && game.global.world >= getPageSetting('dWindStackingMin') && calcHDratio() < 5) || 
+        (game.global.challengeActive != "Daily" && getPageSetting('wsmax') > 0 && getPageSetting('wsmaxhd') > 0 && game.global.world >= getPageSetting('wsmax') && calcHDratio() < getPageSetting('wsmaxhd')) || 
+        (game.global.challengeActive == "Daily" && getPageSetting('dwsmax') > 0 && getPageSetting('dwsmaxhd') > 0 && game.global.world >= getPageSetting('dwsmax') && calcHDratio() < getPageSetting('dwsmaxhd'))
+    ) {
+    if (game.global.challengeActive != "Daily") orangewindstack();
+    if (game.global.challengeActive == "Daily") dorangewindstack();
         return false;
     }
     else return true;
@@ -274,9 +274,9 @@ function autoLevelEquipment() {
     //Shield
     highDamageShield();
     if (getPageSetting('loomswap') > 0 && game.global.challengeActive != "Daily" && game.global.ShieldEquipped.name != getPageSetting('highdmg'))
-	ourDamage *= trimpAA;
+    ourDamage *= trimpAA;
     if (getPageSetting('dloomswap') > 0 && game.global.challengeActive == "Daily" && game.global.ShieldEquipped.name != getPageSetting('dhighdmg'))
-	ourDamage *= trimpAA;
+    ourDamage *= trimpAA;
 
 
     var enemyDamage = calcBadGuyDmg(null, getEnemyMaxAttack(game.global.world + 1, 50, 'Snimp', 1.0), true, true);
@@ -756,7 +756,7 @@ function Rgetequips(map, special) { //(level, p b or false)
     var prestigeItemsAvailable = [];
     for (var item in unlocksObj) {
         var special = unlocksObj[item];
-	if (!special.prestige) continue;
+    if (!special.prestige) continue;
         if (special.locked) continue;
         if (game.global.universe == 2 && special.blockU2) continue;
         if (game.global.universe == 1 && special.blockU1) continue;
@@ -880,15 +880,15 @@ function Requipcalc(capattack, caphealth, level2, zonego, attack, health, name, 
 
     if (canAffordBuilding(name, null, null, true, false, amount) && smithylogic(name, resource, true) &&
         (
-	 (stat == 'a' && game.equipment[name].level < capattack) ||
+     (stat == 'a' && game.equipment[name].level < capattack) ||
          (stat == 'h' && game.equipment[name].level < caphealth)
-	) &&
+    ) &&
         (
          (level2 && game.equipment[name].level == 1) ||
          (zonego) ||
          (Rgetequipcost(name, resource, amount) <= (percent * source)) ||
          ((stat == 'a' && !attack) || (stat == 'h' && !health))
-	)
+    )
     ) {
         RpreBuy3();
 
@@ -896,12 +896,12 @@ function Requipcalc(capattack, caphealth, level2, zonego, attack, health, name, 
             buyEquipment(name, null, true, 1);
         }
 
-	var mostEfficientStuff = mostEfficientEquipment();
+    var mostEfficientStuff = mostEfficientEquipment();
 
-	if (mostEfficientStuff != undefined) {
+    if (mostEfficientStuff != undefined) {
             buyEquipment(mostEfficientStuff[0], null, true, amount);
             buyEquipment(mostEfficientStuff[1], null, true, amount);
-	}
+    }
 
         RpostBuy3();
     }
@@ -1064,16 +1064,16 @@ function equipfarmdynamicHD() {
         equipfarmzone = getPageSetting('Requipfarmzone');
         equipfarmHD = getPageSetting('RequipfarmHD');
         equipfarmmult = getPageSetting('Requipfarmmult');
-	equipfarmHDzone = (game.global.world - equipfarmzone);
-	equipfarmHDmult = (equipfarmHDzone == 0) ? equipfarmHD : Math.pow(equipfarmmult, equipfarmHDzone) * equipfarmHD;
+    equipfarmHDzone = (game.global.world - equipfarmzone);
+    equipfarmHDmult = (equipfarmHDzone == 0) ? equipfarmHD : Math.pow(equipfarmmult, equipfarmHDzone) * equipfarmHD;
     }
     return equipfarmHDmult;
 }
-	
+    
 function estimateEquipsForZone() {
     var artBoost = Math.pow(1 - game.portal.Artisanistry.modifier, game.portal.Artisanistry.radLevel);
-	artBoost *= autoBattle.oneTimers.Artisan.owned ? autoBattle.oneTimers.Artisan.getMult() : 1;
-	if (game.global.challengeActive == "Pandemonium") artBoost *= game.challenges.Pandemonium.getEnemyMult();
+    artBoost *= autoBattle.oneTimers.Artisan.owned ? autoBattle.oneTimers.Artisan.getMult() : 1;
+    if (game.global.challengeActive == "Pandemonium") artBoost *= game.challenges.Pandemonium.getEnemyMult();
     var MAX_EQUIP_DELTA = 700;
 
     // calculate stats needed pass zone

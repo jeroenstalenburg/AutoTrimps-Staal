@@ -18,13 +18,13 @@ function safeBuyBuilding(building) {
         game.global.buyAmt = 10;
     if (!canAffordBuilding(building)) {
         game.global.buyAmt = 2;
-	if (!canAffordBuilding(building))
+    if (!canAffordBuilding(building))
             game.global.buyAmt = 1;
      }
   }
   else if (bwRewardUnlocked("DoubleBuild")) {
         game.global.buyAmt = 2;
-  	if (!canAffordBuilding(building)) 
+      if (!canAffordBuilding(building)) 
         game.global.buyAmt = 1;
   }        
   else game.global.buyAmt = 1;
@@ -35,7 +35,7 @@ function safeBuyBuilding(building) {
   }
 
     game.global.firing = false;
-	
+    
     if (building == 'Gym' && getPageSetting('GymWall')) {
         game.global.buyAmt = 1;
     }
@@ -53,7 +53,7 @@ function safeBuyBuilding(building) {
     }
     debug('Building ' + building, "buildings", '*hammer2');
     if (!game.buildings[building].locked && canAffordBuilding(building)) {
-	buyBuilding(building, true, true);
+    buyBuilding(building, true, true);
     }
     postBuy2(oldBuy);
     return true;
@@ -106,7 +106,7 @@ function buyGemEfficientHousing() {
         var building = game.buildings[unlockedHousing[house]];
         var cost = getBuildingItemPrice(building, "gems", false, 1);
         var ratio = cost / building.increase.by;
-	if (unlockedHousing[house] == "Gateway" && !canAffordBuilding('Gateway'))
+    if (unlockedHousing[house] == "Gateway" && !canAffordBuilding('Gateway'))
             continue;
         obj[unlockedHousing[house]] = ratio;
         document.getElementById(unlockedHousing[house]).style.border = "1px solid #FFFFFF";
@@ -168,7 +168,7 @@ function buyBuildings() {
     if (!hidebuild) {
     buyFoodEfficientHousing();
     buyGemEfficientHousing();
-  	}
+      }
     if (!hidebuild && getPageSetting('MaxWormhole') > 0 && game.buildings.Wormhole.owned < getPageSetting('MaxWormhole') && !game.buildings.Wormhole.locked) {
         safeBuyBuilding('Wormhole');
     }
@@ -195,7 +195,7 @@ function buyBuildings() {
         if (needGymystic) skipGym = true;
         if (!skipGym)
             safeBuyBuilding('Gym');
-       	    needGymystic = false;
+               needGymystic = false;
     }
     //Tributes:
     if (!game.buildings.Tribute.locked && !hidebuild &&(getPageSetting('MaxTribute') > game.buildings.Tribute.owned || getPageSetting('MaxTribute') == -1)) {
@@ -203,7 +203,7 @@ function buyBuildings() {
     }
     //Nurseries
     if (game.buildings.Nursery.locked == 0 && (!hidebuild &&( game.global.world >= getPageSetting('NoNurseriesUntil') || getPageSetting('NoNurseriesUntil') < 1) && (getPageSetting('MaxNursery') > game.buildings.Nursery.owned || getPageSetting('MaxNursery') == -1)) || (game.global.challengeActive != "Daily" && getPageSetting('PreSpireNurseries') > game.buildings.Nursery.owned && isActiveSpireAT()) || (game.global.challengeActive == "Daily" && getPageSetting('dPreSpireNurseries') > game.buildings.Nursery.owned && disActiveSpireAT())) {
-	safeBuyBuilding('Nursery');
+    safeBuyBuilding('Nursery');
     }
 
     postBuy2(oldBuy);
@@ -251,13 +251,13 @@ function RsafeBuyBuilding(building) {
         game.global.buyAmt = 10;
     if (!canAffordBuilding(building)) {
         game.global.buyAmt = 2;
-	if (!canAffordBuilding(building))
+    if (!canAffordBuilding(building))
             game.global.buyAmt = 1;
      }
   }
   else if (bwRewardUnlocked("DoubleBuild")) {
         game.global.buyAmt = 2;
-  	if (!canAffordBuilding(building)) 
+      if (!canAffordBuilding(building)) 
         game.global.buyAmt = 1;
   }        
   else game.global.buyAmt = 1;
@@ -268,10 +268,10 @@ function RsafeBuyBuilding(building) {
   }
 
     game.global.firing = false;
-	
+    
     debug('Building ' + building, "buildings", '*hammer2');
     if (!game.buildings[building].locked && canAffordBuilding(building)) {
-	    buyBuilding(building, true, true);
+        buyBuilding(building, true, true);
     }
     postBuy2(oldBuy);
     return true;
@@ -378,7 +378,7 @@ function mostEfficientHousing() {
             var baseCost = game.buildings[housing].cost[resource][0];
             var costScaling = game.buildings[housing].cost[resource][1];
             var avgProduction = getPsString(resource, true);
-	    if (avgProduction <= 0) avgProduction = 1;
+        if (avgProduction <= 0) avgProduction = 1;
             var housingBonus = game.buildings.Hut.increase.by;
             if (!game.buildings.Hub.locked) { housingBonus += 500;}
 
@@ -453,16 +453,16 @@ function RbuyBuildings() {
         if (getPageSetting('RMaxTribute') > game.buildings.Tribute.owned) {
             buyTributeCount = Math.min(buyTributeCount, getPageSetting('RMaxTribute') - game.buildings.Tribute.owned);
         }
- 	if (getPageSetting('RMaxTribute') < 0 || (getPageSetting('RMaxTribute') > game.buildings.Tribute.owned)) {
+     if (getPageSetting('RMaxTribute') < 0 || (getPageSetting('RMaxTribute') > game.buildings.Tribute.owned)) {
             buyBuilding('Tribute', true, true, buyTributeCount);
-	}
     }
-	
+    }
+    
     //Labs
     if (!game.buildings.Laboratory.locked && getPageSetting('Rnurtureon') == true) {    
- 	if (getPageSetting('RMaxLabs') < 0 || (getPageSetting('RMaxLabs') > game.buildings.Laboratory.owned)) {
+     if (getPageSetting('RMaxLabs') < 0 || (getPageSetting('RMaxLabs') > game.buildings.Laboratory.owned)) {
             buyBuilding('Laboratory', true, true, 1);
-	}
+    }
     }
  
 }

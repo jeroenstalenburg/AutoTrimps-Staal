@@ -5,7 +5,7 @@ function autoStanceNew() {
     if (game.global.gridArray.length === 0) return;
     if (game.global.soldierHealth <= 0) return;
     if (!game.upgrades.Formations.done) return;
-	
+    
     if(game.global.formation == 2 && game.global.soldierHealth <= game.global.soldierHealthMax * 0.25) {
         setFormation('0');
     }
@@ -56,7 +56,7 @@ function autoStance() {
         enemyHealth *= 5;
     if (enemy.corrupted == 'healthyStrong')
         enemyDamage *= 2.5;
-		if (enemy.corrupted == 'healthyTough')
+        if (enemy.corrupted == 'healthyTough')
         enemyHealth *= 7.5;
 
     var xDamage = (enemyDamage - baseBlock);
@@ -222,7 +222,7 @@ function autoStanceCheck(enemyCrit) {
         enemyHealth *= 5;
     if (enemy.corrupted == 'healthyStrong')
         enemyDamage *= 2.5;
-		if (enemy.corrupted == 'healthyTough')
+        if (enemy.corrupted == 'healthyTough')
         enemyHealth *= 7.5;
     enemyDamage -= ourBlock;
     var pierce = 0;
@@ -295,7 +295,7 @@ function windStance() {
     if (game.global.world <= 70) return;
     var stancey = 2;
     if (game.global.challengeActive != "Daily") {
-	if (calcCurrentStance() == 5) {
+    if (calcCurrentStance() == 5) {
             stancey = 5;
             lowHeirloom();
         }
@@ -329,7 +329,7 @@ function windStance() {
         }
     }
     if (game.global.challengeActive == "Daily") {
-	if (calcCurrentStance() == 5) {
+    if (calcCurrentStance() == 5) {
             stancey = 5;
             dlowHeirloom();
         }

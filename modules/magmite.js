@@ -55,25 +55,25 @@ function miRatio() {
 
     var ratios = [];
     if (efffinal != -1)
-	ratios.push(efffinal);
+    ratios.push(efffinal);
     if (capfinal != -1)
-	ratios.push(capfinal);
+    ratios.push(capfinal);
     if (supfinal != -1)
-	ratios.push(supfinal);
+    ratios.push(supfinal);
     if (ocfinal != -1)
-	ratios.push(ocfinal);
+    ratios.push(ocfinal);
 
     ratios.sort(function(a, b){return b-a;});
 
     //Return Next Spend
     if (ratios[0] == efffinal)
-	return "Efficiency";
+    return "Efficiency";
     if (ratios[0] == capfinal)
-	return "Capacity";
+    return "Capacity";
     if (ratios[0] == supfinal)
-	return "Supply";
+    return "Supply";
     if (ratios[0] == ocfinal)
-	return "Overclocker";
+    return "Overclocker";
 }
 
 function autoMagmiteSpender() {

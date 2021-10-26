@@ -110,7 +110,7 @@ function dailyAutoPortal() {
                         }
                         if (autoTrimpSettings.dHeliumHourChallenge.selected != 'None' && getPageSetting('u1daily') == false)
                             doPortal(autoTrimpSettings.dHeliumHourChallenge.selected);
-			else if (autoTrimpSettings.RdHeliumHourChallenge.selected != 'None' && getPageSetting('u1daily') == true)
+            else if (autoTrimpSettings.RdHeliumHourChallenge.selected != 'None' && getPageSetting('u1daily') == true)
                             doPortal(autoTrimpSettings.RdHeliumHourChallenge.selected);
                         else
                             doPortal();
@@ -126,7 +126,7 @@ function dailyAutoPortal() {
             document.getElementById('finishDailyBtnContainer').style.display = 'none';
             if (autoTrimpSettings.dHeliumHourChallenge.selected != 'None' && getPageSetting('u1daily') == false)
                 doPortal(autoTrimpSettings.dHeliumHourChallenge.selected);
-	    else if (autoTrimpSettings.RdHeliumHourChallenge.selected != 'None' && getPageSetting('u1daily') == true)
+        else if (autoTrimpSettings.RdHeliumHourChallenge.selected != 'None' && getPageSetting('u1daily') == true)
                 doPortal(autoTrimpSettings.RdHeliumHourChallenge.selected);
             else
                 doPortal();
@@ -211,31 +211,31 @@ function doPortal(challenge) {
     var c2done = true;
     if(!game.global.portalActive) return;
     if (getPageSetting('spendmagmite')==1) {
-	autoMagmiteSpender();
+    autoMagmiteSpender();
     }
     if (getPageSetting('autoheirlooms') == true && getPageSetting('typetokeep') != 'None' && getPageSetting('raretokeep') != 'None') {
-	autoheirlooms3();
+    autoheirlooms3();
     }
     if (game.global.ShieldEquipped.name != getPageSetting('highdmg') || game.global.ShieldEquipped.name != getPageSetting('dhighdmg')) {
         if (highdmgshield() != undefined) {
-	    selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-	    equipHeirloom();
-	}
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
     }
     /*if (getPageSetting('autonu') == true && getPageSetting('heirloomnu') != undefined) {
         spendNu(); spendNu(); spendNu(); spendNu(); spendNu(); spendNu();
     }*/
     if (getPageSetting('AutoAllocatePerks')==2) {
         viewPortalUpgrades();
-	numTab(6, true)
-	buyPortalUpgrade('Looting_II');
-	activateClicked();
-	cancelPortal();
-	debug('First Stage: Bought Max Looting II');
+    numTab(6, true)
+    buyPortalUpgrade('Looting_II');
+    activateClicked();
+    cancelPortal();
+    debug('First Stage: Bought Max Looting II');
     }
     portalClicked();
     if (!portalWindowOpen) {
-	portalClicked();
+    portalClicked();
     }
     if (portalWindowOpen && getPageSetting('AutoAllocatePerks')==1 && (typeof MODULES["perks"] !== 'undefined' || typeof AutoPerks !== 'undefined')) {
         AutoPerks.clickAllocate();
@@ -248,9 +248,9 @@ function doPortal(challenge) {
         else debug("C2 Runner: All C2s above Threshold!");
     }
     if (portalWindowOpen && getPageSetting('AutoStartDaily') == true && c2done) {
-	if (getPageSetting('u2daily') == true && portalUniverse == 1) {
-	    swapPortalUniverse();
-	}
+    if (getPageSetting('u2daily') == true && portalUniverse == 1) {
+        swapPortalUniverse();
+    }
         selectChallenge('Daily');
         checkCompleteDailies();
         var lastUndone = -7;
@@ -261,9 +261,9 @@ function doPortal(challenge) {
         }
         if (lastUndone == 1) {
             debug("All available Dailies already completed.", "portal");
-	    if ((getPageSetting('u1daily') == true && portalUniverse == 1 && challenge == autoTrimpSettings.RdHeliumHourChallenge.selected) || (getPageSetting('u2daily') == true && portalUniverse == 2)) {
-	        swapPortalUniverse();
-	    }
+        if ((getPageSetting('u1daily') == true && portalUniverse == 1 && challenge == autoTrimpSettings.RdHeliumHourChallenge.selected) || (getPageSetting('u2daily') == true && portalUniverse == 2)) {
+            swapPortalUniverse();
+        }
             selectChallenge(challenge || 0);
         } else {
             getDailyChallenge(lastUndone);
@@ -271,15 +271,15 @@ function doPortal(challenge) {
         }
     }
     else if(portalWindowOpen && challenge && c2done) {
-	if (getPageSetting('u1daily') == true && portalUniverse == 1 && challenge == autoTrimpSettings.RdHeliumHourChallenge.selected) {
-	    swapPortalUniverse();
-	}
+    if (getPageSetting('u1daily') == true && portalUniverse == 1 && challenge == autoTrimpSettings.RdHeliumHourChallenge.selected) {
+        swapPortalUniverse();
+    }
         selectChallenge(challenge);
     }
     if (portalWindowOpen && getPageSetting('AutoAllocatePerks')==2) {
-	numTab(6, true)
-	buyPortalUpgrade('Looting_II');
-	debug('Second Stage: Bought Max Looting II');
+    numTab(6, true)
+    buyPortalUpgrade('Looting_II');
+    debug('Second Stage: Bought Max Looting II');
     }
     pushData();
     activatePortal();
@@ -345,11 +345,11 @@ function RautoPortal() {
             }
             break;
         case "Melt":
-	case "Bublé":
-	case "Quagmire":
-	case "Archaeology":
-	case "Insanity":
-	case "Nurture":
+    case "Bublé":
+    case "Quagmire":
+    case "Archaeology":
+    case "Insanity":
+    case "Nurture":
             if (!game.global.challengeActive) {
                 RdoPortal(autoTrimpSettings.RAutoPortal.selected);
             }
@@ -395,7 +395,7 @@ function RdailyAutoPortal() {
                         }
                         if (autoTrimpSettings.RdHeliumHourChallenge.selected != 'None' && getPageSetting('u2daily') == false)
                             RdoPortal(autoTrimpSettings.RdHeliumHourChallenge.selected);
-			else if (autoTrimpSettings.dHeliumHourChallenge.selected != 'None' && getPageSetting('u2daily') == true)
+            else if (autoTrimpSettings.dHeliumHourChallenge.selected != 'None' && getPageSetting('u2daily') == true)
                             RdoPortal(autoTrimpSettings.dHeliumHourChallenge.selected);
                         else
                             RdoPortal();
@@ -411,7 +411,7 @@ function RdailyAutoPortal() {
             document.getElementById('finishDailyBtnContainer').style.display = 'none';
             if (autoTrimpSettings.RdHeliumHourChallenge.selected != 'None' && getPageSetting('u2daily') == false)
                 RdoPortal(autoTrimpSettings.RdHeliumHourChallenge.selected);
-	    else if (autoTrimpSettings.dHeliumHourChallenge.selected != 'None' && getPageSetting('u2daily') == true)
+        else if (autoTrimpSettings.dHeliumHourChallenge.selected != 'None' && getPageSetting('u2daily') == true)
                 RdoPortal(autoTrimpSettings.dHeliumHourChallenge.selected);
             else
                 RdoPortal();
@@ -422,43 +422,43 @@ function RdailyAutoPortal() {
 function RdoPortal(challenge) {
     if(!game.global.portalActive) return;
     if (getPageSetting('autoheirlooms') == true && getPageSetting('typetokeep') != 'None' && getPageSetting('raretokeep') != 'None') {
-	autoheirlooms3();
+    autoheirlooms3();
     }
     if (game.global.ShieldEquipped.name != getPageSetting('highdmg') || game.global.ShieldEquipped.name != getPageSetting('dhighdmg')) {
         if (highdmgshield() != undefined) {
-	    selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-	    equipHeirloom();
-	}
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
     }
     /*if (getPageSetting('autonu') == true && getPageSetting('heirloomnu') != undefined) {
         spendNu(); spendNu(); spendNu(); spendNu(); spendNu(); spendNu();
     }*/
     if (getPageSetting('RAutoAllocatePerks')==2) {
         viewPortalUpgrades();
-	numTab(6, true)
-	if (getPageSetting('Rdumpgreed') == true) {
-	    buyPortalUpgrade('Greed');
-	    debug('First Stage: Bought Max Greed');
-	}
-	else {
-	    buyPortalUpgrade('Looting');
-	    debug('First Stage: Bought Max Looting');
-	}
-	activateClicked();
-	cancelPortal();
+    numTab(6, true)
+    if (getPageSetting('Rdumpgreed') == true) {
+        buyPortalUpgrade('Greed');
+        debug('First Stage: Bought Max Greed');
+    }
+    else {
+        buyPortalUpgrade('Looting');
+        debug('First Stage: Bought Max Looting');
+    }
+    activateClicked();
+    cancelPortal();
     }
     portalClicked();
     if (!portalWindowOpen) {
-	portalClicked();
+    portalClicked();
     }
     if (portalWindowOpen && getPageSetting('RAutoAllocatePerks')==1 && (typeof MODULES["perks"] !== 'undefined' || typeof AutoPerks !== 'undefined')) {
         RAutoPerks.clickAllocate();
     }
     if (portalWindowOpen && getPageSetting('RAutoStartDaily') == true) {
         if (getPageSetting('u1daily') == true && portalUniverse == 2) {
-	    swapPortalUniverse();
-	}
-	selectChallenge('Daily');
+        swapPortalUniverse();
+    }
+    selectChallenge('Daily');
         checkCompleteDailies();
         var lastUndone = -7;
         while (++lastUndone <= 0) {
@@ -468,9 +468,9 @@ function RdoPortal(challenge) {
         }
         if (lastUndone == 1) {
             debug("All available Dailies already completed.", "portal");
-	    if ((getPageSetting('u2daily') == true && portalUniverse == 2 && challenge == autoTrimpSettings.dHeliumHourChallenge.selected) || (getPageSetting('u1daily') == true && portalUniverse == 1)) {
-	        swapPortalUniverse();
-	    }
+        if ((getPageSetting('u2daily') == true && portalUniverse == 2 && challenge == autoTrimpSettings.dHeliumHourChallenge.selected) || (getPageSetting('u1daily') == true && portalUniverse == 1)) {
+            swapPortalUniverse();
+        }
             selectChallenge(challenge || 0);
         } else {
             getDailyChallenge(lastUndone);
@@ -478,22 +478,22 @@ function RdoPortal(challenge) {
         }
     }
     else if(portalWindowOpen && challenge) {
-	    if (getPageSetting('u2daily') == true && portalUniverse == 2 && challenge == autoTrimpSettings.dHeliumHourChallenge.selected) {
-	        swapPortalUniverse();
-	    }
+        if (getPageSetting('u2daily') == true && portalUniverse == 2 && challenge == autoTrimpSettings.dHeliumHourChallenge.selected) {
+            swapPortalUniverse();
+        }
             selectChallenge(challenge);
     }
     if (portalWindowOpen && getPageSetting('RAutoAllocatePerks')==2) {
-	numTab(6, true)
-	if (getPageSetting('Rdumpgreed') == true) {
-	    buyPortalUpgrade('Greed');
-	    debug('Second Stage: Bought Max Greed');
-	}
-	else {
-	    buyPortalUpgrade('Looting');
-	    debug('Second Stage: Bought Max Looting');
-	}
-	
+    numTab(6, true)
+    if (getPageSetting('Rdumpgreed') == true) {
+        buyPortalUpgrade('Greed');
+        debug('Second Stage: Bought Max Greed');
+    }
+    else {
+        buyPortalUpgrade('Looting');
+        debug('Second Stage: Bought Max Looting');
+    }
+    
     }
     pushData();
     activatePortal();
@@ -518,38 +518,38 @@ function isNextU1DailyWind() {
     var dailynature = [], dpoison, dpoisondiff, dwind, dwinddiff, dice, dicediff;
         
         if (getPageSetting('pdailyenlightthresh') >= 0) {
-	    dpoison = (nextPoisonCost <= getPageSetting('pdailyenlightthresh') && nextPoisonCost <= game.empowerments.Poison.tokens);
-	    if (dpoison) {
-		dpoisondiff = (getPageSetting('pdailyenlightthresh') - nextPoisonCost);
-	    }
-	    else dpoisondiff = -999999;
-	}
-	else dpoisondiff = -999999;
+        dpoison = (nextPoisonCost <= getPageSetting('pdailyenlightthresh') && nextPoisonCost <= game.empowerments.Poison.tokens);
+        if (dpoison) {
+        dpoisondiff = (getPageSetting('pdailyenlightthresh') - nextPoisonCost);
+        }
+        else dpoisondiff = -999999;
+    }
+    else dpoisondiff = -999999;
 
-	if (getPageSetting('wdailyenlightthresh') >= 0) {
-	    dwind = (nextWindCost <= getPageSetting('wdailyenlightthresh') && nextWindCost <= game.empowerments.Wind.tokens);
-	    if (dwind) {
-		dwinddiff = (getPageSetting('wdailyenlightthresh') - nextWindCost);
-	    }
-	    else dwinddiff = -999999;
-	}
-	else dwinddiff = -999999;
+    if (getPageSetting('wdailyenlightthresh') >= 0) {
+        dwind = (nextWindCost <= getPageSetting('wdailyenlightthresh') && nextWindCost <= game.empowerments.Wind.tokens);
+        if (dwind) {
+        dwinddiff = (getPageSetting('wdailyenlightthresh') - nextWindCost);
+        }
+        else dwinddiff = -999999;
+    }
+    else dwinddiff = -999999;
 
-	if (getPageSetting('idailyenlightthresh') >= 0) {
-	    dice = (nextIceCost <= getPageSetting('idailyenlightthresh') && nextIceCost <= game.empowerments.Ice.tokens);
-	    if (dice) {
-		dicediff = (getPageSetting('idailyenlightthresh') - nextIceCost);
-	    }
-	    else dicediff = -999999;
-	}
-	else dicediff = -999999;
+    if (getPageSetting('idailyenlightthresh') >= 0) {
+        dice = (nextIceCost <= getPageSetting('idailyenlightthresh') && nextIceCost <= game.empowerments.Ice.tokens);
+        if (dice) {
+        dicediff = (getPageSetting('idailyenlightthresh') - nextIceCost);
+        }
+        else dicediff = -999999;
+    }
+    else dicediff = -999999;
 
-	dailynature = [{nature:'Poison', cost:dpoisondiff}, {nature:'Wind', cost:dwinddiff}, {nature:'Ice', cost:dicediff}].sort(function(a, b) {return a.cost > b.cost ? -1 : a.cost < b.cost ? 1 : 0;});
+    dailynature = [{nature:'Poison', cost:dpoisondiff}, {nature:'Wind', cost:dwinddiff}, {nature:'Ice', cost:dicediff}].sort(function(a, b) {return a.cost > b.cost ? -1 : a.cost < b.cost ? 1 : 0;});
 
-	if (dailynature[0].cost > 0) {
-	    dnature = dailynature[0].nature;
-	}
-	else { dnature = "None"; }
+    if (dailynature[0].cost > 0) {
+        dnature = dailynature[0].nature;
+    }
+    else { dnature = "None"; }
 
         if(dnature=="Wind")
             return true;

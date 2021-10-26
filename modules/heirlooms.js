@@ -15,7 +15,7 @@ function getHeirloomEff(name, type) {
     else if (getPageSetting('slot4modst') == name) return 5;
     else if (getPageSetting('slot5modst') == name) return 5;
     else if (getPageSetting('slot6modst') == name) return 5;
-	else return 0;
+    else return 0;
   }
   else if (type == "shield") {
     if (getPageSetting('slot1modsh') == name) return 5;
@@ -24,14 +24,14 @@ function getHeirloomEff(name, type) {
     else if (getPageSetting('slot4modsh') == name) return 5;
     else if (getPageSetting('slot5modsh') == name) return 5;
     else if (getPageSetting('slot6modsh') == name) return 5;
-	else return 0;
+    else return 0;
   }
   else if (type == "core") {
     if (getPageSetting('slot1modcr') == name) return 5;
     else if (getPageSetting('slot2modcr') == name) return 5;
     else if (getPageSetting('slot3modcr') == name) return 5;
     else if (getPageSetting('slot4modcr') == name) return 5;
-	else return 0;
+    else return 0;
   }
 }
 
@@ -43,16 +43,16 @@ function evaluateHeirloomMods2(loom, location) {
   var type;
   var rarity;
   var raretokeep = getPageSetting('raretokeep');
-	if (raretokeep == 'Any' || raretokeep == 'Common') raretokeep = 0;
-	else if (raretokeep == 'Uncommon') raretokeep = 1;
-	else if (raretokeep == 'Rare') raretokeep = 2;
-	else if (raretokeep == 'Epic') raretokeep = 3;
-	else if (raretokeep == 'Legendary') raretokeep = 4;
-	else if (raretokeep == 'Magnificent') raretokeep = 5;
-	else if (raretokeep == 'Ethereal') raretokeep = 6;
-	else if (raretokeep == 'Magmatic') raretokeep = 7;
-	else if (raretokeep == 'Plagued') raretokeep = 8;
-	else if (raretokeep == 'Radiating') raretokeep = 9;
+    if (raretokeep == 'Any' || raretokeep == 'Common') raretokeep = 0;
+    else if (raretokeep == 'Uncommon') raretokeep = 1;
+    else if (raretokeep == 'Rare') raretokeep = 2;
+    else if (raretokeep == 'Epic') raretokeep = 3;
+    else if (raretokeep == 'Legendary') raretokeep = 4;
+    else if (raretokeep == 'Magnificent') raretokeep = 5;
+    else if (raretokeep == 'Ethereal') raretokeep = 6;
+    else if (raretokeep == 'Magmatic') raretokeep = 7;
+    else if (raretokeep == 'Plagued') raretokeep = 8;
+    else if (raretokeep == 'Radiating') raretokeep = 9;
         else if (raretokeep == 'Hazardous') raretokeep = 10;
 
   if (location.includes('Equipped'))
@@ -115,7 +115,7 @@ function autoheirlooms3() {
             stopCarryHeirloom();
         }
 
-	//CARRY
+    //CARRY
         var originalLength = game.global.heirloomsExtra.length;
         for(var index=0; index < originalLength; index++) {
             var theLoom = game.global.heirloomsExtra[index];
@@ -126,54 +126,54 @@ function autoheirlooms3() {
             }
         }
 
-	//SHIELD
-	if (getPageSetting('typetokeep') == 1) {
-       		 while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
+    //SHIELD
+    if (getPageSetting('typetokeep') == 1) {
+                while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
                         worthOfHeirlooms3();
                         if (worth3["Shield"].length > 0){
                             var carryshield = worth3["Shield"].shift();
                             selectHeirloom(carryshield.index, 'heirloomsExtra');
                             carryHeirloom();
                         }
-			else break;
+            else break;
                 }
-	}
+    }
 
-	//STAFF
-	else if (getPageSetting('typetokeep') == 2) {
-       		 while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
+    //STAFF
+    else if (getPageSetting('typetokeep') == 2) {
+                while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
                         worthOfHeirlooms3();
                         if (worth3["Staff"].length > 0){
                             var carrystaff = worth3["Staff"].shift();
                             selectHeirloom(carrystaff.index, 'heirloomsExtra');
                             carryHeirloom();
                         }
-			else break;
+            else break;
                 }
-	}
+    }
 
-	//CORE
-	else if (getPageSetting('typetokeep') == 3) {
-       		 while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
+    //CORE
+    else if (getPageSetting('typetokeep') == 3) {
+                while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
                         worthOfHeirlooms3();
                         if (worth3["Core"].length > 0){
                             var carrycore = worth3["Core"].shift();
                             selectHeirloom(carrycore.index, 'heirloomsExtra');
                             carryHeirloom();
                         }
-			else break;
+            else break;
                 }
-	}
+    }
 
-	//ALL
-	else if (getPageSetting('typetokeep') == 4) {
-       		 while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
-            		worthOfHeirlooms3();
-            		if (worth3["Shield"].length > 0){
-                	    var carryshield = worth3["Shield"].shift();
-                	    selectHeirloom(carryshield.index, 'heirloomsExtra');
+    //ALL
+    else if (getPageSetting('typetokeep') == 4) {
+                while ((game.global.heirloomsCarried.length < getMaxCarriedHeirlooms()) && game.global.heirloomsExtra.length > 0){
+                    worthOfHeirlooms3();
+                    if (worth3["Shield"].length > 0){
+                        var carryshield = worth3["Shield"].shift();
+                        selectHeirloom(carryshield.index, 'heirloomsExtra');
                             carryHeirloom();
-              		}
+                      }
                         worthOfHeirlooms3();
                         if (worth3["Staff"].length > 0){
                             var carrystaff = worth3["Staff"].shift();
@@ -187,132 +187,132 @@ function autoheirlooms3() {
                             carryHeirloom();
                         }
                 }
-	}
+    }
     }
 }
 
 //Loom Swapping
 
 function lowHeirloom() {
-	if (lowdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('lowdmg')) {
+    if (lowdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('lowdmg')) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
-	}
+    }
 }
 function dlowHeirloom() {
-	if (dlowdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('dlowdmg')) {
+    if (dlowdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('dlowdmg')) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
-	}
+    }
 }
 function highHeirloom() {
-	if (highdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('highdmg')) {
+    if (highdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('highdmg')) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
-	}
+    }
 }
 function dhighHeirloom() {
-	if (dhighdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('dhighdmg')) {
+    if (dhighdmgshield() != undefined && game.global.ShieldEquipped.name != getPageSetting('dhighdmg')) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
-	}
+    }
 }
 
 //Nu
 
 function calcLoomNu(slot) {
-	nuloom();
-	var heirloom = getSelectedHeirloom();
-	var tot = 0;
-	var thisMod = heirloom.mods[slot];
-	var dummyHeirloom = setupDummyHeirloom(heirloom, thisMod);
-	tot = countPriceOfUpgrades(dummyHeirloom, heirloom.mods[slot][3]);
-	var result = Math.floor(tot) + Math.floor(game.heirlooms.values[heirloom.rarity] / 2);
-	if (isNumberBad(result)) return 0;
-	return result;
+    nuloom();
+    var heirloom = getSelectedHeirloom();
+    var tot = 0;
+    var thisMod = heirloom.mods[slot];
+    var dummyHeirloom = setupDummyHeirloom(heirloom, thisMod);
+    tot = countPriceOfUpgrades(dummyHeirloom, heirloom.mods[slot][3]);
+    var result = Math.floor(tot) + Math.floor(game.heirlooms.values[heirloom.rarity] / 2);
+    if (isNumberBad(result)) return 0;
+    return result;
 }
 
 function calcLoomNuInfinity(slot) {
-	nuloom();
-	var heirloom = getSelectedHeirloom();
-	if (Math.ceil(getModUpgradeCost(heirloom, slot, 1)) != "Infinity") {
-		return true;
-	} else { 
-		return false;
-	}
+    nuloom();
+    var heirloom = getSelectedHeirloom();
+    if (Math.ceil(getModUpgradeCost(heirloom, slot, 1)) != "Infinity") {
+        return true;
+    } else { 
+        return false;
+    }
 }
 
 function calcAutoNuRatio(slot) {
-	nuloom();
-	var heirloom = getSelectedHeirloom();
-	
-	//Shield
-	if (heirloom.mods[slot][0] == "critChance")
-		return 100;
-	else if (heirloom.mods[slot][0] == "voidMaps")
-		return 95;
-	else if (heirloom.mods[slot][0] == "plaguebringer")
-		return 85;
-	else if (heirloom.mods[slot][0] == "trimpAttack")
-		return 75;
-	else if (heirloom.mods[slot][0] == "critDamage")
-		return 54;
-	else if (heirloom.mods[slot][0] == "trimpHealth")
-		return 50;
-	else if (heirloom.mods[slot][0] == "storageSize")
-		return 7;
-	else if (heirloom.mods[slot][0] == "trimpBlock")
-		return 4;
-	else if (heirloom.mods[slot][0] == "trainerEfficiency")
-		return 2.8;
-	else if (heirloom.mods[slot][0] == "breedSpeed")
-		return 2;
-	else if (heirloom.mods[slot][0] == "playerEfficiency")
-		return 0.3;
-	else if (heirloom.mods[slot][0] == "prismatic")
-		return 50;
-	else if (heirloom.mods[slot][0] == "gammaBurst")
-		return 25;
-	
-	//Staff
-	else if (heirloom.mods[slot][0] == "FluffyExp")
-		return 100;
-	else if (heirloom.mods[slot][0] == "fragmentsDrop")
-		return 8;
-	else if (heirloom.mods[slot][0] == "ExplorerSpeed")
-		return 7;
-	else if (heirloom.mods[slot][0] == "metalDrop")
-		return 6;
-	else if (heirloom.mods[slot][0] == "minerSpeed")
-		return 5;
-	else if (heirloom.mods[slot][0] == "woodDrop")
-		return 1;
-	else if (heirloom.mods[slot][0] == "LumberjackSpeed")
-		return 0.8;
-	else if (heirloom.mods[slot][0] == "foodDrop")
-		return 0.2;
-	else if (heirloom.mods[slot][0] == "FarmerSpeed")
-		return 0.05;
-	else if (heirloom.mods[slot][0] == "DragimpSpeed")
-		return 0.04;
-	else if (heirloom.mods[slot][0] == "gemsDrop")
-		return 0.03;
-	else if (heirloom.mods[slot][0] == "ScientistSpeed")
-		return 0.03;
+    nuloom();
+    var heirloom = getSelectedHeirloom();
+    
+    //Shield
+    if (heirloom.mods[slot][0] == "critChance")
+        return 100;
+    else if (heirloom.mods[slot][0] == "voidMaps")
+        return 95;
+    else if (heirloom.mods[slot][0] == "plaguebringer")
+        return 85;
+    else if (heirloom.mods[slot][0] == "trimpAttack")
+        return 75;
+    else if (heirloom.mods[slot][0] == "critDamage")
+        return 54;
+    else if (heirloom.mods[slot][0] == "trimpHealth")
+        return 50;
+    else if (heirloom.mods[slot][0] == "storageSize")
+        return 7;
+    else if (heirloom.mods[slot][0] == "trimpBlock")
+        return 4;
+    else if (heirloom.mods[slot][0] == "trainerEfficiency")
+        return 2.8;
+    else if (heirloom.mods[slot][0] == "breedSpeed")
+        return 2;
+    else if (heirloom.mods[slot][0] == "playerEfficiency")
+        return 0.3;
+    else if (heirloom.mods[slot][0] == "prismatic")
+        return 50;
+    else if (heirloom.mods[slot][0] == "gammaBurst")
+        return 25;
+    
+    //Staff
+    else if (heirloom.mods[slot][0] == "FluffyExp")
+        return 100;
+    else if (heirloom.mods[slot][0] == "fragmentsDrop")
+        return 8;
+    else if (heirloom.mods[slot][0] == "ExplorerSpeed")
+        return 7;
+    else if (heirloom.mods[slot][0] == "metalDrop")
+        return 6;
+    else if (heirloom.mods[slot][0] == "minerSpeed")
+        return 5;
+    else if (heirloom.mods[slot][0] == "woodDrop")
+        return 1;
+    else if (heirloom.mods[slot][0] == "LumberjackSpeed")
+        return 0.8;
+    else if (heirloom.mods[slot][0] == "foodDrop")
+        return 0.2;
+    else if (heirloom.mods[slot][0] == "FarmerSpeed")
+        return 0.05;
+    else if (heirloom.mods[slot][0] == "DragimpSpeed")
+        return 0.04;
+    else if (heirloom.mods[slot][0] == "gemsDrop")
+        return 0.03;
+    else if (heirloom.mods[slot][0] == "ScientistSpeed")
+        return 0.03;
 
-	//Core
-	else if (heirloom.mods[slot][0] == "fireTrap")
-		return 50;
-	else if (heirloom.mods[slot][0] == "poisonTrap")
-		return 50;
-	else if (heirloom.mods[slot][0] == "lightningTrap")
-		return 100;
-	else if (heirloom.mods[slot][0] == "runestones")
-		return 85;
-	else if (heirloom.mods[slot][0] == "strengthEffect")
-		return 50;
-	else if (heirloom.mods[slot][0] == "condenserEffect")
-		return 150;
+    //Core
+    else if (heirloom.mods[slot][0] == "fireTrap")
+        return 50;
+    else if (heirloom.mods[slot][0] == "poisonTrap")
+        return 50;
+    else if (heirloom.mods[slot][0] == "lightningTrap")
+        return 100;
+    else if (heirloom.mods[slot][0] == "runestones")
+        return 85;
+    else if (heirloom.mods[slot][0] == "strengthEffect")
+        return 50;
+    else if (heirloom.mods[slot][0] == "condenserEffect")
+        return 150;
 }
 
 function nuRatio() {
@@ -338,22 +338,22 @@ function nuRatio() {
 
     //Find Player ratio
     if (getPageSetting('autonu') == true && getPageSetting('rationu') == 0 && getPageSetting('heirloomnu') != undefined) { 
-	slot1spend = (getPageSetting('slot1nu') > 0 && calcLoomNuInfinity(0)) ? getPageSetting('slot1nu') : 0;
-	slot2spend = (getPageSetting('slot2nu') > 0 && calcLoomNuInfinity(1)) ? getPageSetting('slot2nu') : 0;
-	slot3spend = (getPageSetting('slot3nu') > 0 && calcLoomNuInfinity(2)) ? getPageSetting('slot3nu') : 0;
-	slot4spend = (getPageSetting('slot4nu') > 0 && calcLoomNuInfinity(3)) ? getPageSetting('slot4nu') : 0;
-	slot5spend = (getPageSetting('slot5nu') > 0 && calcLoomNuInfinity(4)) ? getPageSetting('slot5nu') : 0;
-	slot5spend = (getPageSetting('slot6nu') > 0 && calcLoomNuInfinity(5)) ? getPageSetting('slot6nu') : 0;
-	}
-	
+    slot1spend = (getPageSetting('slot1nu') > 0 && calcLoomNuInfinity(0)) ? getPageSetting('slot1nu') : 0;
+    slot2spend = (getPageSetting('slot2nu') > 0 && calcLoomNuInfinity(1)) ? getPageSetting('slot2nu') : 0;
+    slot3spend = (getPageSetting('slot3nu') > 0 && calcLoomNuInfinity(2)) ? getPageSetting('slot3nu') : 0;
+    slot4spend = (getPageSetting('slot4nu') > 0 && calcLoomNuInfinity(3)) ? getPageSetting('slot4nu') : 0;
+    slot5spend = (getPageSetting('slot5nu') > 0 && calcLoomNuInfinity(4)) ? getPageSetting('slot5nu') : 0;
+    slot5spend = (getPageSetting('slot6nu') > 0 && calcLoomNuInfinity(5)) ? getPageSetting('slot6nu') : 0;
+    }
+    
     if (getPageSetting('autonu') == true && getPageSetting('rationu') == 1 && getPageSetting('heirloomnu') != undefined) { 
-	slot1spend = (calcLoomNuInfinity(0)) ? calcAutoNuRatio(0) : 0;
-	slot2spend = (calcLoomNuInfinity(1)) ? calcAutoNuRatio(1) : 0;
-	slot3spend = (calcLoomNuInfinity(2)) ? calcAutoNuRatio(2) : 0;
-	slot4spend = (calcLoomNuInfinity(3)) ? calcAutoNuRatio(3) : 0;
-	slot5spend = (calcLoomNuInfinity(4)) ? calcAutoNuRatio(4) : 0;
-	slot5spend = (calcLoomNuInfinity(5)) ? calcAutoNuRatio(5) : 0;
-	}
+    slot1spend = (calcLoomNuInfinity(0)) ? calcAutoNuRatio(0) : 0;
+    slot2spend = (calcLoomNuInfinity(1)) ? calcAutoNuRatio(1) : 0;
+    slot3spend = (calcLoomNuInfinity(2)) ? calcAutoNuRatio(2) : 0;
+    slot4spend = (calcLoomNuInfinity(3)) ? calcAutoNuRatio(3) : 0;
+    slot5spend = (calcLoomNuInfinity(4)) ? calcAutoNuRatio(4) : 0;
+    slot5spend = (calcLoomNuInfinity(5)) ? calcAutoNuRatio(5) : 0;
+    }
 
     var totalspend = (slot1spend + slot2spend + slot3spend + slot4spend + slot5spend + slot6spend);
 
@@ -374,22 +374,22 @@ function nuRatio() {
 
     var ratios = [];
     if (slot1final != -1) {
-	ratios.push(slot1final);
+    ratios.push(slot1final);
     }
     if (slot2final != -1) {
-	ratios.push(slot2final);
+    ratios.push(slot2final);
     }
     if (slot3final != -1) {
-	ratios.push(slot3final);
+    ratios.push(slot3final);
     }
     if (slot4final != -1) {
-	ratios.push(slot4final);
+    ratios.push(slot4final);
     }
     if (slot5final != -1) {
-	ratios.push(slot5final);
+    ratios.push(slot5final);
     }
     if (slot6final != -1) {
-	ratios.push(slot6final);
+    ratios.push(slot6final);
     }
 
     if (ratios.length > 0) {
@@ -398,26 +398,26 @@ function nuRatio() {
 
     //Return Next Spend
     if (ratios[0] == slot1final)
-	return 0;
+    return 0;
     if (ratios[0] == slot2final)
-	return 1;
+    return 1;
     if (ratios[0] == slot3final)
-	return 2;
+    return 2;
     if (ratios[0] == slot4final)
-	return 3;
+    return 3;
     if (ratios[0] == slot5final)
-	return 4;
+    return 4;
     if (ratios[0] == slot6final)
-	return 5;
+    return 5;
 }
 
 function spendNu() {
-	nuloom();
-	var slot = nuRatio();
-	if (game.global.nullifium >= (getModUpgradeCost(getSelectedHeirloom(), slot, 1))) {
-	    selectMod(slot);
-	    upgradeMod(true, 1);
-	}
+    nuloom();
+    var slot = nuRatio();
+    if (game.global.nullifium >= (getModUpgradeCost(getSelectedHeirloom(), slot, 1))) {
+        selectMod(slot);
+        upgradeMod(true, 1);
+    }
 }
 
 function generateHeirloomIcon(heirloom, location, number){
@@ -442,58 +442,58 @@ function Rhsmapstaff(){for(loom of game.global.heirloomsCarried)if(loom.name==ge
 function Rhstributestaff(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhstributestaff'))return loom;}
 
 function Rhsequip1() {
-	if (Rhsshield1() != "undefined" && game.global.ShieldEquipped.name != getPageSetting('Rhs1')) {
-		selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-		equipHeirloom();
-	}
+    if (Rhsshield1() != "undefined" && game.global.ShieldEquipped.name != getPageSetting('Rhs1')) {
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
 }
 function Rhsequip2() {
-	if (Rhsshield2() != "undefined" && game.global.ShieldEquipped.name != getPageSetting('Rhs2')) {
-		selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-		equipHeirloom();
-	}
+    if (Rhsshield2() != "undefined" && game.global.ShieldEquipped.name != getPageSetting('Rhs2')) {
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
 }
 function Rhsworldstaffequip() {
-	if (Rhsworldstaff() != "undefined" && game.global.StaffEquipped.name != getPageSetting('Rhsworldstaff')) {
-		selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-		equipHeirloom();
-	}
+    if (Rhsworldstaff() != "undefined" && game.global.StaffEquipped.name != getPageSetting('Rhsworldstaff')) {
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
 }
 function Rhsmapstaffequip() {
-	if (Rhsmapstaff() != "undefined" && game.global.StaffEquipped.name != getPageSetting('Rhsmapstaff')) {
-		selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-		equipHeirloom();
-	}
+    if (Rhsmapstaff() != "undefined" && game.global.StaffEquipped.name != getPageSetting('Rhsmapstaff')) {
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
 }
 
 function Rhstributestaffequip() {
-	if (Rhstributestaff() != "undefined" && game.global.StaffEquipped.name != getPageSetting('Rhstributestaff')) {
-		selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-		equipHeirloom();
-	}
+    if (Rhstributestaff() != "undefined" && game.global.StaffEquipped.name != getPageSetting('Rhstributestaff')) {
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
 }
 
 function Rheirloomswap() {
-	
-	//Swapping Shields
-	if (getPageSetting('Rhsshield') != false) {
-		if (getPageSetting('Rhsz') > 0 && game.global.world < getPageSetting('Rhsz')) {
-			Rhsequip1();
-		}
-		if (getPageSetting('Rhsz') > 0 && game.global.world >= getPageSetting('Rhsz')) {
-			Rhsequip2();
-		}
-	}
-	//Swapping Staffs
-	if (getPageSetting('Rhsstaff') != false) {
-		if (getPageSetting('Rhsworldstaff') != "undefined" && game.global.mapsActive == false) {
-			Rhsworldstaffequip();
-		}
-		if (getPageSetting('Rhsmapstaff') != "undefined" && (Rshouldtributefarm == false || getPageSetting('Rhstributestaff') == "undefined") && game.global.mapsActive == true) {
-			Rhsmapstaffequip();
-		}
-		if (getPageSetting('Rhstributestaff') != "undefined" && getPageSetting('Rhsstaff') && Rshouldtributefarm == true && game.global.mapsActive == true) {
-			Rhstributestaffequip();
-		}
-	}
+    
+    //Swapping Shields
+    if (getPageSetting('Rhsshield') != false) {
+        if (getPageSetting('Rhsz') > 0 && game.global.world < getPageSetting('Rhsz')) {
+            Rhsequip1();
+        }
+        if (getPageSetting('Rhsz') > 0 && game.global.world >= getPageSetting('Rhsz')) {
+            Rhsequip2();
+        }
+    }
+    //Swapping Staffs
+    if (getPageSetting('Rhsstaff') != false) {
+        if (getPageSetting('Rhsworldstaff') != "undefined" && game.global.mapsActive == false) {
+            Rhsworldstaffequip();
+        }
+        if (getPageSetting('Rhsmapstaff') != "undefined" && (Rshouldtributefarm == false || getPageSetting('Rhstributestaff') == "undefined") && game.global.mapsActive == true) {
+            Rhsmapstaffequip();
+        }
+        if (getPageSetting('Rhstributestaff') != "undefined" && getPageSetting('Rhsstaff') && Rshouldtributefarm == true && game.global.mapsActive == true) {
+            Rhstributestaffequip();
+        }
+    }
 }
