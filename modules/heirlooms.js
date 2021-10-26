@@ -436,15 +436,16 @@ function generateHeirloomIcon(heirloom, location, number){
 }
 
 //Radon
-function Rhloomequip(name) {
+function Rhloomequip(settingName) {
+    hname = getPageSetting(settingName)
     let loom = "undefined"
     for(loom of game.global.heirloomsCarried) {
-        if(loom.name==name){
+        if(loom.name==hname){
             break
         }
         loom = "undefined"
     }
-    if (loom != "undefined" && game.global.ShieldEquipped.name != name) {
+    if (loom != "undefined" && game.global.ShieldEquipped.name != hname) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
     }
@@ -453,27 +454,29 @@ function Rhloomequip(name) {
 
 function Rheirloomswap() {
     //Swapping Shields
-    if (getPageSetting('Rhsshield') != false) {
-        if (getPageSetting('Rhsz') > 0 && game.global.world < getPageSetting('Rhsz')) {
-            Rhloomequip(getPageSetting('Rhs1'))
+    if (getPageSetting("Rhsshield") != false) {
+        if (getPageSetting("Rhsz") > 0 && game.global.world < getPageSetting("Rhsz")) {
+            Rhloomequip("Rhs1")
         }
-        if (getPageSetting('Rhsz') > 0 && game.global.world >= getPageSetting('Rhsz')) {
-            Rhloomequip(getPageSetting('Rhs2'))
+        if (getPageSetting("Rhsz") > 0 && game.global.world >= getPageSetting("Rhsz")) {
+            Rhloomequip("Rhs2")
         }
     }
     //Swapping Staffs
-    if (getPageSetting('Rhsstaff') != false) {
+    if (getPageSetting("Rhsstaff") != false) {
         //World Staff
         if (game.global.mapsActive == false) {
-            if (getPageSetting('Rhsworldstaff') != "undefined") {
-                Rhloomequip(getPageSetting('Rhsworldstaff'))
+            if (getPageSetting("Rhsworldstaff") != "undefined") {
+                Rhloomequip("Rhsworldstaff")
             }
         //Map Staffs
         } else {
-            if (getPageSetting('Rhstributestaff') != "undefined" && (Rshouldtributefarm == true || Rshouldshipfarm == true)) {
-                Rhloomequip(getPageSetting('Rhstributestaff'))
-            } else if (getPageSetting('Rhsmapstaff') != "undefined") {
-                Rhloomequip(getPageSetting('Rhsmapstaff'))
+            if (getPageSetting("Rhstributestaff") != "undefined" && (Rshouldtributefarm == true || Rshouldshipfarm == true)) {
+                Rhloomequip("Rhstributestaff")
+            } else if (getPageSetting("Rhstimestaff") != "undefined" && (Rshouldtimefarm)) {
+                Rhloomequip("Rhstimestaff")
+            } else if (getPageSetting("Rhsmapstaff") != "undefined") {
+                Rhloomequip("Rhsmapstaff")
             }
         }
     }

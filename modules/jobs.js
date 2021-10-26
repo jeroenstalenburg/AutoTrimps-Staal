@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 MODULES["jobs"] = {};
 
 //Helium
@@ -572,7 +573,7 @@ function RbuyJobs() {
         }
     }
     if (Rshouldshipfarm) {
-    allIn = "Farmer";
+        allIn = "Farmer";
     }
     var desiredRatios = [0,0,0,0];
     if (allIn != "") {

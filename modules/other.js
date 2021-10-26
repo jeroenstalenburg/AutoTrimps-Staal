@@ -3572,11 +3572,11 @@ function shipfrag() {
         var shipfarmzone = getPageSetting('Rshipfarmzone');
         var shipfarmlevel = getPageSetting('Rshipfarmlevel');
 
-            var shipfarmlevelindex = shipfarmzone.indexOf(game.global.world);
-            var shiplevelzones = shipfarmlevel[shipfarmlevelindex];
+        var shipfarmlevelindex = shipfarmzone.indexOf(game.global.world);
+        var shiplevelzones = shipfarmlevel[shipfarmlevelindex];
         
         if (getPageSetting('Rshipfarmfrag') == true) {
-        cost = shipfragmin(shiplevelzones);
+            cost = shipfragmin(shiplevelzones);
         }
 
         if (game.resources.fragments.owned >= cost) return true;
