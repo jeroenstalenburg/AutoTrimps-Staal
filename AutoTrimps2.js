@@ -310,8 +310,8 @@ function mainLoop() {
 
     // RJobs
     if (!(game.global.challengeActive == 'Quest' && game.global.world > 5) && getPageSetting('RBuyJobsNew') == 1) {
-      RworkerRatios();
-      RbuyJobs();
+        RworkerRatios();
+        RbuyJobs();
     } else if (!(game.global.challengeActive == 'Quest' && game.global.world > 5) && getPageSetting('RBuyJobsNew') == 2) {
         RbuyJobs();
     }
