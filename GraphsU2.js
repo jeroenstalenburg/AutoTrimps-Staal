@@ -786,7 +786,7 @@ setInterval(getLootData2, 15000);
         }
     }
 
-    const oldJestimpLoot = game.badGuys.Jestimp.loot;
+    var oldJestimpLoot = game.badGuys.Jestimp.loot;
     game.badGuys.Jestimp.loot =
         function() {
             storeResAmts2();
@@ -800,7 +800,7 @@ setInterval(getLootData2, 15000);
             return toReturn;
         };
 
-    const oldChronoimpLoot = game.badGuys.Chronoimp.loot;
+    var oldChronoimpLoot = game.badGuys.Chronoimp.loot;
     game.badGuys.Chronoimp.loot =
         function() {
             storeResAmts2();
@@ -814,7 +814,7 @@ setInterval(getLootData2, 15000);
             return toReturn;
         };
 
-    const oldFunction = window.addResCheckMax;
+    var oldFunction = window.addResCheckMax;
     window.addResCheckMax = (a, b, c, d, e, f) => filterLoot(a, b, null, d, f) || oldFunction(a, b, c, d, e, f);
 })();
 

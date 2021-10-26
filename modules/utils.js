@@ -23,7 +23,7 @@ function safeSetItems(a,b){try{localStorage.setItem(a,b)}catch(c){22==c.code&&de
 
 function serializeSettings() {
     return JSON.stringify(Object.keys(autoTrimpSettings).reduce((v, k) => {
-        const el = autoTrimpSettings[k];
+        var el = autoTrimpSettings[k];
         switch (el.type) {
         case 'boolean':
             return v[k] = el.enabled, v;

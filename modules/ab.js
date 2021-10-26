@@ -6,11 +6,11 @@ function getCurrentAB(effect) {
   if (effect == false) {
     return autoBattle.enemyLevel;
   } else {
-    const poison = autoBattle.enemy.poisonResist;
-    const bleed = autoBattle.enemy.bleedResist;
-    const shock = autoBattle.enemy.shockResist;
+    var poison = autoBattle.enemy.poisonResist;
+    var bleed = autoBattle.enemy.bleedResist;
+    var shock = autoBattle.enemy.shockResist;
 
-    const lowestResist = Math.min(poison, bleed, shock);
+    var lowestResist = Math.min(poison, bleed, shock);
 
     let outEffect = '';
     if (poison == lowestResist) {
@@ -28,7 +28,7 @@ function getCurrentAB(effect) {
 }
 
 function checkPreset(presetSlot) {
-  for (const item in autoBattle.items) {
+  for (var item in autoBattle.items) {
     if (autoBattle.items[item].equipped &&
         autoBattle.presets['p' + presetSlot].indexOf(item) == -1) {
       return false;
@@ -38,7 +38,7 @@ function checkPreset(presetSlot) {
 }
 
 function ABcheck() {
-  const winning = (autoBattle.sessionEnemiesKilled >=
+  var winning = (autoBattle.sessionEnemiesKilled >=
                    autoBattle.sessionTrimpsKilled);
 
   if (winning) return 0;
@@ -75,9 +75,9 @@ function ABswitch() {
 }
 
 function ABdustsimple() {
-  const equips = [];
+  var equips = [];
 
-  for (const item in autoBattle.items) {
+  for (var item in autoBattle.items) {
     if (autoBattle.items[item].equipped) {
       equips.push([item, autoBattle.upgradeCost(item)]);
     }
@@ -91,9 +91,9 @@ function ABdustsimple() {
 }
 
 function ABdustsimplenonhid() {
-  const equips = [];
+  var equips = [];
 
-  for (const item in autoBattle.items) {
+  for (var item in autoBattle.items) {
     if (!autoBattle.items[item].equipped && !autoBattle.items[item].hidden) {
       equips.push([item, autoBattle.upgradeCost(item)]);
     }
@@ -107,20 +107,20 @@ function ABdustsimplenonhid() {
 }
 
 function ABfarmsave() {
-  const equips = [];
+  var equips = [];
 
-  for (const item in autoBattle.items) {
+  for (var item in autoBattle.items) {
     if (autoBattle.items[item].equipped) {
       equips.push(item);
     }
   }
 
-  const dustps = parseInt(autoBattle.getDustPs());
+  var dustps = parseInt(autoBattle.getDustPs());
 
   let bestdust = 0;
   if (autoBattle.sessionEnemiesKilled > 2 && autoBattle.sessionEnemiesKilled > autoBattle.sessionTrimpsKilled) bestdust = dustps;
 
-  const string = [autoBattle.enemyLevel, bestdust, equips];
+  var string = [autoBattle.enemyLevel, bestdust, equips];
 
   if (getPageSetting('RABfarmstring') == '-1') {
     setPageSetting('RABfarmstring', string);
@@ -144,7 +144,7 @@ function ABfarmswitch() {
   }
 
   if (match) {
-    const preset = getPageSetting('RABfarmstring')[2];
+    var preset = getPageSetting('RABfarmstring')[2];
     let plength = preset.length;
     if (plength > autoBattle.getMaxItems()) plength = autoBattle.getMaxItems();
     for (let item in autoBattle.items) {
@@ -170,7 +170,7 @@ function ABlevelswitch(level) {
 function ABsolver() {
   if (autoBattle.autoLevel) autoBattle.toggleAutoLevel();
 
-  const max = autoBattle.maxEnemyLevel;
+  var max = autoBattle.maxEnemyLevel;
   let items = [];
   let level = [];
   let contract = '';

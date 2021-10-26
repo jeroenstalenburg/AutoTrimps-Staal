@@ -136,7 +136,7 @@ function autoMagmiteSpender() {
                     if (EffObj.miCostPerPct <= CapObj.miCostPerPct)
                         item = EffObj.name;
                     else {
-                        const supCost = sup.cost();
+                        var supCost = sup.cost();
                         var wall = getPageSetting('SupplyWall');
                         if (!wall)
                             item = (CapObj.cost <= supCost) ?

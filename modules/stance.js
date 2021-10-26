@@ -35,7 +35,7 @@ function autoStance() {
     var enemyHealth = enemy.health;
     var enemyDamage = calcBadGuyDmg(enemy,null,true,true);
     var critMulti = 1;
-    const ignoreCrits = getPageSetting('IgnoreCrits');
+    var ignoreCrits = getPageSetting('IgnoreCrits');
     var isCrushed = false;
     var isCritVoidMap = false;
     var isCritDaily = false;
@@ -200,7 +200,7 @@ function autoStanceCheck(enemyCrit) {
     var enemyHealth = enemy.health;
     var enemyDamage = calcBadGuyDmg(enemy,null,true,true,true);
     var critMulti = 1;
-    const ignoreCrits = getPageSetting('IgnoreCrits');
+    var ignoreCrits = getPageSetting('IgnoreCrits');
     var isCrushed = false;
     var isCritVoidMap = false;
     var isCritDaily = false;

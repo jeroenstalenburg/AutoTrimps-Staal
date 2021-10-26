@@ -1,18 +1,18 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-const ATversion='Staal v0.1';
-const atscript=document.getElementById('AutoTrimps-script');
+var ATversion='Staal v0.1';
+var atscript=document.getElementById('AutoTrimps-script');
 let basepath='https://jeroenstalenburg.github.io/AutoTrimps-Staal/';
-const modulepath='modules/';
+var modulepath='modules/';
 null!==atscript&&(basepath=atscript.src.replace(/AutoTrimps2\.js$/, ''));
 function ATscriptLoad(a, b) {
   null==b&&debug(
       'Wrong Syntax. Script could not be loaded. Try ATscriptLoad(modulepath, \'example.js\'); ');
-  const c=document.createElement('script');
+  var c=document.createElement('script');
   null==a&&(a=''), c.src=basepath+a+b+'.js', c.id=b+'_MODULE', document.head.appendChild(c);
 }
 function ATscriptUnload(a) {
-  const b=document.getElementById(a+'_MODULE');
+  var b=document.getElementById(a+'_MODULE');
   b&&(document.head.removeChild(b), debug('Removing '+a+'_MODULE', 'other'));
 }
 ATscriptLoad(modulepath, 'utils');
@@ -26,13 +26,13 @@ function initializeAutoTrimps() {
     'equipment', 'gather', 'stance', 'maps', 'breedtimer',
     'dynprestige', 'fight', 'scryer', 'magmite', 'nature',
     'other', 'perks', 'fight-info', 'performance', 'ab'];
-  for (const m in ATmoduleList) {
+  for (var m in ATmoduleList) {
     ATscriptLoad(modulepath, ATmoduleList[m]);
   }
   debug('AutoTrimps - Staal Fork Loaded!', '*spinner3');
 }
 
-const changelogList = [];
+var changelogList = [];
 changelogList.push({date: '15/05/2021', version: 'v4.5.0', description: '<b>v5.5.0</b> Seperated Tribute and Time farm. Added automation for Pandemonium, Alchemy and Spire Assault. Updated calcs. Added an option to calc frenzy. Credits to August for adding Staff swap and fixing a few bugs. ', isNew: true});
 changelogList.push({date: '15/09/2020', version: 'v4.4.1', description: '<b>v5.4.1</b> Fixed things. Check your TF settings U2 people i added a toggle', isNew: false});
 changelogList.push({date: '06/09/2020', version: 'v4.4.0', description: '<b>v5.4.0</b> There is not enough space to describe how much stuff has changed. But its got all 5.4 content ready. <b>CHANGED THE WAY JOBS, GEAR, BUILDINGS WORKS! CHECK SETTINGS!</b> ', isNew: false});
@@ -48,22 +48,22 @@ function assembleChangelog(a, b, c, d) {
 }
 function printChangelog() {
   let body='';
-  for (const i in changelogList) {
-    const $item = changelogList[i];
-    const result = assembleChangelog($item.date, $item.version, $item.description, $item.isNew);
+  for (var i in changelogList) {
+    var $item = changelogList[i];
+    var result = assembleChangelog($item.date, $item.version, $item.description, $item.isNew);
     body+=result;
   }
-  const footer =
+  var footer =
         '\'<b>Staal Fork</b>';
-  const action = 'cancelTooltip()';
-  const title = 'Script Update Notice<br>' + ATversion;
-  const acceptBtnText = 'Thank you for playing AutoTrimps. Accept and Continue.';
-  const hideCancel = true;
+  var action = 'cancelTooltip()';
+  var title = 'Script Update Notice<br>' + ATversion;
+  var acceptBtnText = 'Thank you for playing AutoTrimps. Accept and Continue.';
+  var hideCancel = true;
   tooltip('confirm', null, 'update', body+footer, action, title, acceptBtnText, null, hideCancel);
 }
 
-const runInterval = 100;
-const startupDelay = 4000;
+var runInterval = 100;
+var startupDelay = 4000;
 
 setTimeout(delayStart, startupDelay);
 
@@ -97,30 +97,30 @@ function delayStartAgain() {
 }*/
 
 let ATrunning = true;
-const ATmessageLogTabVisible = true;
-const enableDebug = true;
+var ATmessageLogTabVisible = true;
+var enableDebug = true;
 
 var autoTrimpSettings = {};
 var MODULES = {};
 var MODULESdefault = {};
-const ATMODULES = {};
+var ATMODULES = {};
 var ATmoduleList = [];
 
 let bestBuilding;
 let scienceNeeded;
 let RscienceNeeded;
-const breedFire = false;
+var breedFire = false;
 
-const shouldFarm = false;
-const RshouldFarm = false;
-const enoughDamage = true;
-const RenoughDamage = true;
-const enoughHealth = true;
-const RenoughHealth = true;
+var shouldFarm = false;
+var RshouldFarm = false;
+var enoughDamage = true;
+var RenoughDamage = true;
+var enoughHealth = true;
+var RenoughHealth = true;
 
-const baseDamage = 0;
-const baseBlock = 0;
-const baseHealth = 0;
+var baseDamage = 0;
+var baseBlock = 0;
+var baseHealth = 0;
 
 let preBuyAmt;
 let preBuyFiring;
@@ -130,11 +130,11 @@ let preBuymaxSplit;
 let currentworld = 0;
 let lastrunworld = 0;
 let aWholeNewWorld = false;
-const needGymystic = true;
+var needGymystic = true;
 let heirloomFlag = false;
-const daily3 = false;
+var daily3 = false;
 let heirloomCache = game.global.heirloomsExtra.length;
-const magmiteSpenderChanged = false;
+var magmiteSpenderChanged = false;
 let lastHeliumZone = 0;
 let lastRadonZone = 0;
 
@@ -220,7 +220,7 @@ function mainLoop() {
     }
     if (getPageSetting('BetterAutoFight') == 1) betterAutoFight();
     if (getPageSetting('BetterAutoFight') == 2) betterAutoFight3();
-    const forcePrecZ = (getPageSetting('ForcePresZ') < 0) || (game.global.world < getPageSetting('ForcePresZ'));
+    var forcePrecZ = (getPageSetting('ForcePresZ') < 0) || (game.global.world < getPageSetting('ForcePresZ'));
     if (getPageSetting('DynamicPrestige2') > 0 && forcePrecZ) prestigeChanging2();
     else autoTrimpSettings.Prestige.selected = document.getElementById('Prestige').value;
     if (game.global.world > 5 && game.global.challengeActive == 'Daily' && getPageSetting('avoidempower') == true && typeof game.global.dailyChallenge.empower !== 'undefined' && !game.global.preMapsActive && !game.global.mapsActive && game.global.soldierHealth > 0) avoidempower();
@@ -252,9 +252,9 @@ function mainLoop() {
     if (game.global.mapsActive && getPageSetting('game.global.universe == 1 && BWraid') == true && game.global.world == getPageSetting('BWraidingz') && getCurrentMapObject().level <= getPageSetting('BWraidingmax')) buyWeps();
 
     // Golden
-    const agu = getPageSetting('AutoGoldenUpgrades');
-    const dagu = getPageSetting('dAutoGoldenUpgrades');
-    const cagu = getPageSetting('cAutoGoldenUpgrades');
+    var agu = getPageSetting('AutoGoldenUpgrades');
+    var dagu = getPageSetting('dAutoGoldenUpgrades');
+    var cagu = getPageSetting('cAutoGoldenUpgrades');
     if (agu && agu != 'Off' && (!game.global.runningChallengeSquared && game.global.challengeActive != 'Daily')) autoGoldenUpgradesAT(agu);
     if (dagu && dagu != 'Off' && game.global.challengeActive == 'Daily') autoGoldenUpgradesAT(dagu);
     if (cagu && cagu != 'Off' && game.global.runningChallengeSquared) autoGoldenUpgradesAT(cagu);
@@ -360,9 +360,9 @@ function mainLoop() {
     }
 
     // RGolden
-    const Ragu = getPageSetting('RAutoGoldenUpgrades');
-    const Rdagu = getPageSetting('RdAutoGoldenUpgrades');
-    const Rcagu = getPageSetting('RcAutoGoldenUpgrades');
+    var Ragu = getPageSetting('RAutoGoldenUpgrades');
+    var Rdagu = getPageSetting('RdAutoGoldenUpgrades');
+    var Rcagu = getPageSetting('RcAutoGoldenUpgrades');
     if (Ragu && Ragu != 'Off' && (!game.global.runningChallengeSquared && game.global.challengeActive != 'Daily')) RautoGoldenUpgradesAT(Ragu);
     if (Rdagu && Rdagu != 'Off' && game.global.challengeActive == 'Daily') RautoGoldenUpgradesAT(Rdagu);
     if (Rcagu && Rcagu != 'Off' && game.global.runningChallengeSquared) RautoGoldenUpgradesAT(Rcagu);

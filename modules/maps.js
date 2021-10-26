@@ -238,7 +238,7 @@ function autoMap() {
 
     //Prestige
     if ((getPageSetting('ForcePresZ') >= 0) && ((game.global.world + extraMapLevels) >= getPageSetting('ForcePresZ'))) {
-        const prestigeList = ['Supershield', 'Dagadder', 'Megamace', 'Polierarm', 'Axeidic', 'Greatersword', 'Harmbalest', 'Bootboost', 'Hellishmet', 'Pantastic', 'Smoldershoulder', 'Bestplate', 'GambesOP'];
+        var prestigeList = ['Supershield', 'Dagadder', 'Megamace', 'Polierarm', 'Axeidic', 'Greatersword', 'Harmbalest', 'Bootboost', 'Hellishmet', 'Pantastic', 'Smoldershoulder', 'Bestplate', 'GambesOP'];
         needPrestige = (offlineProgress.countMapItems(game.global.world) !== 0);
     } else
         needPrestige = prestige != "Off" && game.mapUnlocks[prestige] && game.mapUnlocks[prestige].last <= (game.global.world + extraMapLevels) - 5 && game.global.challengeActive != "Frugal";
@@ -259,9 +259,9 @@ function autoMap() {
     }
 
     if ((needPrestige || skippedPrestige) && (getPageSetting('PrestigeSkip1_2') == 1 || getPageSetting('PrestigeSkip1_2') == 3)) {
-        const prestigeList = ['Dagadder', 'Megamace', 'Polierarm', 'Axeidic', 'Greatersword', 'Harmbalest'];
-        const numLeft = prestigeList.filter(prestige => game.mapUnlocks[prestige].last <= (game.global.world + extraMapLevels) - 5);
-        const shouldSkip = numLeft <= customVars.UnearnedPrestigesRequired;
+        var prestigeList = ['Dagadder', 'Megamace', 'Polierarm', 'Axeidic', 'Greatersword', 'Harmbalest'];
+        var numLeft = prestigeList.filter(prestige => game.mapUnlocks[prestige].last <= (game.global.world + extraMapLevels) - 5);
+        var shouldSkip = numLeft <= customVars.UnearnedPrestigesRequired;
         if (shouldSkip != skippedPrestige) {
             needPrestige = !needPrestige;
             skippedPrestige = !skippedPrestige;
@@ -290,7 +290,7 @@ function autoMap() {
     var ourBaseDamage2 = ourBaseDamage;
     ourBaseDamage2 /= mapbonusmulti;
     var pierceMod = (game.global.brokenPlanet) ? getPierceAmt() : 0;
-    const FORMATION_MOD_1 = game.upgrades.Dominance.done ? 2 : 1;
+    var FORMATION_MOD_1 = game.upgrades.Dominance.done ? 2 : 1;
     enoughHealth = (calcOurHealth() / FORMATION_MOD_1 > customVars.numHitsSurvived * (enemyDamage - calcOurBlock() / FORMATION_MOD_1 > 0 ? enemyDamage - calcOurBlock() / FORMATION_MOD_1 : enemyDamage * pierceMod));
     enoughDamage = (ourBaseDamage * mapenoughdamagecutoff > enemyHealth);
     updateAutoMapsStatus();
@@ -341,7 +341,7 @@ function autoMap() {
         } else if (lastMapWeWereIn) {
             prestigeitemsleft = addSpecials(true, true, lastMapWeWereIn);
         }
-        const prestigeList = ['Dagadder', 'Megamace', 'Polierarm', 'Axeidic', 'Greatersword', 'Harmbalest'];
+        var prestigeList = ['Dagadder', 'Megamace', 'Polierarm', 'Axeidic', 'Greatersword', 'Harmbalest'];
         var numUnbought = 0;
         for (var i = 0, len = prestigeList.length; i < len; i++) {
             var p = prestigeList[i];
