@@ -100,7 +100,7 @@ let ATrunning = true;
 const ATmessageLogTabVisible = true;
 const enableDebug = true;
 
-const autoTrimpSettings = {};
+var autoTrimpSettings = {};
 var MODULES = {};
 var MODULESdefault = {};
 const ATMODULES = {};
