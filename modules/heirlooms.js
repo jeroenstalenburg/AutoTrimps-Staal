@@ -452,7 +452,6 @@ function Rhloomequip(name) {
 
 
 function Rheirloomswap() {
-    
     //Swapping Shields
     if (getPageSetting('Rhsshield') != false) {
         if (getPageSetting('Rhsz') > 0 && game.global.world < getPageSetting('Rhsz')) {
@@ -464,10 +463,12 @@ function Rheirloomswap() {
     }
     //Swapping Staffs
     if (getPageSetting('Rhsstaff') != false) {
+        //World Staff
         if (game.global.mapsActive == false) {
             if (getPageSetting('Rhsworldstaff') != "undefined") {
                 Rhloomequip(getPageSetting('Rhsworldstaff'))
             }
+        //Map Staffs
         } else {
             if (getPageSetting('Rhstributestaff') != "undefined" && (Rshouldtributefarm == true || Rshouldshipfarm == true)) {
                 Rhloomequip(getPageSetting('Rhstributestaff'))
