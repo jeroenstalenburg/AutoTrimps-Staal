@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 var animated = (game.options.menu.showHeirloomAnimations.enabled) ? "animated " : "";
 var hrlmProtBtn1=document.createElement('DIV');hrlmProtBtn1.setAttribute('class','noselect heirloomBtnActive heirBtn'),hrlmProtBtn1.setAttribute('onclick','protectHeirloom(this, true)'),hrlmProtBtn1.innerHTML='Protect/Unprotect',hrlmProtBtn1.id='protectHeirloomBTN1';var hrlmProtBtn2=document.createElement('DIV');hrlmProtBtn2.setAttribute('class','noselect heirloomBtnActive heirBtn'),hrlmProtBtn2.setAttribute('onclick','protectHeirloom(this, true)'),hrlmProtBtn2.innerHTML='Protect/Unprotect',hrlmProtBtn2.id='protectHeirloomBTN2';var hrlmProtBtn3=document.createElement('DIV');hrlmProtBtn3.setAttribute('class','noselect heirloomBtnActive heirBtn'),hrlmProtBtn3.setAttribute('onclick','protectHeirloom(this, true)'),hrlmProtBtn3.innerHTML='Protect/Unprotect',hrlmProtBtn3.id='protectHeirloomBTN3',document.getElementById('equippedHeirloomsBtnGroup').appendChild(hrlmProtBtn1),document.getElementById('carriedHeirloomsBtnGroup').appendChild(hrlmProtBtn2),document.getElementById('extraHeirloomsBtnGroup').appendChild(hrlmProtBtn3);
 function protectHeirloom(a,b){var c=game.global.selectedHeirloom,d=c[1],e=game.global[d];if(-1!=c[0])var e=e[c[0]];b&&(e.protected=!e.protected),a||(d.includes("Equipped")?a=document.getElementById("protectHeirloomBTN1"):"heirloomsCarried"==d?a=document.getElementById("protectHeirloomBTN2"):"heirloomsExtra"==d&&(a=document.getElementById("protectHeirloomBTN3"))),a&&(a.innerHTML=e.protected?"UnProtect":"Protect")}
@@ -435,11 +436,26 @@ function generateHeirloomIcon(heirloom, location, number){
 }
 
 //Radon
+function Rhloom(name){
+    for(let loom of game.global.heirloomsCarried) {
+        if(loom.name==name){
+            return loom;
+        }
+    }
+}
 function Rhsshield1(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhs1'))return loom;}
 function Rhsshield2(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhs2'))return loom;}
 function Rhsworldstaff(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhsworldstaff'))return loom;}
 function Rhsmapstaff(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhsmapstaff'))return loom;}
 function Rhstributestaff(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhstributestaff'))return loom;}
+
+function Rhloomequip(name) {
+    let loom = Rhloom(name)
+    if (loom != "undefined" && game.global.ShieldEquipped.name != name) {
+        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
+        equipHeirloom();
+    }
+}
 
 function Rhsequip1() {
     if (Rhsshield1() != "undefined" && game.global.ShieldEquipped.name != getPageSetting('Rhs1')) {
@@ -478,22 +494,27 @@ function Rheirloomswap() {
     //Swapping Shields
     if (getPageSetting('Rhsshield') != false) {
         if (getPageSetting('Rhsz') > 0 && game.global.world < getPageSetting('Rhsz')) {
-            Rhsequip1();
+            // Rhsequip1();
+            Rhloomequip(getPageSetting('Rhs1'))
         }
         if (getPageSetting('Rhsz') > 0 && game.global.world >= getPageSetting('Rhsz')) {
-            Rhsequip2();
+            // Rhsequip2();
+            Rhloomequip(getPageSetting('Rhs2'))
         }
     }
     //Swapping Staffs
     if (getPageSetting('Rhsstaff') != false) {
         if (getPageSetting('Rhsworldstaff') != "undefined" && game.global.mapsActive == false) {
-            Rhsworldstaffequip();
+            // Rhsworldstaffequip();
+            Rhloomequip(getPageSetting('Rhsworldstaff'))
         }
         if (getPageSetting('Rhsmapstaff') != "undefined" && (Rshouldtributefarm == false || getPageSetting('Rhstributestaff') == "undefined") && game.global.mapsActive == true) {
-            Rhsmapstaffequip();
+            // Rhsmapstaffequip();
+            Rhloomequip(getPageSetting('Rhsmapstaff'))
         }
         if (getPageSetting('Rhstributestaff') != "undefined" && getPageSetting('Rhsstaff') && Rshouldtributefarm == true && game.global.mapsActive == true) {
-            Rhstributestaffequip();
+            // Rhstributestaffequip();
+            Rhloomequip(getPageSetting('Rhstributestaff'))
         }
     }
 }
