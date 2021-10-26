@@ -436,13 +436,6 @@ function generateHeirloomIcon(heirloom, location, number){
 }
 
 //Radon
-function Rhloom(name){
-    for(let loom of game.global.heirloomsCarried) {
-        if(loom.name==name){
-            return loom;
-        }
-    }
-}
 function Rhsshield1(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhs1'))return loom;}
 function Rhsshield2(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhs2'))return loom;}
 function Rhsworldstaff(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhsworldstaff'))return loom;}
@@ -450,7 +443,13 @@ function Rhsmapstaff(){for(loom of game.global.heirloomsCarried)if(loom.name==ge
 function Rhstributestaff(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('Rhstributestaff'))return loom;}
 
 function Rhloomequip(name) {
-    let loom = Rhloom(name)
+    let loom = "undefined"
+    for(loom of game.global.heirloomsCarried) {
+        if(loom.name==name){
+            break
+        }
+        loom = "undefined"
+    }
     if (loom != "undefined" && game.global.ShieldEquipped.name != name) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
