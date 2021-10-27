@@ -463,10 +463,11 @@ function ABsolver() {
   // Contract
 
   if (contract == "" && autoBattle.activeContract == "") {
+    let lowest_zone = 9999999
     for (let item in autoBattle.items) {
-      if (!autoBattle.items[item].owned) {
+      if (!autoBattle.items[item].owned && autoBattle.items[item].zone < lowest_zone) {
         contract = item;
-        break
+        lowest_zone = autoBattle.items[item].zone
       }
     }
   }
