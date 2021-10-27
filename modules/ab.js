@@ -462,6 +462,14 @@ function ABsolver() {
 
   // Contract
 
+  if (contract == "" && autoBattle.activeContract == "") {
+    for (let item in autoBattle.items) {
+      if (!autoBattle.items[item].owned) {
+        contract = item;
+      }
+    }
+  }
+
   if (contract != '' && !autoBattle.items[contract].owned) {
     autoBattle.acceptContract(contract);
     if (autoBattle.activeContract == contract) {
