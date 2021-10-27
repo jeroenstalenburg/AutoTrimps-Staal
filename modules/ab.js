@@ -466,6 +466,7 @@ function ABsolver() {
     for (let item in autoBattle.items) {
       if (!autoBattle.items[item].owned) {
         contract = item;
+        break
       }
     }
   }
