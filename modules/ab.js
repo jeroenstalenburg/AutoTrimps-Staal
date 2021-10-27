@@ -462,7 +462,7 @@ function ABsolver() {
 
   // Contract
 
-  if (contract == "" && autoBattle.activeContract == "") {
+  if (autoBattle.activeContract == "" && contract == "") {
     let lowest_zone = 9999999
     for (let item in autoBattle.items) {
       if (!autoBattle.items[item].owned && autoBattle.items[item].zone < lowest_zone) {
@@ -474,10 +474,9 @@ function ABsolver() {
 
   if (contract != '' && !autoBattle.items[contract].owned) {
     autoBattle.acceptContract(contract);
-    if (autoBattle.activeContract == contract) {
-      if (game.global.world >= autoBattle.items[contract].zone) {
-        contractVoid = true;
-      }
-    }
+  }
+
+  if (game.global.world >= autoBattle.items[autoBattle.activeContract].zone) {
+    contractVoid = true;
   }
 }
