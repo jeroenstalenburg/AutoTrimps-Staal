@@ -476,7 +476,7 @@ function ABsolver() {
     autoBattle.acceptContract(contract);
   }
 
-  if (game.global.world >= autoBattle.items[autoBattle.activeContract].zone) {
+  if (game.global.world >= autoBattle.items[autoBattle.activeContract].zone && game.global.lastClearedCell > Rvoidscell) {
     contractVoid = true;
   }
 }
