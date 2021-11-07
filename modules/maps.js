@@ -943,10 +943,10 @@ function RautoMap() {
 
     //Contract
     if (autoBattle.activeContract != '') {
-    if (getPageSetting('RABsolve') == true && contractVoid) {
+        if (getPageSetting('RABsolve') == true && contractVoid) {
             RneedToVoid = true;
-        RdoVoids = true;
-    }
+            RdoVoids = true;
+        }
     }
 
     //Calc
@@ -988,7 +988,6 @@ function RautoMap() {
     Rshouldstormfarm = false;
     Rshouldequipfarm = false;
     Rshouldshipfarm = false;
-    contractVoid = false;
     Rshouldmayhem = 0;
     Rshouldpanda = false;
     if (ourBaseDamage > 0) {
