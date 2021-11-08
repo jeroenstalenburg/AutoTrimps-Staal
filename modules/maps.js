@@ -2219,7 +2219,7 @@ function RautoMap() {
                         }
                         if (!insanityfragcheck && game.global.mapsActive && insanityfragmappybought && insanityprefragmappy != undefined && Rshouldinsanityfarm) {
                             if (insanityfrag() == false) {
-                                if (!game.global.repeatMap) {
+                                if (game.global.repeatMap) {
                                     repeatClicked();
                                 }
                             } else if (insanityfrag() == true) {
