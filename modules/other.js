@@ -3291,11 +3291,11 @@ function insanityfrag() {
         var insanityfarmzone = getPageSetting('Rinsanityfarmzone');
         var insanityfarmlevel = getPageSetting('Rinsanityfarmlevel');
 
-            var insanityfarmlevelindex = insanityfarmzone.indexOf(game.global.world);
-            var insanitylevelzones = insanityfarmlevel[insanityfarmlevelindex];
+        var insanityfarmlevelindex = insanityfarmzone.indexOf(game.global.world);
+        var insanitylevelzones = insanityfarmlevel[insanityfarmlevelindex];
         
         if (getPageSetting('Rinsanityfarmfrag') == true) {
-        cost = insanityfragmin(insanitylevelzones);
+            cost = insanityfragmin(insanitylevelzones);
         }
 
         if (game.resources.fragments.owned >= cost) return true;
