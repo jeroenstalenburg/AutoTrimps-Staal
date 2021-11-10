@@ -1,7 +1,7 @@
 # AutoTrimps - Staal Fork
 
 ## Current Version - Ongoing Development!
-- Staal Fork. All changes made by Staal using Zek as base. Currently up-to-date as of 06/2020.
+- Staal Fork. All changes made by Staalli using Zek as base. Currently up-to-date as of 10/2021.
 
 ## Script Installation
 
