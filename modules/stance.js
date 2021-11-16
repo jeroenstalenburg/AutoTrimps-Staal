@@ -294,8 +294,13 @@ function windStance() {
     if (!game.upgrades.Formations.done) return;
     if (game.global.world <= 70) return;
     var stancey = 2;
+    if (getPageSetting('maploom') != 'undefined' && game.global.mapsActive == true) {
+        mapHeirloom();
+        setFormation(2);
+        return;
+    }
     if (game.global.challengeActive != "Daily") {
-    if (calcCurrentStance() == 5) {
+        if (calcCurrentStance() == 5) {
             stancey = 5;
             lowHeirloom();
         }
@@ -329,7 +334,7 @@ function windStance() {
         }
     }
     if (game.global.challengeActive == "Daily") {
-    if (calcCurrentStance() == 5) {
+        if (calcCurrentStance() == 5) {
             stancey = 5;
             dlowHeirloom();
         }

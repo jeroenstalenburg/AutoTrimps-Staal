@@ -850,9 +850,11 @@ function initializeAllSettings() {
     //Heirloom
     createSetting('highdmg', 'WS: High Damage', '<b>HIGH DAMAGE HEIRLOOM</b><br><br>Enter the name of your high damage heirloom. This is your heirloom that you will use normally. ', 'textValue', 'undefined', null, 'Heirlooms');
     createSetting('lowdmg', 'WS: Low Damage', '<b>LOW DAMAGE HEIRLOOM</b><br><br>Enter the name of your low damage heirloom. This is the heirloom that you will use for windstacking. ', 'textValue', 'undefined', null, 'Heirlooms');
+    createSetting('maploom', 'Map', '<b>MAX DAMAGE HEIRLOOM</b><br><br>Enter the name of your max damage heirloom. This is the heirloom that you will use for maps where you do not need void map chance. ', 'textValue', 'undefined', null, 'Heirlooms');
+
 
     //Heirloom Swapping
-    document.getElementById('lowdmg').parentNode.insertAdjacentHTML('afterend', '<br>');
+    document.getElementById('maploom').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rhs', 'Heirloom Swapping', 'Heirloom swapping master button. Turn this on to allow heirloom swapping and its associated settings. ', 'boolean', false, null, 'Heirlooms');
     
     //Shield Swapping
