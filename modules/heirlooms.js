@@ -442,8 +442,10 @@ function heirloomSwap() {
             }
         }
     } else {
-        // In map equip map heirloom
-        heirloomequip('maploom');
+        // In higher lvl map equip map heirloom
+        if (getCurrentMapObject().level > game.global.world){
+            heirloomequip('maploom');
+        }
     }
     windstackloomequip = false;
 }
