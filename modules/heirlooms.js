@@ -202,7 +202,6 @@ function heirloomequip(settingName) {
             break
         }
     }
-    // debug('Equiping Heirloom ' + hname + '  ' + loom);
     if (loom != "undefined" && (game.global.ShieldEquipped.name != hname && game.global.ShieldEquipped.name != hname)) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
