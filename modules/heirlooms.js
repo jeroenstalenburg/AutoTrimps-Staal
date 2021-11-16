@@ -208,23 +208,6 @@ function heirloomequip(settingName) {
     }
 }
 
-function lowHeirloom() {
-    heirloomequip('lowdmg');
-}
-
-
-function highHeirloom() {
-    heirloomequip('highdmg');
-}
-
-function dlowHeirloom() {
-    heirloomequip('dlowdmg');
-}
-
-function dhighHeirloom() {
-    heirloomequip('dhighdmg');
-}
-
 
 //Nu
 
