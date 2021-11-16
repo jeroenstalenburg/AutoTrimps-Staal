@@ -195,7 +195,8 @@ function autoheirlooms3() {
 //Loom Swapping
 function heirloomequip(settingName) {
     hname = getPageSetting(settingName)
-    let loom = "undefined"
+    debug('Equiping Heirloom ' + hname);
+    let loom = "undefined";
     for(tloom of game.global.heirloomsCarried) {
         if(loom.name==hname){
             loom = tloom
