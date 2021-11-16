@@ -429,7 +429,7 @@ function generateHeirloomIcon(heirloom, location, number){
 function heirloomSwap() {
     if (game.global.mapsActive == false) {
         if (windstackloomequip) {
-            heirloomequip(windstackloomequip)
+            heirloomequip(windstackloomequip);
         } else {
             // If not Windstacking, equip world shield before z or after z
             if (getPageSetting("hsz") > 0) {
@@ -439,12 +439,12 @@ function heirloomSwap() {
                     heirloomequip('hs2');
                 }
             } else {
-                heirloomequip('hs1')
+                heirloomequip('hs1');
             }
         }
     } else {
         // In map equip map heirloom
-        heirloomequip('maploom')
+        heirloomequip('maploom');
     }
     windstackloomequip = false;
 }
