@@ -3,10 +3,10 @@ var animated = (game.options.menu.showHeirloomAnimations.enabled) ? "animated " 
 var hrlmProtBtn1=document.createElement('DIV');hrlmProtBtn1.setAttribute('class','noselect heirloomBtnActive heirBtn'),hrlmProtBtn1.setAttribute('onclick','protectHeirloom(this, true)'),hrlmProtBtn1.innerHTML='Protect/Unprotect',hrlmProtBtn1.id='protectHeirloomBTN1';var hrlmProtBtn2=document.createElement('DIV');hrlmProtBtn2.setAttribute('class','noselect heirloomBtnActive heirBtn'),hrlmProtBtn2.setAttribute('onclick','protectHeirloom(this, true)'),hrlmProtBtn2.innerHTML='Protect/Unprotect',hrlmProtBtn2.id='protectHeirloomBTN2';var hrlmProtBtn3=document.createElement('DIV');hrlmProtBtn3.setAttribute('class','noselect heirloomBtnActive heirBtn'),hrlmProtBtn3.setAttribute('onclick','protectHeirloom(this, true)'),hrlmProtBtn3.innerHTML='Protect/Unprotect',hrlmProtBtn3.id='protectHeirloomBTN3',document.getElementById('equippedHeirloomsBtnGroup').appendChild(hrlmProtBtn1),document.getElementById('carriedHeirloomsBtnGroup').appendChild(hrlmProtBtn2),document.getElementById('extraHeirloomsBtnGroup').appendChild(hrlmProtBtn3);
 function protectHeirloom(a,b){var c=game.global.selectedHeirloom,d=c[1],e=game.global[d];if(-1!=c[0])var e=e[c[0]];b&&(e.protected=!e.protected),a||(d.includes("Equipped")?a=document.getElementById("protectHeirloomBTN1"):"heirloomsCarried"==d?a=document.getElementById("protectHeirloomBTN2"):"heirloomsExtra"==d&&(a=document.getElementById("protectHeirloomBTN3"))),a&&(a.innerHTML=e.protected?"UnProtect":"Protect")}
 function newSelectHeirloom(a,b,c){selectHeirloom(a,b,c),protectHeirloom()}
-function highdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('highdmg'))return loom;}
-function lowdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('lowdmg'))return loom;}
-function dhighdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('dhighdmg'))return loom;}
-function dlowdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('dlowdmg'))return loom;}
+// function highdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('highdmg'))return loom;}
+// function lowdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('lowdmg'))return loom;}
+// function dhighdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('dhighdmg'))return loom;}
+// function dlowdmgshield(){for(loom of game.global.heirloomsCarried)if(loom.name==getPageSetting('dlowdmg'))return loom;}
 
 function getHeirloomEff(name, type) {
   if (type == "staff") {
@@ -195,15 +195,15 @@ function autoheirlooms3() {
 //Loom Swapping
 function heirloomequip(settingName) {
     hname = getPageSetting(settingName)
-    debug('Equiping Heirloom ' + hname);
     let loom = "undefined";
     for(tloom of game.global.heirloomsCarried) {
-        if(loom.name==hname){
+        if(tloom.name==hname){
             loom = tloom
             break
         }
     }
-    if (loom != "undefined" && game.global.ShieldEquipped.name != hname) {
+    // debug('Equiping Heirloom ' + hname + '  ' + loom);
+    if (loom != "undefined" && (game.global.ShieldEquipped.name != hname && game.global.ShieldEquipped.name != hname)) {
         selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
         equipHeirloom();
     }
@@ -428,7 +428,7 @@ function generateHeirloomIcon(heirloom, location, number){
 
 function heirloomSwap() {
     if (game.global.mapsActive == false) {
-        if (windstackloomequip) {
+        if (windstackloomequip != false) {
             heirloomequip(windstackloomequip);
         } else {
             // If not Windstacking, equip world shield before z or after z
