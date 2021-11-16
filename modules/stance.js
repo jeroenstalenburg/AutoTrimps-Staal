@@ -294,77 +294,72 @@ function windStance() {
     if (!game.upgrades.Formations.done) return;
     if (game.global.world <= 70) return;
     var stancey = 2;
-    if (getPageSetting('maploom') != 'undefined' && game.global.mapsActive == true) {
-        mapHeirloom();
-        setFormation(2);
-        return;
-    }
     if (game.global.challengeActive != "Daily") {
         if (calcCurrentStance() == 5) {
             stancey = 5;
-            lowHeirloom();
+            windstackloomequip = 'lowdmg';
         }
         if (calcCurrentStance() == 2) {
             stancey = 2;
-            lowHeirloom();
+            windstackloomequip = 'lowdmg';
         }
         if (calcCurrentStance() == 0) {
             stancey = 0;
-            lowHeirloom();
+            windstackloomequip = 'lowdmg';
         }
         if (calcCurrentStance() == 1) {
             stancey = 1;
-            lowHeirloom();
+            windstackloomequip = 'lowdmg';
         }
         if (calcCurrentStance() == 15) {
             stancey = 5;
-            highHeirloom();
+            windstackloomequip = 'highdmg';
         }
         if (calcCurrentStance() == 12) {
             stancey = 2;
-            highHeirloom();
+            windstackloomequip = 'highdmg';
         }
         if (calcCurrentStance() == 10) {
             stancey = 0;
-            highHeirloom();
+            windstackloomequip = 'highdmg';
         }
         if (calcCurrentStance() == 11) {
             stancey = 1;
-            highHeirloom();
+            windstackloomequip = 'highdmg';
         }
     }
     if (game.global.challengeActive == "Daily") {
         if (calcCurrentStance() == 5) {
             stancey = 5;
-            dlowHeirloom();
+            windstackloomequip = 'dlowdmg';
         }
         if (calcCurrentStance() == 2) {
             stancey = 2;
-            dlowHeirloom();
+            windstackloomequip = 'dlowdmg';
         }
         if (calcCurrentStance() == 0) {
             stancey = 0;
-            dlowHeirloom();
+            windstackloomequip = 'dlowdmg';
         }
         if (calcCurrentStance() == 1) {
             stancey = 1;
-            dlowHeirloom();
+            windstackloomequip = 'dlowdmg';
         }
         if (calcCurrentStance() == 15) {
             stancey = 5;
-            dhighHeirloom();
+            windstackloomequip = 'dhighdmg';
         }
         if (calcCurrentStance() == 12) {
             stancey = 2;
-            dhighHeirloom();
+            windstackloomequip = 'dhighdmg';
         }
         if (calcCurrentStance() == 10) {
             stancey = 0;
-            dhighHeirloom();
+            windstackloomequip = 'dhighdmg';
         }
         if (calcCurrentStance() == 11) {
             stancey = 1;
-            dhighHeirloom();
+            windstackloomequip = 'dhighdmg';
         }
     }
     setFormation(stancey);

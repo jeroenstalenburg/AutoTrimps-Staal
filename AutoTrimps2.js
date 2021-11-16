@@ -137,6 +137,7 @@ let heirloomCache = game.global.heirloomsExtra.length;
 var magmiteSpenderChanged = false;
 let lastHeliumZone = 0;
 let lastRadonZone = 0;
+var windstackloomequip = 0;
 
 function mainLoop() {
   if (ATrunning == false) return;
@@ -250,6 +251,9 @@ function mainLoop() {
     }
     if ((getPageSetting('BWraid') == true || getPageSetting('DailyBWraid') == true) && bwraidon) buyWeps();
     if (game.global.mapsActive && getPageSetting('game.global.universe == 1 && BWraid') == true && game.global.world == getPageSetting('BWraidingz') && getCurrentMapObject().level <= getPageSetting('BWraidingmax')) buyWeps();
+
+    // Heirlooms
+    heirloomSwap()
 
     // Golden
     var agu = getPageSetting('AutoGoldenUpgrades');

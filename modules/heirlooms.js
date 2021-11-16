@@ -212,21 +212,19 @@ function lowHeirloom() {
     heirloomequip('lowdmg');
 }
 
-function dlowHeirloom() {
-    heirloomequip('dlowdmg');
-}
 
 function highHeirloom() {
     heirloomequip('highdmg');
+}
+
+function dlowHeirloom() {
+    heirloomequip('dlowdmg');
 }
 
 function dhighHeirloom() {
     heirloomequip('dhighdmg');
 }
 
-function mapHeirloom() {
-    heirloomequip('maploom')
-}
 
 //Nu
 
@@ -442,6 +440,29 @@ function generateHeirloomIcon(heirloom, location, number){
     html += '" onmouseover="tooltip(\'Heirloom\', null, event, null, ' + locText + ')" onmouseout="tooltip(\'hide\')" onclick="newSelectHeirloom(';
     html += locText + ', this)"> <span class="' + icon + '"></span></span>';
     return html;
+}
+
+function heirloomSwap() {
+    if (game.global.mapsActive == false) {
+        if (windstackloomequip) {
+            heirloomequip(windstackloomequip)
+        } else {
+            // If not Windstacking, equip world shield before z or after z
+            if (getPageSetting("hsz") > 0) {
+                if (game.global.world < getPageSetting("hsz")) {
+                    heirloomequip('hs1');
+                } else {
+                    heirloomequip('hs2');
+                }
+            } else {
+                heirloomequip('hs1')
+            }
+        }
+    } else {
+        // In map equip map heirloom
+        heirloomequip('maploom')
+    }
+    windstackloomequip = false;
 }
 
 //Radon
