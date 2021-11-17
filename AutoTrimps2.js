@@ -255,6 +255,16 @@ function mainLoop() {
     // Heirlooms
     heirloomSwap()
 
+    // AB
+    if (game.stats.highestRadLevel.valueTotal() >= 75 && getPageSetting('RAB') == true) {
+      if (getPageSetting('RABpreset') == true) ABswitch();
+      if (getPageSetting('RABdustsimple') == 1) ABdustsimple();
+      else if (getPageSetting('RABdustsimple') == 2) ABdustsimplenonhid();
+      if (getPageSetting('RABfarm') == true) ABfarmsave();
+      if (getPageSetting('RABfarmswitch') == true) ABfarmswitch();
+      if (getPageSetting('RABsolve') == true) ABsolver();
+    }
+
     // Golden
     var agu = getPageSetting('AutoGoldenUpgrades');
     var dagu = getPageSetting('dAutoGoldenUpgrades');
