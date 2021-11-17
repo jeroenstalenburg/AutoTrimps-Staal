@@ -217,10 +217,7 @@ function doPortal(challenge) {
     autoheirlooms3();
     }
     if (game.global.ShieldEquipped.name != getPageSetting('highdmg') || game.global.ShieldEquipped.name != getPageSetting('dhighdmg')) {
-        if (highdmgshield() != undefined) {
-        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-        equipHeirloom();
-    }
+        heirloomequip('highdmg');
     }
     /*if (getPageSetting('autonu') == true && getPageSetting('heirloomnu') != undefined) {
         spendNu(); spendNu(); spendNu(); spendNu(); spendNu(); spendNu();
@@ -422,13 +419,10 @@ function RdailyAutoPortal() {
 function RdoPortal(challenge) {
     if(!game.global.portalActive) return;
     if (getPageSetting('autoheirlooms') == true && getPageSetting('typetokeep') != 'None' && getPageSetting('raretokeep') != 'None') {
-    autoheirlooms3();
+        autoheirlooms3();
     }
     if (game.global.ShieldEquipped.name != getPageSetting('highdmg') || game.global.ShieldEquipped.name != getPageSetting('dhighdmg')) {
-        if (highdmgshield() != undefined) {
-        selectHeirloom(game.global.heirloomsCarried.indexOf(loom), "heirloomsCarried", true);
-        equipHeirloom();
-    }
+        heirloomequip('highdmg');
     }
     /*if (getPageSetting('autonu') == true && getPageSetting('heirloomnu') != undefined) {
         spendNu(); spendNu(); spendNu(); spendNu(); spendNu(); spendNu();
