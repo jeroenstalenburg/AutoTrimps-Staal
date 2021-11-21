@@ -69,14 +69,17 @@ function buyFoodEfficientHousing() {
     }
     var buildorder = [];
     for (var house in unlockedHousing) {
-        var building = game.buildings[unlockedHousing[house]];
-        var cost = getBuildingItemPrice(building, "food", false, 1);
-        var ratio = cost / building.increase.by;
+        let building = game.buildings[unlockedHousing[house]];
+        let cost = getBuildingItemPrice(building, "food", false, 1);
+        let ratio = cost / building.increase.by;
         buildorder.push({
             'name': unlockedHousing[house],
             'ratio': ratio
         });
-        document.getElementById(unlockedHousing[house]).style.border = "1px solid #FFFFFF";
+        let best = document.getElementById(unlockedHousing[house]);
+        if (best != null) {
+            best.style.border = "1px solid #FFFFFF";
+        }
     }
     buildorder.sort(function (a, b) {
         return a.ratio - b.ratio;
