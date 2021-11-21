@@ -475,8 +475,8 @@ function ABsolver() {
   if (contract != '' && !autoBattle.items[contract].owned) {
     autoBattle.acceptContract(contract);
   }
-  let contract = autoBattle.items[autoBattle.activeContract]
-  contractVoid = (contract != null && game.global.world >= contract.zone
+  let activeContract = autoBattle.items[autoBattle.activeContract]
+  contractVoid = (activeContract != null && game.global.world >= activeContract.zone
                   && game.global.lastClearedCell > ((getPageSetting('Rvoidscell') > 0) ?
                   getPageSetting('Rvoidscell') : 70));
 }

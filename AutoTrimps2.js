@@ -25,7 +25,7 @@ function initializeAutoTrimps() {
     'upgrades', 'heirlooms', 'buildings', 'jobs',
     'equipment', 'gather', 'stance', 'maps', 'breedtimer',
     'dynprestige', 'fight', 'scryer', 'magmite', 'nature',
-    'other', 'perks', 'fight-info', 'performance', 'ab',''];
+    'other', 'perks', 'fight-info', 'performance', 'ab'];
   for (var m in ATmoduleList) {
     ATscriptLoad(modulepath, ATmoduleList[m]);
   }
