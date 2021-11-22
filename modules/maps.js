@@ -479,7 +479,8 @@ function autoMap() {
         };
         var prefixkeys = Object.keys(prefixlist);
         var suffixlist = {
-            'Descent': 7.077,
+            // 'Descent': 7.077,
+            'Descent': 11,
             'Void': 8.822,
             'Nightmare': 9.436,
             'Pit': 10.6
