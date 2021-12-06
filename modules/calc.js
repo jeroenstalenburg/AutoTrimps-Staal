@@ -970,6 +970,9 @@ function RcalcBadGuyDmg(enemy, attack, equality) {
     if (!enemy && game.global.usingShriek) {
         number *= game.mapUnlocks.roboTrimp.getShriekValue();
     }
+    if (game.global.challengeActive == "Hypothermia") {
+        number *= game.challenges.Hypothermia.getEnemyMult();
+    }
     return number;
 }
 
@@ -1043,6 +1046,9 @@ function RcalcEnemyHealth(world) {
     }
     if (game.global.challengeActive == "Alchemy") {
     health *= ((alchObj.getEnemyStats(false, false)) + 1);
+    }
+    if (game.global.challengeActive == "Hypothermia") {
+        health *= game.challenges.Hypothermia.getEnemyMult();
     }
     return health;
 }
