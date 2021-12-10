@@ -806,7 +806,7 @@ RAutoPerks.displayGUI = function() {
     //Line 3 of the UI
     apGUI.$ratiosLine3 = document.createElement("DIV");
     apGUI.$ratiosLine3.setAttribute('style', 'display: inline-block; text-align: left; width: 100%');
-    var listratiosLine3 = ["Resilience","Tenacity","Greed","Frenzy","Championism","Observation"];
+    var listratiosLine3 = ["Resilience","Tenacity","Greed","Frenzy","Championism","Observation","masterfulness"];
     for (var i in listratiosLine3)
         RAutoPerks.createInput(listratiosLine3[i],apGUI.$ratiosLine3);
     //Create dump perk dropdown
@@ -1380,6 +1380,7 @@ RAutoPerks.initializePerks = function () {
     var championism = new RAutoPerks.VariablePerk("championism", 1000000000, true,      14, 0.1);
     let obsWeight = observationWeight()
     var observation = new RAutoPerks.VariablePerk("observation", 5000000000000000000, obsWeight == 0.5,     15, obsWeight, 50);
+    var masterfulness = new RAutoPerks.VariablePerk("masterfulness", 10000000000, true,      16, 0.1, 10);
     
     equality.exprate = 1.5;
     championism.exprate = 5;
@@ -1388,7 +1389,7 @@ RAutoPerks.initializePerks = function () {
     //no
     //tier2
     //no
-    RAutoPerks.perkHolder = [range, agility, bait, trumps, packrat, hunger, /*overkill,*/ looting, toughness, power, motivation, pheromones, artisanistry, carpentry, prismal, resilience, criticality, tenacity, greed, frenzy, championism, equality, observation];
+    RAutoPerks.perkHolder = [range, agility, bait, trumps, packrat, hunger, /*overkill,*/ looting, toughness, power, motivation, pheromones, artisanistry, carpentry, prismal, resilience, criticality, tenacity, greed, frenzy, championism, equality, observation, masterfulness];
     for(var i in RAutoPerks.perkHolder) {
         RAutoPerks.perkHolder[i].radLevel = 0;
         RAutoPerks.perkHolder[i].spent = 0;
