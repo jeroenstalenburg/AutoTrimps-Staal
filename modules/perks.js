@@ -1380,7 +1380,7 @@ RAutoPerks.initializePerks = function () {
     var championism = new RAutoPerks.VariablePerk("championism", 1000000000, true,      14, 0.1);
     let obsWeight = observationWeight()
     var observation = new RAutoPerks.VariablePerk("observation", 5000000000000000000, obsWeight == 0.5,     15, obsWeight, 50);
-    var masterfulness = new RAutoPerks.VariablePerk("masterfulness", 10000000000, true,      16, 0.1, 10);
+    var masterfulness = new RAutoPerks.VariablePerk("masterfulness", 10 ** 23, true,      16, 0.1, 10);
     
     equality.exprate = 1.5;
     championism.exprate = 5;
