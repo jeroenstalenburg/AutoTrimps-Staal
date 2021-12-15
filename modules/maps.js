@@ -1562,6 +1562,13 @@ function RautoMap() {
                     selectedMap = theMap.id;
                     break;
                 }
+                var frozencastle = [10000, 10000];
+                if (getPageSetting('Rfrozencastle')[0] > 0 && getPageSetting('Rfrozencastle')[1] >= 0) frozencastle = getPageSetting('Rfrozencastle');
+                if (theMap.name == 'Frozen Castle' && (game.global.world >= frozencastle[0] && ((game.global.lastClearedCell + 1) >= frozencastle[1]))) {
+                    if (game.global.world < 175) continue;
+                    selectedMap = theMap.id;
+                    break;
+                }
             }
         }
     }
