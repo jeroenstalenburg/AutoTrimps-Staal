@@ -787,7 +787,7 @@ function RcalcOurDmg(minMaxAvg, equality) {
 
     // Equality
     if (getPageSetting('Rcalcmaxequality') == 1 && !equality) {
-        number *= Math.pow(game.portal.Equality.modifier, game.portal.Equality.scalingCount);
+        number *= Math.pow(game.portal.Equality.modifier + getHeirloomBonus("Shield", "inequality")/1000, game.portal.Equality.scalingCount);
     } else if (getPageSetting('Rcalcmaxequality') == 0 && !equality) {
         number *= game.portal.Equality.getMult();
     } else {
