@@ -795,7 +795,7 @@ function RcalcOurDmg(minMaxAvg, equality) {
     }
 
     // Gamma Burst
-    if (getHeirloomBonus("Shield", "gammaBurst") > 0 && (RcalcOurHealth() / (RcalcBadGuyDmg(null, RgetEnemyMaxAttack(game.global.world, 50, 'Snimp', 1.0))) >= 5)) {
+    if (getHeirloomBonus("Shield", "gammaBurst") > 0 && (RcalcOurHealth() / (RcalcBadGuyDmg(null, RgetEnemyMaxAttack(game.global.world, 50, 'Snimp', 1.0))) >= (autoBattle.oneTimers.Burstier.owned ? 4 : 5))) {
         number *= 1 + (getHeirloomBonus("Shield", "gammaBurst") / 100) / (autoBattle.oneTimers.Burstier.owned ? 4 : 5);
     }
 
