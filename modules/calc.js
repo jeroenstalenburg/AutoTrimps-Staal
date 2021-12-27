@@ -289,8 +289,8 @@ function calcOurDmg(minMaxAvg, incStance, incFlucts) {
     if (Fluffy.isActive()){
         number *= Fluffy.getDamageModifier();
     }
-    if (getHeirloomBonus("Shield", "gammaBurst") > 0 && (calcOurHealth() / (calcBadGuyDmg(null, getEnemyMaxAttack(game.global.world, 50, 'Snimp', 1.0))) >= 5)) {
-            number *= ((getHeirloomBonus("Shield", "gammaBurst") / 100) + 1) / 5;
+    if (getHeirloomBonus("Shield", "gammaBurst") > 0 && (calcOurHealth() / (calcBadGuyDmg(null, getEnemyMaxAttack(game.global.world, 50, 'Snimp', 1.0))) >= (autoBattle.oneTimers.Burstier.owned ? 4 : 5))) {
+            number *= ((getHeirloomBonus("Shield", "gammaBurst") / 100) + 1) / (autoBattle.oneTimers.Burstier.owned ? 4 : 5);
     }
 
 
