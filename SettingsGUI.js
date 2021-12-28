@@ -775,7 +775,7 @@ function initializeAllSettings() {
     //Hypo
     document.getElementById('Ralchfarmfrag').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rhypoon', 'Hypothermia', 'Turn on Hypothermia settings. ', 'boolean', 'false', null, 'Challenges');
-    createSetting('Rhyporestrictwood', 'Speedlumber holdzone', 'Don\'t buy speedlumber upgrades until the given zone', 'value', -1, null, 'Challenges');
+    createSetting('Rhyporestrictwood', 'Restrict wood zone', 'Set lumberacks to 0 and don\'t buy speedlumber upgrades until the given zone', 'value', -1, null, 'Challenges');
 
     //Combat
 
