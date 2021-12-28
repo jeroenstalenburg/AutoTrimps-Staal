@@ -775,7 +775,8 @@ function initializeAllSettings() {
     //Hypo
     document.getElementById('Ralchfarmfrag').parentNode.insertAdjacentHTML('afterend', '<br>');
     createSetting('Rhypoon', 'Hypothermia', 'Turn on Hypothermia settings. ', 'boolean', 'false', null, 'Challenges');
-    createSetting('Rhyporestrictwood', 'Restrict wood zone', 'Set lumberacks to 0 and don\'t buy speedlumber upgrades until the given zone', 'value', -1, null, 'Challenges');
+    createSetting('Rhyporestrictwood', 'Restrict wood zone', 'Set lumberacks to 0, don\'t buy sheds and don\'t buy speedlumber upgrades until the given zone', 'value', -1, null, 'Challenges');
+    createSetting('Rhypostorageratio', 'Storage Ratio', 'The Storage ratio for Barns and Forges when restricting wood', 'value', .1, null, 'Challenges');
 
     //Combat
 
@@ -1906,7 +1907,9 @@ function updateCustomButtons() {
     //Hypo
     radonon ? turnOn("Rhypoon") : turnOff("Rhypoon");
     radonon && getPageSetting('Rhypoon') == true ? turnOn("Rhyporestrictwood") : turnOff("Rhyporestrictwood");
+    radonon && getPageSetting('Rhypoon') == true ? turnOn("Rhypostorageratio") : turnOff("Rhypostorageratio");
 
+    
     //Hide Challenges
     radonon ? turnOn("Rchallengehide"): turnOff("Rchallengehide");
     radonon && getPageSetting('Rchallengehide') == true ? turnOn("Rchallengehidequag") : turnOff("Rchallengehidequag");

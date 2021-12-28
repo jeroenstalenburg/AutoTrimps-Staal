@@ -423,7 +423,19 @@ function mostEfficientHousing() {
 function RbuyBuildings() {
  
     // Storage, shouldn't be needed anymore that autostorage is lossless
-    if (!game.global.autoStorage) {toggleAutoStorage(false);}
+    if (game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhyporestrictwood')) {
+        //barn
+        if (game.buildings.Barn.cost.food() / game.resources.food.owned < getPageSetting('Rhypostorageratio')) {
+            buyBuilding("Barn", true, true, 1);
+        }
+        //forge
+        if (game.buildings.Forge.cost.metal() / game.resources.metal.owned < getPageSetting('Rhypostorageratio')) {
+            buyBuilding("Forge", true, true, 1);
+        }
+        if (game.global.autoStorage) {toggleAutoStorage(false);}
+    } else {
+        if (!game.global.autoStorage) {toggleAutoStorage(false);}
+    }
  
     //Smithy
     if (!game.buildings.Smithy.locked && canAffordBuilding('Smithy')) {
