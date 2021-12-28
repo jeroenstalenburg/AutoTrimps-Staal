@@ -605,6 +605,10 @@ function RbuyJobs() {
         }
     }
 
+    if (game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhyporestrictwood')) {
+        desiredRatios[ratioWorkers.indexOf("Lumberjack")] = 0
+    }
+
     var totalFraction = desiredRatios.reduce((a,b) => {return a + b;});
 
     var desiredWorkers = [0,0,0,0];

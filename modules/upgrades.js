@@ -60,7 +60,7 @@ function RbuyUpgrades() {
             if (upgrade == 'Coordination' && (getPageSetting('RBuyUpgradesNew') == 2 || !canAffordCoordinationTrimps())) continue;
 
             //Speedlumber
-            if (upgrade == 'Speedlumber' && game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhypolumberholdzone')) continue;
+            if (upgrade == 'Speedlumber' && game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhyporestrictwood')) continue;
 
             //Other
             if (!available) continue;
