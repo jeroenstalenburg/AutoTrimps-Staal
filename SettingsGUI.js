@@ -731,14 +731,14 @@ function initializeAllSettings() {
     
     //Storm
     document.getElementById('Rmayhemmap').parentNode.insertAdjacentHTML('afterend', '<br>');
-    createSetting('Rstormon', 'Storm', 'Turn on Storm settings. This also controls the entireity of Storm settings. If you turn this off it will not do anything in Storm. ', 'boolean', 'false', null, 'Challenges');
+    createSetting('Rstormon', 'Storm', 'Turn on Storm settings. This also controls the entirety of Storm settings. If you turn this off it will not do anything in Storm. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Rstormzone', 'S: Zone', 'What zone to start S: H:D and S: Multiplier. ', 'value', '-1', null, 'Challenges');
     createSetting('RstormHD', 'S: H:D', 'What H:D to use inside Storm. ', 'value', '-1', null, 'Challenges');
     createSetting('Rstormmult', 'S: Multiplier', 'Starting from the zone above S: Zone, this setting will multiply the H:D you have set in S: H:D. So if S: Zone was 100, S: H:D was 10, S: Multiplier was 1.2, at z101 your H:D target will be 12, then at z102 it will be 14.4 and so on. This way you can account for the zones getting stronger and you will not waste time farming for a really low H:D. ', 'value', '-1', null, 'Challenges');
     
     //Insanity
     document.getElementById('Rstormmult').parentNode.insertAdjacentHTML('afterend', '<br>');
-    createSetting('Rinsanityon', 'Insanity', 'Turn on Insanity settings. This also controls the entireity of IF. If you turn this off it will not Insanity Farm. ', 'boolean', 'false', null, 'Challenges');
+    createSetting('Rinsanityon', 'Insanity', 'Turn on Insanity settings. This also controls the entirety of IF. If you turn this off it will not Insanity Farm. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Rinsanityfarmzone', 'Insanity Farming', 'Farms for specified stacks in IF: Stacks at zone according to this settings value. Can use 108,109,110. ', 'multiValue', [-1], null, 'Challenges');
     createSetting('Rinsanityfarmcell', 'IF: Cell', 'Insanity Farm at this Cell. -1 to run them at the default value, which is 1. ', 'value', '-1', null, 'Challenges');
     createSetting('Rinsanityfarmstack', 'IF: Stacks', 'How many stacks to farm at zone specified in IF. Can use 300,400,500. These values should match up to your IF zones. If using IF and IF: Stacks examples (110 and 500) it will farm at z110 for 500 stacks of insanity. If stacks specified are above maximum Insanity Stacks, it will farm for maximum. ', 'multiValue', [-1], null, 'Challenges');
@@ -747,7 +747,7 @@ function initializeAllSettings() {
     
     //Exterminate
     document.getElementById('Rinsanityfarmfrag').parentNode.insertAdjacentHTML('afterend', '<br>');
-    createSetting('Rexterminateon', 'Exterminate', 'Turn on Exterminate settings. This also controls the entireity of Exterminate. If you turn this off it will not calculate Exterminate. ', 'boolean', 'false', null, 'Challenges');
+    createSetting('Rexterminateon', 'Exterminate', 'Turn on Exterminate settings. This also controls the entirety of Exterminate. If you turn this off it will not calculate Exterminate. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Rexterminatecalc', 'E: Calc', 'Calculate Exterminate enemies instead of the usual ones. May improve your challenge experience. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Rexterminateeq', 'E: Equality', 'Will manage your equality \'better\' inside the challenge. When you have the experienced buff it will turn it off, when you dont it will turn it on and let it build up. ', 'boolean', 'false', null, 'Challenges');
     
@@ -764,7 +764,7 @@ function initializeAllSettings() {
     
     //Alch
     document.getElementById('Rpandahits').parentNode.insertAdjacentHTML('afterend', '<br>');
-    createSetting('Ralchon', 'Alchemy', 'Turn on Alchemy settings. This also controls the entireity of AF. If you turn this off it will not Alchemy Farm. ', 'boolean', 'false', null, 'Challenges');
+    createSetting('Ralchon', 'Alchemy', 'Turn on Alchemy settings. This also controls the entirety of AF. If you turn this off it will not Alchemy Farm. ', 'boolean', 'false', null, 'Challenges');
     createSetting('Ralchfarmzone', 'Alchemy Farming', 'Farms for specified potion levels in AF: Potions at zone according to this settings value. Can use 138,139,140. ', 'multiValue', [-1], null, 'Challenges');
     createSetting('Ralchfarmcell', 'AF: Cell', 'Alchemy Farm at this Cell. -1 to run them at the default value, which is 1. ', 'value', '-1', null, 'Challenges');
     createSetting('Ralchfarmstack', 'AF: Potion', 'How many levels of a potion to farm at zone specified in AF. You must pair a potion with a level here. Example: h15\,g20\,s15. This will farm Herby potion up to level 15 on the first AF zone\, Gaseous potion to level 20 and so on. It will also buy that potion so don\'t bother using the vanilla autobrew. Think of it like an Arch string\, you remember that challenge right?', 'textValue', 'undefined', null, 'Challenges');
@@ -772,7 +772,10 @@ function initializeAllSettings() {
     createSetting('Ralchfarmselection', 'AF: Map Selection', 'Select which map you prefer to use for AF. Use m = Mountains\, f = Forest\, s = Sea\, d = Depths\, g = Gardens\, l = farmLands. ', 'textValue', 'l', null, 'Challenges');
     createSetting('Ralchfarmfrag', 'AF: Frags', 'Turn this on to farm fragments if you cannot afford the map you have selected for AF. ', 'boolean', 'false', null, 'Challenges');
 
-
+    //Hypo
+    document.getElementById('Ralchfarmfrag').parentNode.insertAdjacentHTML('afterend', '<br>');
+    createSetting('Rhypoon', 'Hypothermia', 'Turn on Hypothermia settings. ', 'boolean', 'false', null, 'Challenges');
+    createSetting('Rhypolumberholdzone', 'Speedlumber holdzone', 'Don\'t buy speedlumber upgrades until the given zone', 'Value', -1, null, 'Challenges');
 
     //Combat
 
@@ -1899,6 +1902,10 @@ function updateCustomButtons() {
     radonon && getPageSetting('Ralchon') == true ? turnOn("Ralchfarmlevel") : turnOff("Ralchfarmlevel");
     radonon && getPageSetting('Ralchon') == true ? turnOn("Ralchfarmselection") : turnOff("Ralchfarmselection");
     radonon && getPageSetting('Ralchon') == true ? turnOn("Ralchfarmfrag") : turnOff("Ralchfarmfrag");
+
+    //Hypo
+    radonon ? turnOn("Rhypoon") : turnOff("Rhypoon");
+    radonon && getPageSetting('Rhypoon') == true ? turnOn("Rhypolumberholdzone") : turnOff("Rhypolumberholdzone");
 
     //Hide Challenges
     radonon ? turnOn("Rchallengehide"): turnOff("Rchallengehide");

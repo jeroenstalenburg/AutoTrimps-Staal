@@ -48,21 +48,28 @@ function buyUpgrades() {
 var RupgradeList = ['Miners', 'Scientists', 'Coordination', 'Speedminer', 'Speedlumber', 'Speedfarming', 'Speedscience', 'Speedexplorer', 'Megaminer', 'Megalumber', 'Megafarming', 'Megascience', 'Efficiency', 'Explorers', 'Battle', 'Bloodlust', 'Bounty', 'Egg', 'Rage', 'Prismatic', 'Prismalicious', 'Formations', 'Dominance', 'UberHut', 'UberHouse', 'UberMansion', 'UberHotel', 'UberResort', 'Trapstorm', 'Potency'];
 
 function RbuyUpgrades() {
+    let bought;
+    do {
+        bought = false;
+        for (var upgrade in RupgradeList) {
+            upgrade = RupgradeList[upgrade];
+            var gameUpgrade = game.upgrades[upgrade];
+            var available = (gameUpgrade.allowed > gameUpgrade.done && canAffordTwoLevel(gameUpgrade));
+                
+            //Coord
+            if (upgrade == 'Coordination' && (getPageSetting('RBuyUpgradesNew') == 2 || !canAffordCoordinationTrimps())) continue;
 
-    for (var upgrade in RupgradeList) {
-        upgrade = RupgradeList[upgrade];
-        var gameUpgrade = game.upgrades[upgrade];
-        var available = (gameUpgrade.allowed > gameUpgrade.done && canAffordTwoLevel(gameUpgrade));
-            
-        //Coord
-    if (upgrade == 'Coordination' && (getPageSetting('RBuyUpgradesNew') == 2 || !canAffordCoordinationTrimps())) continue;
+            //Speedlumber
+            if (upgrade == 'Speedlumber' && game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhypolumberholdzone')) continue;
 
-        //Other
-        if (!available) continue;
-        if (game.upgrades.Scientists.done < game.upgrades.Scientists.allowed && upgrade != 'Scientists') continue;
+            //Other
+            if (!available) continue;
+            if (game.upgrades.Scientists.done < game.upgrades.Scientists.allowed && upgrade != 'Scientists') continue;
             buyUpgrade(upgrade, true, true);
             debug('Upgraded ' + upgrade, "upgrades", "*upload2");
+            bought = true;
         }
+    } while (bought)
 }
 
 function RautoGoldenUpgradesAT(setting) {
