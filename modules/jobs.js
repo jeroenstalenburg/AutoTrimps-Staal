@@ -603,10 +603,10 @@ function RbuyJobs() {
                 desiredRatios[ratioWorkers.indexOf(worker)] = scientistMod * parseFloat(getPageSetting('R' + worker + 'Ratio'));
             }
         }
-    }
 
-    if (game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhyporestrictwood')) {
-        desiredRatios[ratioWorkers.indexOf("Lumberjack")] = 0
+        if (game.global.challengeActive == "Hypothermia" && game.global.world < getPageSetting('Rhyporestrictwood')) {
+            desiredRatios[ratioWorkers.indexOf("Lumberjack")] = 0
+        }
     }
 
     var totalFraction = desiredRatios.reduce((a,b) => {return a + b;});
