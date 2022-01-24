@@ -1350,7 +1350,7 @@ function observationWeight() {
     if (game.portal.Observation.trinkets < 1000 || (game.portal.Observation.trinkets < (game.portal.Observation.radLevel * 1000 - 1001))) {
         return 0.5
     }
-    return game.portal.Observation.trinkets / 100
+    return game.portal.Observation.trinkets
 }
 
 RAutoPerks.initializePerks = function () {
