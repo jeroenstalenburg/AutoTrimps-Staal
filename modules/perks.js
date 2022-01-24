@@ -1346,13 +1346,6 @@ RAutoPerks.VariablePerk = function(name, base, compounding, value, baseIncrease,
     this.value = getRatiosFromPresets();
 };
 
-function observationWeight() {
-    if (game.portal.Observation.trinkets < 1000 || (game.portal.Observation.trinkets < (game.portal.Observation.radLevel * 1000 - 1001))) {
-        return 0.5
-    }
-    return game.portal.Observation.trinkets
-}
-
 RAutoPerks.initializePerks = function () {
     //fixed
     var range = new RAutoPerks.FixedPerk("range", 1, 10, 10);
@@ -1378,8 +1371,7 @@ RAutoPerks.initializePerks = function () {
     var greed = new RAutoPerks.VariablePerk("greed", 10000000000, true,      12, 0.1, 40);
     var frenzy = new RAutoPerks.VariablePerk("frenzy", 1000000000000000, true,      13, 0.1);
     var championism = new RAutoPerks.VariablePerk("championism", 1000000000, true,      14, 0.1);
-    let obsWeight = observationWeight()
-    var observation = new RAutoPerks.VariablePerk("observation", 5000000000000000000, obsWeight == 0.5,     15, obsWeight, 50);
+    var observation = new RAutoPerks.VariablePerk("observation", 5000000000000000000, true,     15, 0.5, 50);
     var masterfulness = new RAutoPerks.VariablePerk("masterfulness", 10 ** 23, true,      16, 0.1, 10);
     
     equality.exprate = 1.5;
